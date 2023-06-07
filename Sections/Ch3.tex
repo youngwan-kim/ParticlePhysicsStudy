@@ -1,27 +1,39 @@
 \noindent\rule{7in}{2.8pt}
 \section{Decay Rates and Cross Sections}
 
-\begin{problem}{1}
-
+\begin{problem}{3.1}
+Calculate the energy of the $\mu^-$ produced in the decay at rest $\pi^- \rightarrow \mu\bar{\nu}_{\mu}$.
+Assume $m_{\pi} = \mathrm{140 \ MeV}$, $m_{\mu} = \mathrm{106 \ MeV}$ and take $m_{\nu} \sim 0$.
 \end{problem}
 
 \begin{solution}
+Let the four-momenta of the muon and the neutrino to be $p_1 = (E_1, 0, 0, E_2)$ and $p_2 = (E_2, 0, 0, -E_2)$.
+In the pion rest frame, $E_1 + E_2 = m_{\pi}$ and from the muon mass constraint $m_{\mu}^2 = E_1^2 - E_2^2$.
+Solving these equation gives 
+$$E_1 = {m_{\pi}^2 + m_{\mu}^2 \over 2m_{\pi}} = \mathrm{110.13 \ GeV}$$.
 
 \end{solution} 
 \noindent\rule{7in}{1.5pt}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Problem 2
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{problem}{2}
-
+\begin{problem}{3.2}
+For the decay $a \rightarrow 1 + 2$, show that the momenta of both daughter particles
+in the centre-of mass frame $p^*$ are
+$$p^* = {1 \over 2m_a}\sqrt{[m_a^2 - (m_1^2 + m_2^2)][m_a^2 - (m_1^2 - m_2^2)]}$$.
 \end{problem}
 
 \begin{solution}
+Let the four-momenta of the mother particle and the daughter particles to be
+$p_a = (m_a, 0, 0, 0)$, $p_1 = (E_1, 0, 0, p^*)$, $p_2 = (E_2, 0, 0, -p^*)$
+From the mass constraints, we get $E_1 + E_2 = m_a$, $E_1^2 - p^{*2} = m_1^2$, and 
+$E_2^2 - p^{*2} = m_2^2$.
+
+Since we have three unknown variables $E_1, E_2, p^*$ and three equations,
+it is possible to get $p^*$ in terms of $m_a, m_1 \ \mathrm{and} \ m_2$, which gives
+the desired solution.
 
 \end{solution} 
-
 \noindent\rule{7in}{1.5pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
