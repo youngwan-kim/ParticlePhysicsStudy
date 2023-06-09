@@ -1,14 +1,205 @@
 \section{Introduction}
+
+\begin{problem}{1.1}
+Feynman diagrams are constructed out of the Standard Model vertices shown in Figure 1.4.
+Only the weak charged-current interaction can change the flavour of the particle at the interaction vertex.
+Explaining your reasoning, state whether each of the sixteen diagrams below represents a valid Standard Model vertex.
+\end{problem}
+\begin{solution}
+    
+\end{solution} 
+\noindent\rule{7in}{1.5pt}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+
 \begin{problem}{1.2}
 Draw the Feynman diagram for $\tau^-\to\pi^-\nu_\tau$. (The $\pi^-$ is the lightest $d\bar{u}$ meson)
 \end{problem}
-\begin{solution}
+\begin{solution} 
+    \\[0.15in]
+    \begin{center}
+        \scalebox{1.5}{
+        \begin{tikzpicture}
+            \begin{feynman}
+              \vertex (a1) {\(\tau^-\)};
+              \vertex[right=2.5cm of a1] (a2) ;
+              \vertex[right=5cm of a1] (a3) {\(\nu_\tau\)};
+          
+              \vertex[above=of a3] (c1) {\(\overline u\)};
+              \vertex[above=2.5em of c1] (c3) {\(d\)};
+              \vertex at ($(c1)!0.5!(c3) - (1cm, 0)$) (c2);
+          
+              \diagram* {
+                {[edges=fermion]
+                  (a1) -- (a2) -- (a3),
+                },
 
+                (c1) -- [fermion, out=180, in=-45] (c2) -- [fermion, out=45, in=180] (c3),
+                (a2) -- [boson, bend left, edge label=\(W^{-}\)] (c2),
+              };
+          
+              \draw [decoration={brace}, decorate] (c3.north east) -- (c1.south east)
+                    node [pos=0.5, right] {\(\pi^{-}\)};
+            \end{feynman}
+          \end{tikzpicture}
+        }
+    \end{center}
 \end{solution} 
 \noindent\rule{7in}{1.5pt}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Problem 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}{1.3}
+Explain why it is not possible to construct a valid Feynman diagram using the Standard Model vertices for the following processes :
+\begin{enumerate}[label=(\alph*)]
+    \item $\mu^- \to e^+e^-e^+$
+    \item $\nu_\tau + p \to \mu^- + n$
+    \item $\nu_\tau + p \to \tau^+ + n$
+    \item $\pi^+(u\overbar{d})+\pi^-(d\overbar{u}) \to n(udd) + \pi^0(u\overbar{u})$
+\end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}[label=(\alph*)]
+    \item $\mu^- \to e^+e^-e^+$ : Charge is not conserved, as well as lepton numbers.
+    \item $\nu_\tau + p \to \mu^- + n$
+    \item $\nu_\tau + p \to \tau^+ + n$
+    \item $\pi^+(u\overbar{d})+\pi^-(d\overbar{u}) \to n(udd) + \pi^0(u\overbar{u})$
+\end{enumerate}
+\end{solution}
+
+\noindent\rule{7in}{1.5pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}{1.4}
+Draw the Feynman diagram for the decays:
+\begin{enumerate}[label=(\alph*)]
+    \item $\Delta^+(udd)\to n(udd)\pi^+(u\overbar{d})$
+    \item $\Sigma^0(uds)\to\Lambda(uds)\gamma$
+    \item $pi^+(u\overbar{d})\to mu^+ \nu_\mu$
+\end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}[label=(\alph*)]
+    \item $\Delta^+(udd)\to n(udd)\pi^+(u\overbar{d})$
+    \item $\Sigma^0(uds)\to\Lambda(uds)\gamma$
+    \item $pi^+(u\overbar{d})\to mu^+ \nu_\mu$
+\end{enumerate}
+\end{solution}
+
+\noindent\rule{7in}{1.5pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}{1.5}
+Treating the $\pi^0$ as a $uu$ bound state, draw the Feynman diagrams for:
+\begin{enumerate}[label=(\alph*)]
+    \item $\pi^0\to\gamma\gamma$
+    \item $\pi^0\to\gamma e^+e^-$
+    \item $\pi^0\to e^+e^-e^+e^-$
+    \item $\pi^0\to e^+e^-$
+\end{enumerate}
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+\noindent\rule{7in}{1.5pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}{1.6}
+Particle interactions fall into two main categories, scattering processes and annihilation processes, as indicated by the Feynman diagrams below.
+\begin{center}
+    \scalebox{1.5}{
+    \begin{tikzpicture}
+        \begin{feynman}
+            \vertex (a1);
+            \vertex[below=4em of a1] (a3);
+            \vertex[right=1.5em of a3] (a2t);
+            \vertex[above=2em of a2t] (a2);
+    
+            \vertex[right=2em of a2] (b2);
+            \vertex[right=5em of a1] (b1);
+            \vertex[right=5em of a3] (b3);
+    
+            \diagram* {
+                {[edges=fermion]
+                  (a1) -- (a2) -- (a3),
+                  (b3) -- (b2) -- (b1)
+                },
+                (a2) -- [boson] (b2)
+            };
+        \end{feynman}
+    \end{tikzpicture} \hspace{0.15in}
+    \begin{tikzpicture}
+        \begin{feynman}
+            \vertex (a1);
+            \vertex[right=5em of a1] (a3);
+            \vertex[right=2.5em of a1] (a2t);
+            \vertex[below=1em of a2t] (a2);
+    
+            \vertex[below=4em of a1] (b1);
+            \vertex[right=5em of b1] (b3);
+            \vertex[right=2.5em of b1] (b2t);
+            \vertex[above=1em of b2t] (b2);
+
+            \diagram* {
+                {[edges=fermion]
+                  (a1) -- (a2) -- (a3),
+                  (b1) -- (b2) -- (b3)
+                },
+                (a2) -- [boson] (b2)
+            };
+            
+        \end{feynman}
+    \end{tikzpicture}
+    }
+\end{center}
+Draw the lowest-order Feynman diagrams for the scattering and/or annihilation processes:
+\begin{enumerate}[label=(\alph*)]
+    \item $e^-e^- \to e^-e^-$
+    \item $e^+e^- \to \mu^+\mu^-$
+    \item $e^+e^- \to e^+e^-$
+    \item $e^-\nu_e \to e^-\nu_e$
+    \item $e^-\overbar{\nu_e} \to e^-\overbar{\nu_e}$
+\end{enumerate}
+\end{problem}
+\begin{solution}
+\begin{enumerate}[label=(\alph*)]
+    \item $e^-e^- \to e^-e^-$
+
+    \item $e^+e^- \to \mu^+\mu^-$
+    \item $e^+e^- \to e^+e^-$
+    \item $e^-\nu_e \to e^-\nu_e$
+    \item $e^-\overbar{\nu_e} \to e^-\overbar{\nu_e}$
+\end{enumerate}
+\end{solution}
+
+\noindent\rule{7in}{1.5pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}{1.7}
+High-energy muons traversing matter lose energy according to
+\begin{align*}
+    -\frac{1}{\rho} \frac{\dif E}{\dif x} \approx a + bE 
+\end{align*}
+where $a$ is due to ionisation energy loss and $b$ is due to the bremsstrahlung and $e^+e^-$ pair-production processes. 
+For standard rock, taken to have $A = 22, Z = 11$ and $\rho = 2.65 \unit{\gram\centi\metre^{-3}}$ , the parameters $a$ and $b$ depend only weakly on 
+the muon energy and have values $a \approx 2.5 \MeV\unit{\gram^{-1}\centi\metre^2}$ and $b \approx \num{3.5e-6} \unit{\gram^{-1}\centi\metre^2}$.
+\begin{enumerate}[label=(\alph*)]
+    \item At what muon energy are the ionisation and bremsstrahlung/pair production processes equally important?
+    \item Approximately how far does a 100 GeV cosmic-ray muon propagate in rock?
+\end{enumerate}
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+\noindent\rule{7in}{1.5pt}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{1.8}
@@ -22,6 +213,22 @@ Tugsten has a radiation length of $X_0=0.35$ cm and a critical energy of $E_c-7.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{problem}{1.9}
+The CPLEAR detector consisted of: tracking detectors in a magnetic field of 0.44 T; and electromagnetic calorimeter;
+and Čerenkov detectors with a radiator of refractive index $n=1.25$ used to distinguish $\pi^\pm$ from $K^\pm$.
+
+A charged particle travelling perpendicular to the direction of the magnetic field leaves a track with a
+measured radius of curvature of $R=4$m. If it is observed to give a Čerenkov signal, is it 
+possible to distinguish between the particle being a pion or kaon? Take $m_\pi \approx 140 \MeV /\text{c}^2$ and $m_K \approx 494 \MeV /\text{c}^2$ 
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+\noindent\rule{7in}{1.5pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{problem}{1.10}
 In a fixed-target pp experiment, what proton energy would be required to achieve the same centre-of-mass energy as the LHC, which will ultimately operate at 14 TeV.
 \end{problem}
@@ -30,3 +237,12 @@ In a fixed-target pp experiment, what proton energy would be required to achieve
 \end{solution} 
 \noindent\rule{7in}{1.5pt}
     
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}{1.11}
+At the LEP $e^+e^-$ collider, which had a circumference of 27 km, the electron and positron beam currents were both 1.0 mA. Each beam consisted of four equally spaced bunches of electrons/positrons. The bunches had an effec- tive area of $\num{1.8e4}\unit{\micro\metre^2}$.
+Calculate the instantaneous luminosity on the assumption that the beams collided head-on.
+\end{problem}
+\begin{solution}
+
+\end{solution}
