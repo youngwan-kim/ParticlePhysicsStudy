@@ -44,8 +44,15 @@ and the mean kaon lifetime $\tau(K^+)=\num{1.2e-8}$ s.
 \end{problem}
     
 \begin{solution}
-
-    
+Using the given information, 
+\begin{align*}
+    \text{BR}\left(K^+\to\pi^+\pi^0\right) &= \frac{1}{\Gamma_{K^+}} \times \Gamma\left( K^+ \to \pi^+\pi^0 \right) \\[0.15in]
+                                           &= \tau( K^+ )\times \Gamma\left( K^+ \to \pi^+\pi^0 \right) \\[0.15in]
+                                           &= \left( \num{1.2e-8}\unit{ s} \right) \times \left( \num{1.2e-8} \text{eV}\right) \\[0.15in]
+                                           &= \left( \num{1.2e-8} \right)  \times \left( \frac{1}{6.58} \times \num{e16} \text{ eV}^{-1} \right)  \times \left( \num{1.2e-8} \text{eV}\right) \\[0.15in]
+                                           &= \frac{1.2^2}{6.58} \simeq 21\%
+\end{align*}
+which is as much as expected from the known branching rate.\\
 \end{solution} 
 \noindent\rule{7in}{1.5pt}
     
@@ -58,8 +65,12 @@ and is operational for $50\%$ of the time, how many Higgs bosons will be produce
 \end{problem}
         
 \begin{solution}
-    
-        
+Let the total number of Higgs bosons that will be produced in 5 years of running in such condition as $N$, then one could calculate $N$ as,
+\begin{align*}
+    N &= \left( \num{2e34}\unit{\centi\metre^{-2}\second^{-1}} \right) \times \left( 5 \text{ yrs} \right) \times \left( 250 \text{ fb} \right) \times 0.5 \\[0.15in]
+      &= \left( \num{2e34}\unit{\centi\metre^{-2}\second^{-1}} \right) \left( \num{1.5768e8} \unit{\second} \right) \times \left( \num{2.5e-42} \unit{\centi\metre^2} \right) \times 0.5 \\[0.15in]
+      &= \num{3.942}
+\end{align*}
 \end{solution} 
 
 \noindent\rule{7in}{1.5pt}
@@ -71,10 +82,12 @@ The total $e^+e^-\to\gamma\to\mu^+\mu^-$ annihilation cross section is $\sigma =
 Calculate the cross section at $\sqrt{s}=50\GeV$, expressing your answer in both natural units and in barns.
 Compare this to the total pp cross section at $\sqrt{s}=50\GeV$ which is approximately 40 mb and comment on the result.
 \end{problem}
-            
 \begin{solution}
-        
-            
+Plugging in all the values we know in natural units ,
+\begin{align*}
+    \sigma = \frac{4\pi}{3\cdot \left( \num{2.5e3} \GeV^2 \right)\cdot 137^2} = \num{8.9e-26} \text{ eV}^{-2}
+\end{align*}
+which could be converted into barns using $1\text{ GeV}^{-2} = 0.3894 \text{ mb}$
 \end{solution} 
     
 \noindent\rule{7in}{1.5pt}
