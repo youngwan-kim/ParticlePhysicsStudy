@@ -85,9 +85,9 @@ Compare this to the total pp cross section at $\sqrt{s}=50\GeV$ which is approxi
 \begin{solution}
 Plugging in all the values we know in natural units ,
 \begin{align*}
-    \sigma = \frac{4\pi}{3\cdot \left( \num{2.5e3} \GeV^2 \right)\cdot 137^2} = \num{8.9e-26} \text{ eV}^{-2}
+    \sigma = \frac{4\pi}{3\cdot \left( \num{2.5e3} \GeV^2 \right)\cdot 137^2} = \num{8.9e-8} \GeV^{-2}
 \end{align*}
-which could be converted into barns using $1\text{ GeV}^{-2} = 0.3894 \text{ mb}$
+which could be converted into barns using $1\text{ GeV}^{-2} = 0.3894 \text{ mb}$ which gives $\sigma $
 \end{solution} 
     
 \noindent\rule{7in}{1.5pt}
@@ -96,7 +96,7 @@ which could be converted into barns using $1\text{ GeV}^{-2} = 0.3894 \text{ mb}
 
 
 \begin{problem}{3.6}
-A $1\GeV$ muon neutrino is fired at a $1\unit{metre}$ thick block of iron with density $\rho=\num{7.874e3}\unit{\kilo\gram\cdot\metre^{-3}}$.
+A $1\GeV$ muon neutrino is fired at a $1\unit{\metre}$ thick block of iron with density $\rho=\num{7.874e3}\unit{\kilo\gram\cdot\metre^{-3}}$.
 If the average neutrino-nucleon interaction cross section is $\sigma=\num{8e-39}\unit{\square\metre}$, calculate the (small) probability that the neutrino interacts in the block.
 \end{problem}
             
@@ -111,12 +111,24 @@ If the average neutrino-nucleon interaction cross section is $\sigma=\num{8e-39}
 
 
 \begin{problem}{3.7}
-
+For the process $a+b\to1+2$ the Lorents-invariant flux term installed
+\begin{align*}
+    F = 4 \left[ \left( p_a \cdot p_b \right)^2 - m_a^2 m_b^2  \right]^{\frac{1}{2}}
+\end{align*}
+In the non-relativistic limit, $\beta_a,\beta_b \ll 1$, show that
+\begin{align*}
+    F \approx 4m_am_b \left| \mathbf{v}_a - \mathbf{v}_b \right|
+\end{align*}
+where $\mathbf{v}_a,\mathbf{v}_b$ are the (non-relativistic) velocities of the two particles.
 \end{problem}
-            
 \begin{solution}
-        
-            
+Let the four-momenta of a,b as $p_a = \left( E_a, \boldp_a\right)$ and $p_b = \left( E_b, \boldp_b\right)$.
+Under the non-relativistic limit which implies that $\gamma_a,\gamma_b \simeq 1$, one could write down $F$ as
+\begin{align*}
+    F &=  4 \left[ \left( p_a \cdot p_b \right)^2 - m_a^2 m_b^2  \right]^{\frac{1}{2}} \\[0.15in]
+      &=  4 \left[ \left( E_aE_b - m_am_b \boldsymbol{\beta}_a\cdot\boldsymbol{\beta}_b\right)^2 - m_a^2 m_b^2  \right]^{\frac{1}{2}} \\[0.15in]
+      &=  4 \left[ \left( E_aE_b - m_am_b \boldsymbol{\beta}_a\cdot\boldsymbol{\beta}_b\right)^2 - m_a^2 m_b^2  \right]^{\frac{1}{2}} \\[0.15in]
+\end{align*}
 \end{solution} 
     
 \noindent\rule{7in}{1.5pt}
@@ -125,7 +137,12 @@ If the average neutrino-nucleon interaction cross section is $\sigma=\num{8e-39}
 
 
 \begin{problem}{3.8}
-
+The Lorentz-invariant flux term for the process $a+b\to1+2$ in the centre-of-mass frame was shown to be 
+$F=4p_i^\ast\sqrt{s}$, where $p_i^\ast$ is the momentum of the initial-state particles. Show that the 
+corresponding expression in the frame where $b$ is at rest is 
+\begin{align*}
+    F = 4m_bp_a.
+\end{align*}
 \end{problem}
             
 \begin{solution}
@@ -136,3 +153,38 @@ If the average neutrino-nucleon interaction cross section is $\sigma=\num{8e-39}
 \noindent\rule{7in}{1.5pt}
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}{3.9}
+Show that the momentum in the centre-of-mass frame of the initial-state particles in a two-body scattering
+process can be expressed as
+\begin{align*}
+    p_i^{\ast 2} = \frac{1}{4s} \left[ s-\left(m_1+m_2\right)^2 \right]\left[ s-\left(m_1-m_2\right)^2 \right]
+\end{align*}
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+\noindent\rule{7in}{1.5pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{problem}{3.10}
+Repeat the calculation of Section 3.5.2 for the process $e^-p \to e^-p$ where the mass of the electron is no longer neglected.
+\begin{enumerate}[label=(\alph*)]
+    \item First show that
+    \begin{align*}
+        \frac{\dif E}{\dif \left( E \cos\theta \right)} = \frac{p_1p_3^2}{p_3\left(E_1+m_p\right)-E_3p_1\cos\theta}
+    \end{align*}
+    \item Then show that
+    \begin{align*}
+        \frac{\dif \sigma}{\dif \Omega} = \frac{1}{64\pi^2} \cdot \frac{p_3^2}{p_1m_p} \cdot \frac{1}{p_3\left(E_1+m_p\right)-E_3p_1\cos\theta} \cdot \left| \mathcal{M}_{fi} \right|^2
+    \end{align*}
+\end{enumerate}
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+\noindent\rule{7in}{1.5pt}
+
