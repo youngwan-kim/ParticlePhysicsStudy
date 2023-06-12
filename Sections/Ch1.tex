@@ -6,7 +6,24 @@ Only the weak charged-current interaction can change the flavour of the particle
 Explaining your reasoning, state whether each of the sixteen diagrams below represents a valid Standard Model vertex.
 \end{problem}
 \begin{solution}
-    
+\begin{enumerate}[label=(\alph*)]
+    \item Valid. 
+    \item Invalid, due to the fact that $\nu_e$ has no electric charge. 
+    \item Valid.
+    \item Valid.
+    \item Invalid.
+    \item Valid.
+    \item Invalid.
+    \item Invalid.
+    \item Invalid, leptons do not carry color charge.
+    \item Valid. 
+    \item 
+    \item
+    \item
+    \item
+    \item
+    \item
+\end{enumerate}
 \end{solution} 
 \noindent\rule{7in}{1.5pt}
     
@@ -19,7 +36,7 @@ Draw the Feynman diagram for $\tau^-\to\pi^-\nu_\tau$. (The $\pi^-$ is the light
 \begin{solution} 
     \\[0.15in]
     \begin{center}
-        \scalebox{1.5}{
+        \scalebox{1.25}{
         \begin{tikzpicture}
             \begin{feynman}
               \vertex (a1) {\(\tau^-\)};
@@ -62,9 +79,9 @@ Explain why it is not possible to construct a valid Feynman diagram using the St
 \begin{solution}
 \begin{enumerate}[label=(\alph*)]
     \item $\mu^- \to e^+e^-e^+$ : Charge is not conserved, as well as lepton numbers.
-    \item $\nu_\tau + p \to \mu^- + n$
-    \item $\nu_\tau + p \to \tau^+ + n$
-    \item $\pi^+(u\overbar{d})+\pi^-(d\overbar{u}) \to n(udd) + \pi^0(u\overbar{u})$
+    \item $\nu_\tau + p \to \mu^- + n$ : 
+    \item $\nu_\tau + p \to \tau^+ + n$ : Baryon number is not conserved.
+    \item $\pi^+(u\overbar{d})+\pi^-(d\overbar{u}) \to n(udd) + \pi^0(u\overbar{u})$ : Again, baryon number is not conserved.
 \end{enumerate}
 \end{solution}
 
@@ -75,16 +92,135 @@ Explain why it is not possible to construct a valid Feynman diagram using the St
 \begin{problem}{1.4}
 Draw the Feynman diagram for the decays:
 \begin{enumerate}[label=(\alph*)]
-    \item $\Delta^+(udd)\to n(udd)\pi^+(u\overbar{d})$
+    \item $\Delta^+(uud)\to n(udd)\pi^+(u\overbar{d})$
     \item $\Sigma^0(uds)\to\Lambda(uds)\gamma$
-    \item $pi^+(u\overbar{d})\to mu^+ \nu_\mu$
+    \item $\pi^+(u\overbar{d})\to \mu^+ \nu_\mu$
 \end{enumerate}
 \end{problem}
 \begin{solution}
 \begin{enumerate}[label=(\alph*)]
-    \item $\Delta^+(udd)\to n(udd)\pi^+(u\overbar{d})$
-    \item $\Sigma^0(uds)\to\Lambda(uds)\gamma$
-    \item $pi^+(u\overbar{d})\to mu^+ \nu_\mu$
+    \item $\Delta^+(uud)\to n(udd)\pi^+(u\overbar{d})$
+    \begin{center}
+        \scalebox{1.25}{
+            \begin{tikzpicture}
+                \begin{feynman}
+                    \vertex (a1) {\(u\)};
+                    \vertex[right=2.5cm of a1] (a2t);
+                    \vertex[left=1.cm of a2t] (a2l);
+                    \vertex[right=1.cm of a2t] (a2r);
+                    \vertex[right=5cm of a1] (a3) {\(d\)};
+
+                    \vertex[below=0.75em of a1] (b1) {\(u\)};
+                    \vertex[below=0.75em of a3] (b3) {\(u\)};
+
+                    \vertex[below=0.75em of b1] (d1) {\(d\)};
+                    \vertex[below=0.75em of b3] (d3) {\(d\)};
+
+                    \vertex[above=of a2r] (c3t);
+                    \vertex[left=0.25em of c3t] (c3){\( \overline d \)};
+                    %\vertex[right=1em of c1t] (c1){\(\overline d\)};
+                    \vertex[above=of a2l] (c1t) ;
+                    \vertex[right=0.15em of c1t] (c1) {\(u\)};
+
+                    \vertex[above=.75em of c1t] (c1tu);
+                    \vertex[above=.75em of c3t] (c3tu);
+
+                    \diagram* {
+                      {[edges=fermion]
+                        (a1) -- (a2l) -- (c1), (a2r) -- (a3),
+                        (b1) -- (b3),
+                        (d1) -- (d3),
+                        (a2r) -- (c3), 
+                      },
+
+                      (a2l) -- [gluon] (a2r),
+                      
+                    };
+
+                    \draw [decoration={brace}, decorate] (c1tu) -- (c3tu)
+                          node [pos=0.5, above] {\(\pi^{+}\)};
+                    \draw [decoration={brace}, decorate] (d1.south west) -- (a1.north west)
+                          node [pos=0.5, left] {\(\Delta^{+}\)};
+                    \draw [decoration={brace}, decorate] (a3.north east) -- (d3.south east) 
+                          node [pos=0.5, right] {\(n\)};
+                \end{feynman}
+            \end{tikzpicture}
+        }
+    \end{center}
+    \item $\Sigma^0(uds)\to\Lambda(uds)\gamma$ 
+    \begin{center}
+        \scalebox{1.25}{
+            \begin{tikzpicture}
+                \begin{feynman}
+                    \vertex (a1) {\(u\)};
+                    \vertex[right=2.5cm of a1] (a2t);
+                    \vertex[left=1.cm of a2t] (a2l);
+                    \vertex[right=1.cm of a2t] (a2r);
+                    \vertex[right=5cm of a1] (a3) {\(u\)};
+
+                    \vertex[below=0.75em of a1] (b1) {\(d\)};
+                    \vertex[below=0.75em of a3] (b3) {\(d\)};
+
+                    \vertex[below=0.75em of b1] (d1) {\(s\)};
+                    \vertex[below=0.75em of b3] (d3) {\(s\)};
+
+                    \vertex[above=of a2r] (c3t);
+                    \vertex[left=0.25em of c3t] (c3){\( \gamma \)};
+                    %\vertex[right=1em of c1t] (c1){\(\overline d\)};
+                    \vertex[above=of a2l] (c1t) ;
+
+                    \vertex[above=.75em of c1t] (c1tu);
+                    \vertex[above=.75em of c3t] (c3tu);
+
+                    \diagram* {
+                      {[edges=fermion]
+                        (a1) -- (a2) -- (a3),
+                        (b1) -- (b3),
+                        (d1) -- (d3),
+                      },
+
+                      (a2) -- [photon] (c3)
+                      
+                    };
+
+                    \draw [decoration={brace}, decorate] (d1.south west) -- (a1.north west)
+                          node [pos=0.5, left] {\(\Sigma^{0}\)};
+                    \draw [decoration={brace}, decorate] (a3.north east) -- (d3.south east) 
+                          node [pos=0.5, right] {\(\Lambda\)};
+                \end{feynman}
+            \end{tikzpicture}
+        }
+    \end{center} 
+    \pagebreak
+    \item $\pi^+(u\overbar{d})\to \mu^+ \nu_\mu$ \\[0.15in]
+    \begin{center}
+        \scalebox{1.25}{
+            \begin{tikzpicture}
+                \begin{feynman}
+                   
+                    \vertex (a1){\(u\)};
+                    \vertex[left=1.5cm of a1] (a0u) {\(u\)};
+                    \vertex[below=2.5em of a0u] (a0d) {\(\overline d\)};
+                    \vertex[below=2.5em of a1] (a3) {\(\overline d\)};
+                    \vertex at ($(a3)!0.5!(a1) + (1.25cm, 0)$) (a2) ;
+
+                    \vertex[right=3em of a2] (b2);
+
+                    \vertex[right=3.5cm of a1] (b1) {\(\mu^+\)};
+                    \vertex[right=3.5cm of a3] (b3) {\(\nu_\mu\)};
+
+                    \diagram* {
+
+                      (a0u) -- [fermion] (a1) -- [fermion,bend left] (a2) -- [fermion, bend left] (a3) -- [fermion] (a0d),
+                      (a2) -- [boson, edge label =\(W^+\)] (b2), (b1) -- [fermion] (b2) -- [fermion] (b3)
+
+                    };
+                    \draw [decoration={brace}, decorate] (a0d.south west) -- (a0u.north west)
+                          node [pos=0.5, left] {\(\pi^{+}\)};
+                \end{feynman}
+            \end{tikzpicture}
+        }
+    \end{center}
 \end{enumerate}
 \end{solution}
 
@@ -102,7 +238,131 @@ Treating the $\pi^0$ as a $uu$ bound state, draw the Feynman diagrams for:
 \end{enumerate}
 \end{problem}
 \begin{solution}
+    \begin{enumerate}[label=(\alph*)]
+        \item $\pi^0\to\gamma\gamma$
+        \begin{center}
+            \scalebox{1.5}{
+                \begin{tikzpicture}
+                    \begin{feynman}
+                       
+                        \vertex (a1) {\(u\)};
+                        \vertex[right=3.75em of a1] (a2u);
+                        \vertex[below=2em of a2u] (a2d);
+                        \vertex[below=2em of a1] (a3) {\(\overline u\)};
+    
+                        \vertex[right=3.75em of a2u] (g1t);
+                        \vertex[right=3.75em of a2d] (g2t);
+                        \vertex[above=1em of g1t] (g1) {\(\gamma\)};
+                        \vertex[below=1em of g2t] (g2) {\(\gamma\)};
+    
+                        \diagram* {   
+                          (a1) -- [fermion] (a2u) -- [fermion] (a2d) -- [fermion] (a3),
+                          (a2u) -- [photon] (g1) , (a2d) -- [photon] (g2)
+                        };
 
+                        \draw [decoration={brace}, decorate] (a3.south west) -- (a1.north west)
+                              node [pos=0.5, left] {\(\pi^{0}\)};
+                    \end{feynman}
+                \end{tikzpicture}
+            }
+        \end{center}
+        \item $\pi^0\to\gamma e^+e^-$
+        \begin{center}
+            \scalebox{1.5}{
+                \begin{tikzpicture}
+                    \begin{feynman}
+                       
+                        \vertex (a1) {\(u\)};
+                        \vertex[right=3.75em of a1] (a2u);
+                        \vertex[below=2em of a2u] (a2d);
+                        \vertex[below=2em of a1] (a3) {\(\overline u\)};
+    
+                        %\vertex[right=2.25em of a2u] (g1u);
+                        \vertex at ($ (a2u) + (5.25em,0.5em) $) (g1u_t) {\(\gamma\)};
+                        \vertex at ($ (a2u) + (2.25em,0.75em) $) (g1u);
+                        \vertex at ($ (a2d) + (2.25em,-0.75em) $) (g2d);
+                        %\vertex[right=2.25em of a2d] (g2d);
+
+                        \vertex at ($ (g1u) + (3em,1.5em) $) (e1);
+                        \vertex at ($ (g2d) + (3em,-1.5em) $) (e4) {\(e^+\)};
+                        \vertex at ($ (e1)!.33!(e4) $) (e2);
+                        \vertex at ($ (e1)!.66!(e4) $) (e3) {\(e^-\)};
+    
+                        \diagram* {   
+                          (a1) -- [fermion] (a2u) -- [fermion] (a2d) -- [fermion] (a3),
+                          (a2u) -- [photon] (g1u_t) , (a2d) -- [photon] (g2d) ,
+                          (e3) -- [fermion] (g2d) -- [fermion]  (e4)
+                        };
+
+                        \draw [decoration={brace}, decorate] (a3.south west) -- (a1.north west)
+                              node [pos=0.5, left] {\(\pi^{0}\)};
+                    \end{feynman}
+                \end{tikzpicture}
+            }
+        \end{center}
+        \item $\pi^0\to e^+e^-e^+e^-$
+        \begin{center}
+            \scalebox{1.5}{
+                \begin{tikzpicture}
+                    \begin{feynman}
+                       
+                        \vertex (a1) {\(u\)};
+                        \vertex[right=3.75em of a1] (a2u);
+                        \vertex[below=2em of a2u] (a2d);
+                        \vertex[below=2em of a1] (a3) {\(\overline u\)};
+    
+                        %\vertex[right=2.25em of a2u] (g1u);
+                        \vertex at ($ (a2u) + (2.25em,0.75em) $) (g1u);
+                        \vertex at ($ (a2d) + (2.25em,-0.75em) $) (g2d);
+                        %\vertex[right=2.25em of a2d] (g2d);
+
+                        \vertex at ($ (g1u) + (3em,1.5em) $) (e1) {\(e^-\)};
+                        \vertex at ($ (g2d) + (3em,-1.5em) $) (e4) {\(e^+\)};
+                        \vertex at ($ (e1)!.33!(e4) $) (e2) {\(e^+\)};
+                        \vertex at ($ (e1)!.66!(e4) $) (e3) {\(e^-\)};
+    
+                        \diagram* {   
+                          (a1) -- [fermion] (a2u) -- [fermion] (a2d) -- [fermion] (a3),
+                          (a2u) -- [photon] (g1u) , (a2d) -- [photon] (g2d) ,
+                          (e1) -- [fermion] (g1u) -- [fermion]  (e2) , (e3) -- [fermion] (g2d) -- [fermion]  (e4)
+                        };
+
+                        \draw [decoration={brace}, decorate] (a3.south west) -- (a1.north west)
+                              node [pos=0.5, left] {\(\pi^{0}\)};
+                    \end{feynman}
+                \end{tikzpicture}
+            }
+        \end{center}
+        \item $\pi^0\to e^+e^-$
+        \begin{center}
+            \scalebox{1.25}{
+                \begin{tikzpicture}
+                    \begin{feynman}
+                       
+                        \vertex (a1){\(u\)};
+                        \vertex[below=2.5em of a1] (a3) {\(\overline u\)};
+                        \vertex at ($(a3)!0.5!(a1) + (1.5cm, 0)$) (a2) ;
+    
+                        \vertex[right=3em of a2] (b2);
+    
+                        \vertex at ($(a2) + (6em,2.5em)$) (b1) {\(e^-\)};
+                        \vertex at ($(a2) + (6em,-2.5em)$) (b3) {\(e^+\)};
+                        %\vertex[right=4.5cm of a1] (b1) {\(\mu^+\)};
+                        %\vertex[right=4.5cm of a3] (b3) {\(\nu_\mu\)};
+    
+                        \diagram* {
+    
+                          (a1) -- [fermion,bend left] (a2) -- [fermion, bend left] (a3) ,
+                          (a2) -- [boson, edge label =\(\gamma\)] (b2), (b1) -- [fermion] (b2) -- [fermion] (b3)
+    
+                        };
+                        \draw [decoration={brace}, decorate] (a3.south west) -- (a1.north west)
+                              node [pos=0.5, left] {\(\pi^{0}\)};
+                    \end{feynman}
+                \end{tikzpicture}
+            }
+        \end{center}
+    \end{enumerate}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -169,8 +429,55 @@ Draw the lowest-order Feynman diagrams for the scattering and/or annihilation pr
 \begin{solution}
 \begin{enumerate}[label=(\alph*)]
     \item $e^-e^- \to e^-e^-$
-
+    \begin{center}
+        \scalebox{1.5}{
+            \begin{tikzpicture}
+                \begin{feynman}
+                    \vertex (a2) ;
+                    \vertex at ($(a2) + (-3.5em,1em) $) (a1) {$e^-$};
+                    \vertex at ($(a2) + (3.5em,1em) $) (a3) {$e^-$};
+            
+                    \vertex[below=3.75em of a2] (b2);        
+                    \vertex at ($(b2) + (-3.5em,-1em) $) (b1) {$e^-$};
+                    \vertex at ($(b2) + (3.5em,-1em) $) (b3) {$e^-$};
+            
+                    \diagram* {
+                        {[edges=fermion]
+                          (a1) -- (a2) -- (a3),
+                          (b1) -- (b2) -- (b3)
+                        },
+                        (a2) -- [boson, edge label =\(\gamma\)] (b2)
+                    };
+                    
+                \end{feynman}
+            \end{tikzpicture}
+        }
+    \end{center}
     \item $e^+e^- \to \mu^+\mu^-$
+    \begin{center}
+        \scalebox{1.25}{
+            \begin{tikzpicture}
+                \begin{feynman}
+                    
+                    \vertex (g1);
+                    \vertex at ($(g1) + (-3.5em,3.5em) $) (e1) {\(e^-\)};
+                    \vertex at ($(g1) + (-3.5em,-3.5em) $) (e2) {\(e^+\)};
+
+                    \vertex at ($(g1) + (3em,0)$) (g2) ;
+                    \vertex at ($(g2) + (3.5em,3.5em) $) (m1) {\(\mu^-\)};
+                    \vertex at ($(g2) + (3.5em,-3.5em) $) (m2) {\(\mu^+\)};
+                    \diagram* {
+                        {[edges=fermion]
+                          (e1) -- (g1) -- (e2),
+                          (m1) -- (g2) -- (m2)
+                        },
+                        (g1) -- [boson, edge label =\(\gamma\)] (g2)
+                    };
+
+                \end{feynman}
+            \end{tikzpicture}
+        }
+    \end{center}
     \item $e^+e^- \to e^+e^-$
     \item $e^-\nu_e \to e^-\nu_e$
     \item $e^-\overbar{\nu_e} \to e^-\overbar{\nu_e}$
@@ -195,7 +502,16 @@ the muon energy and have values $a \approx 2.5 \MeV\unit{\gram^{-1}\centi\metre^
 \end{enumerate}
 \end{problem}
 \begin{solution}
-
+%Using the given approximation of $\dif E / \dif x$, one could solve the differential equation of $E(x)$ as
+%\begin{align*}
+%    -\frac{1}{\rho} \frac{\dif E}{\dif x} \approx a + bE  &\implies - \frac{\dif E}{\rho \left( a+bE \right)} \approx \dif x  \\[0.15in]
+%                                                          &\implies  E(x) \approx \frac{c}{\rho b} e^{\rho b x} - \frac{a}{b}
+%\end{align*}
+\begin{enumerate}[label=(\alph*)]
+    \item One could assume that ionisation and bremsstrahlung/pair production processes become equally important for a certain energy scale $E^\ast$ when $a \simeq bE^\ast$.
+    Such $E^\ast \simeq a/b$ can be calculated as $\sim 700 \GeV$.
+    \item Around 132 metres. 
+\end{enumerate}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -203,11 +519,13 @@ the muon energy and have values $a \approx 2.5 \MeV\unit{\gram^{-1}\centi\metre^
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{1.8}
-Tugsten has a radiation length of $X_0=0.35$ cm and a critical energy of $E_c-7.97$ MeV. Roughly what thickness of tungsten is required to fully contain a 500 GeV electromagnetic shower from an electron?
+Tugsten has a radiation length of $X_0=0.35$ cm and a critical energy of $E_c = 7.97$ MeV. Roughly what thickness of tungsten is required to fully contain a 500 GeV electromagnetic shower from an electron?
 \end{problem}
-
 \begin{solution}
-
+\begin{align*}
+    x_{\text{max}} = \frac{1}{\ln 2}\ln\left( \frac{E}{E_c}\right) = \frac{1}{\ln 2}\ln\left( \frac{500 \GeV}{7.97 \MeV}\right) \sim 16
+\end{align*}
+Thus, roughly around $x_\text{max}X_0 \simeq 5.6 \unit{\centi\metre}$ of tungsten would be able to contain a 500 GeV electromagnetic shower from an electron.\\
 \end{solution} 
 \noindent\rule{7in}{1.5pt}
 
@@ -240,7 +558,7 @@ In a fixed-target pp experiment, what proton energy would be required to achieve
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{1.11}
-At the LEP $e^+e^-$ collider, which had a circumference of 27 km, the electron and positron beam currents were both 1.0 mA. Each beam consisted of four equally spaced bunches of electrons/positrons. The bunches had an effec- tive area of $\num{1.8e4}\unit{\micro\metre^2}$.
+At the LEP $e^+e^-$ collider, which had a circumference of 27 km, the electron and positron beam currents were both 1.0 mA. Each beam consisted of four equally spaced bunches of electrons/positrons. The bunches had an effective area of $\num{1.8e4}\unit{\micro\metre^2}$.
 Calculate the instantaneous luminosity on the assumption that the beams collided head-on.
 \end{problem}
 \begin{solution}
