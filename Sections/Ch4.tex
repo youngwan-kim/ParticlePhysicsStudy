@@ -3,7 +3,11 @@
 \section{The Dirac Equation}
     
 \begin{problem}{4.1}
-
+Show that
+\begin{align*}
+    \left[ \hat{\boldp}^2,\hat{\mathbf{r}}\times \hat{\boldp}\right]=0,
+\end{align*}
+and hence the Hamiltonian of the free-particle Schrödinger equation commutes with the angular momentum operator.
 \end{problem}
 \begin{solution}
 
@@ -14,7 +18,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{4.2}
-
+Show that $u_1$ and $u_2$ are orthogonal, i.e. $u_1^\dagger u_2 =0$.
 \end{problem}
 \begin{solution}
 
@@ -25,7 +29,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{4.3}
-
+Verify the statement that the Einstein energy-momentum relationship is recovered if any of the four Sirac spinors of (4.48)
+are subtitutes into the Dirac equation written in terms of momentum, $\left( \gamma^\mu p_\mu-m \right)u=0$.
 \end{problem}
 \begin{solution}
 
@@ -36,7 +41,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{4.4}
-
+For a particle with four-momentum $p^\mu = (E,\boldp)$, the general solution to the free-particle Dirac equation can be written
+\begin{align*}
+    \psi(p) = \left[ au_1(p)+bu_2(p) \right] e^{i\left( \boldp\cdot\boldx - Et \right)}
+\end{align*}
+Using the explicit forms for $u_1$ and $u_2$, show that the four-vector current $j^\mu=(\rho,\mathbf{j})$ is given by
+\begin{align*}
+    j^\mu = 2 p^\mu
+\end{align*}
+Furthermore, show that the resulting probability density and probability current are consistent with a particle
+moving with velocity $\beta = p /E$.
 \end{problem}
 \begin{solution}
 
@@ -47,7 +61,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{4.5}
-
+Writing the four-component spinor $u$ in terms of two two-component vectors
+\begin{align*}
+    u = \begin{pmatrix}
+        u_A \\
+        u_B
+    \end{pmatrix},
+\end{align*}
+show that in the non-relativistic limit, where $\beta \cong v/c \ll 1$, the components of $u_B$ are smaller than those of $u_A$ by a factor $v/c$.
 \end{problem}
 \begin{solution}
 
@@ -58,7 +79,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{4.6}
-
+By considering the three cases $\mu=\nu=0$, $\mu=\nu\neq 0$ and $\mu \neq \nu$ show that 
+\begin{align*}
+    \gamma^\mu \gamma^\nu + \gamma^\nu \gamma^\mu = 2 g^{\mu\nu}.
+\end{align*}
 \end{problem}
 \begin{solution}
 
@@ -69,7 +93,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{4.7}
-
+By operating on the Dirac equation,
+\begin{align*}
+    \left( i\gamma^\mu \partial_\mu - m \right) \psi = 0
+\end{align*}
+with $\gamma^\nu\partial_\nu$ prove that the components of $\psi$ satisfy the Klein-Gordon equation,
+\begin{align*}
+    \left( \partial^\mu \partial_\mu +m^2 \right) \psi = 0.
+\end{align*}
 \end{problem}
 \begin{solution}
 
@@ -80,7 +111,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{4.8}
-
+Show that
+\begin{align*}
+    \left(\gamma^\mu\right)^\dagger = \gamma^0 \gamma^\mu \gamma^0.
+\end{align*}
 \end{problem}
 \begin{solution}
 
@@ -91,7 +125,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{4.9}
-
+Starting from
+\begin{align*}
+    \left( \gamma^\mu p_\mu - m  \right) u = 0,
+\end{align*}
+show that the corresponding equation for the adjoint spinor is
+\begin{align*}
+    \overbar{u} \left( \gamma^\mu p_\mu -m \right)=0.
+\end{align*} 
+Hence, without using the explicit form for the $u$ spinors, show that the normalisation condition $u^\dagger u = 2E$ leads to1
+\begin{align*}
+    u\overbar{u} = 2m,
+\end{align*}
+and that
+\begin{align*}
+   \overbar{u} \gamma^\mu u = 2p^\mu.
+\end{align*}
 \end{problem}
 \begin{solution}
 
@@ -102,7 +151,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{4.10}
-
+Demonstrate that the two relations of Equation (4.45) are consistnet by showing that
+\begin{align*}
+    \left( \boldsymbol{\sigma} \cdot \boldp \right)^2 = \boldp^2.
+\end{align*}
 \end{problem}
 \begin{solution}
 
@@ -113,7 +165,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{4.11}
-
+Consider the $e^+e^-\to\gamma\to e^+e^-$ annihilation process in the centre-of-mass frame where the energy of the photon is $2E$.
+Discuss energy and charge conservation for the two cases where:
+\begin{enumerate}[label=(\alph*)]
+    \item the negative energy solutions of the Dirac equation are interpreted as negative energy particles propagating backwards in time
+    \item the negative energy solutions of the Dirac equation are interpreted as positive energy antiparticles propa- gating forwards in time
+\end{enumerate}
 \end{problem}
 \begin{solution}
 
@@ -124,7 +181,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{4.12}
-
+Verify that the helicity operator
+\begin{align*}
+    \hat{h} = \frac{\hat{\boldsymbol{\Sigma}}\cdot\hat{\boldp}}{2p} = \frac{1}{2p}
+    \begin{pmatrix}
+        \boldmath{\sigma}\cdot\hat{\boldp} & 0 \\
+        0 & \boldmath{\sigma}\cdot\hat{\boldp}
+    \end{pmatrix}
+\end{align*}
+commutes with the Dirac Hamiltonian,
+\begin{align*}
+    \hat{H}_D = \boldsymbol{\alpha}\cdot\hat{\boldp} + \beta m
+\end{align*}
 \end{problem}
 \begin{solution}
 
@@ -135,7 +203,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{4.13}
-
+Show that
+\begin{align*}
+    \hat{p}_{u_\uparrow} \left( \theta,\phi \right) = u_\downarrow \left( \pi-\theta,\pi+\phi \right)
+\end{align*}
+and comment on the result.
 \end{problem}
 \begin{solution}
 
@@ -146,7 +218,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{4.14}
-
+Under the combined operation of parity and charge conjugation $(\hat{C}\hat{P})$ spinors transform as
+\begin{align*}
+    \psi \to \psi^C = \hat{C}\hat{P} \psi = i \gamma^2\gamma^0 \psi^\ast 
+\end{align*}
+Show that up to an overall complex phase factor
+\begin{align*}
+    \hat{C}\hat{p}_{u_\uparrow} \left( \theta,\phi \right) = v_\downarrow  \left( \pi-\theta,\pi+\phi \right)
+\end{align*}
 \end{problem}
 \begin{solution}
 
@@ -157,7 +236,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{4.15}
-
+Starting from the Dirac equation, derive the identity
+\begin{align*}
+    \overbar{u}  (p') \gamma^\mu u ( p ) = \frac{1}{2m} \overbar{u}(p') \left(p+p'\right) u(p) + \frac{i}{m} \overbar{u}\left(p'\right) \Sigma^{\mu\nu} q_\nu u(p)
+\end{align*}
+where $q = p'-p$ and $\Sigma^{\mu\nu}=\frac{i}{4}\left[ \gamma^\mu,\gamma^\nu \right]$
 \end{problem}
 \begin{solution}
 
