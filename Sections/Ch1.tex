@@ -17,12 +17,12 @@ Explaining your reasoning, state whether each of the sixteen diagrams below repr
     \item Invalid.
     \item Invalid, leptons do not carry color charge.
     \item Valid. 
-    \item 
-    \item
-    \item
-    \item
-    \item
-    \item
+    \item Valid.
+    \item Invalid.
+    \item Invalid.
+    \item Valid.
+    \item Valid.
+    \item Invalid.
 \end{enumerate}
 \end{solution} 
 \noindent\rule{7in}{1.5pt}
@@ -79,9 +79,9 @@ Explain why it is not possible to construct a valid Feynman diagram using the St
 \begin{solution}
 \begin{enumerate}[label=(\alph*)]
     \item $\mu^- \to e^+e^-e^+$ : Charge is not conserved, as well as lepton numbers.
-    \item $\nu_\tau + p \to \mu^- + n$ : 
-    \item $\nu_\tau + p \to \tau^+ + n$ : Baryon number is not conserved.
-    \item $\pi^+(u\overbar{d})+\pi^-(d\overbar{u}) \to n(udd) + \pi^0(u\overbar{u})$ : Again, baryon number is not conserved.
+    \item $\nu_\tau + p \to \mu^- + n$ : Charge is not conserved, as well as baryon numbers.
+    \item $\nu_\tau + p \to \tau^+ + n$ : Both baryon and lepton number is not conserved.
+    \item $\pi^+(u\overbar{d})+\pi^-(d\overbar{u}) \to n(udd) + \pi^0(u\overbar{u})$ : Baryon number is not conserved.
 \end{enumerate}
 \end{solution}
 
@@ -510,7 +510,13 @@ the muon energy and have values $a \approx 2.5 \MeV\unit{\gram^{-1}\centi\metre^
 \begin{enumerate}[label=(\alph*)]
     \item One could assume that ionisation and bremsstrahlung/pair production processes become equally important for a certain energy scale $E^\ast$ when $a \simeq bE^\ast$.
     Such $E^\ast \simeq a/b$ can be calculated as $\sim 700 \GeV$.
-    \item Around 132 metres. 
+    \item Using the values given, 
+
+    \begin{align*}
+        - \frac{\dif E}{\dif x} &\approx a \rho + b \rho  E \impliedby \left( a\rho \sim \num{6.6}\MeV/\text{cm} \text{ , } b \rho \sim \num{9.275e-6}/\text{cm} \right) \\[0.15in]
+                                &\simeq 7.52 \MeV/\text{cm} 
+    \end{align*}\\
+    which shows that a 100 GeV muon will go through around 132 metres of rock.
 \end{enumerate}
 \end{solution}
 
@@ -522,9 +528,11 @@ the muon energy and have values $a \approx 2.5 \MeV\unit{\gram^{-1}\centi\metre^
 Tugsten has a radiation length of $X_0=0.35$ cm and a critical energy of $E_c = 7.97$ MeV. Roughly what thickness of tungsten is required to fully contain a 500 GeV electromagnetic shower from an electron?
 \end{problem}
 \begin{solution}
+Getting $x_\text{max}$ for the given situation, one obtains :
+
 \begin{align*}
     x_{\text{max}} = \frac{1}{\ln 2}\ln\left( \frac{E}{E_c}\right) = \frac{1}{\ln 2}\ln\left( \frac{500 \GeV}{7.97 \MeV}\right) \sim 16
-\end{align*}
+\end{align*}\\
 Thus, roughly around $x_\text{max}X_0 \simeq 5.6 \unit{\centi\metre}$ of tungsten would be able to contain a 500 GeV electromagnetic shower from an electron.\\
 \end{solution} 
 \noindent\rule{7in}{1.5pt}
@@ -540,7 +548,12 @@ measured radius of curvature of $R=4$m. If it is observed to give a Čerenkov si
 possible to distinguish between the particle being a pion or kaon? Take $m_\pi \approx 140 \MeV /\text{c}^2$ and $m_K \approx 494 \MeV /\text{c}^2$ 
 \end{problem}
 \begin{solution}
+First, the momentum could be extracted from the fact that the charged particles are travelling perpendicular ($\lambda =0 $) to the 0.44 T magnetic field, 
+which eventually gives $p=0.3BR=0.528\GeV$. The threshold mass for Čerenkov radiation in this case would be,
 
+\begin{align*}
+    \sqrt{n^2-1} p = 0.75 \times p = 0.396 \GeV
+\end{align*}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -551,8 +564,14 @@ possible to distinguish between the particle being a pion or kaon? Take $m_\pi \
 In a fixed-target pp experiment, what proton energy would be required to achieve the same centre-of-mass energy as the LHC, which will ultimately operate at 14 TeV.
 \end{problem}
 \begin{solution}
-    
+Let the four-momentum of the beam proton and the fixed target proton as $p_1 = (E,0,0,p)$ and $p_2 = (m_p,0,0,0)$. Using the following expression of the centre-of-mass energy $\sqrt{s}$, the proton energy $E$ to satisfy the required situation would be :
+
+\begin{align*}
+    \sqrt{s} = (p_1 + p_2) ^2 &= 2m_p^2 + 2 p_1 \cdot p_2 \\[0.15in]
+                              &= 2m_p \left( m_p + E \right) = 14 \text{ TeV} \implies \boxed{E \simeq 7.4 \text{ PeV}}
+\end{align*}
 \end{solution} 
+
 \noindent\rule{7in}{1.5pt}
     
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

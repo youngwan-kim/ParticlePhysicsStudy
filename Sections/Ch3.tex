@@ -5,13 +5,14 @@
 Calculate the energy of the $\mu^-$ produced in the decay at rest $\pi^- \rightarrow \mu\bar{\nu}_{\mu}$.
 Assume $m_{\pi} = \mathrm{140 \ MeV}$, $m_{\mu} = \mathrm{106 \ MeV}$ and take $m_{\nu} \sim 0$.
 \end{problem}
-
 \begin{solution}
 Let the four-momenta of the muon and the neutrino to be $p_1 = (E_1, 0, 0, E_2)$ and $p_2 = (E_2, 0, 0, -E_2)$.
 In the pion rest frame, $E_1 + E_2 = m_{\pi}$ and from the muon mass constraint $m_{\mu}^2 = E_1^2 - E_2^2$.
 Solving these equation gives 
-$$E_1 = {m_{\pi}^2 + m_{\mu}^2 \over 2m_{\pi}} = \mathrm{110.13 \ GeV}$$.
 
+\begin{align*}
+    \boxed{E_1 = {m_{\pi}^2 + m_{\mu}^2 \over 2m_{\pi}} = 110.13 \GeV}
+\end{align*}\\
 \end{solution} 
 \noindent\rule{7in}{1.5pt}
 
@@ -19,20 +20,40 @@ $$E_1 = {m_{\pi}^2 + m_{\mu}^2 \over 2m_{\pi}} = \mathrm{110.13 \ GeV}$$.
 
 \begin{problem}{3.2}
 For the decay $a \rightarrow 1 + 2$, show that the momenta of both daughter particles
-in the centre-of mass frame $p^*$ are
-$$p^* = {1 \over 2m_a}\sqrt{[m_a^2 - (m_1^2 + m_2^2)][m_a^2 - (m_1^2 - m_2^2)]}$$.
+in the centre-of mass frame $p^\ast$ are
+$$p^\ast = {1 \over 2m_a}\sqrt{\left[m_a^2 - (m_1^2 + m_2^2)\right]\left[m_a^2 - (m_1^2 - m_2^2)\right]}$$.
 \end{problem}
-
 \begin{solution}
 Let the four-momenta of the mother particle and the daughter particles to be
-$p_a = (m_a, 0, 0, 0)$, $p_1 = (E_1, 0, 0, p^*)$, $p_2 = (E_2, 0, 0, -p^*)$
-From the mass constraints, we get $E_1 + E_2 = m_a$, $E_1^2 - p^{*2} = m_1^2$, and 
-$E_2^2 - p^{*2} = m_2^2$.
+$p_a = (m_a, 0, 0, 0)$, $p_1 = (E_1, 0, 0, p^*)$, $p_2 = (E_2, 0, 0, -p^\ast)$
+From the mass constraints, we get $E_1 + E_2 = m_a$, $E_1^2 - p^{\ast2} = m_1^2$, and 
+$E_2^2 - p^{\ast2} = m_2^2$.\\
 
 Since we have three unknown variables $E_1, E_2, p^*$ and three equations,
 it is possible to get $p^*$ in terms of $m_a, m_1 \ \mathrm{and} \ m_2$, which gives
-the desired solution.
+the desired solution. In detail, 
 
+\begin{align*}
+    p^{\ast2} = E_1^2 - m_1^2 = E_2^2 - m_2^2 \implies E_1^2 &= E_2^2 + m_1^2 - m_2^2 \\[0.15in]
+                                                             &= \left( m_a - E_1\right)^2 + m_1^2 -m_2^2 \implies E_1 = \frac{1}{2m_a}\left( m_a^2 +m_1^2 -m_2^2 \right)
+\end{align*}\\
+which leads to a similar expression of $E_2$ using $E_1+E_2 = m_a$ 
+
+\begin{align*}
+    E_2 = m_a - E_1 = \frac{1}{2m_a}\left( m_a^2 - m_1^2 +m_2^2 \right)
+\end{align*}\\
+Then one could finally write down $p^\ast$ in terms of $m_a,m_1,m_2$ as, using the fact that $p^{\ast2} = E_1^2 - m_1^2 = E_2^2 - m_2^2$
+
+{\allowdisplaybreaks
+\begin{align*}
+     p^{\ast2} &= \frac{1}{2} \left[ E_1^2 + E_2^2 - \left(m_1^2 +m_2^2\right) \right] \\[0.15in]
+                                                                  &= \frac{1}{2} \left[ \left(E_1+E_2\right)^2 - 2E_1E_2 - \left(m_1^2 +m_2^2\right) \right] \\[0.15in]
+                                                                  &= \frac{1}{2} \left[ m_a^2 -\frac{1}{2m_a^2}\left[m_a^2 - (m_1^2 + m_2^2)\right]\left[m_a^2 - (m_1^2 - m_2^2)\right] - \left(m_1^2 +m_2^2\right) \right] \\[0.15in]
+                                                                  &= \frac{1}{2} \left[ m_a^2 - \left( m_1^2 +m_2^2\right)\right]\left[1-\frac{1}{2m_a^2} \left[ m_a^2 - \left( m_1^2 -m_2^2\right)\right] \right] \\[0.15in]
+                                                                  &= \frac{1}{2} \left[ m_a^2 - \left( m_1^2 +m_2^2\right)\right]\left[1-\frac{1}{2m_a^2} \left[ m_a^2 - \left( m_1^2 -m_2^2\right)\right] \right] \\[0.15in]
+                                                                  &= \frac{1}{4m_a^2} \left[m_a^2 - (m_1^2 + m_2^2)\right]\left[m_a^2 - (m_1^2 - m_2^2)\right] \qed
+\end{align*}\\
+}
 \end{solution} 
 \noindent\rule{7in}{1.5pt}
 
@@ -42,16 +63,16 @@ the desired solution.
 Calculate the branching ratio for the decay $K^+\to\pi^+\pi^0$, given the partial decay width $\Gamma(K^+\to\pi^+\pi^0)=\num{1.2e-8} \text{ eV}$
 and the mean kaon lifetime $\tau(K^+)=\num{1.2e-8}$ s.
 \end{problem}
-    
 \begin{solution}
 Using the given information, 
+
 \begin{align*}
     \text{BR}\left(K^+\to\pi^+\pi^0\right) &= \frac{1}{\Gamma_{K^+}} \times \Gamma\left( K^+ \to \pi^+\pi^0 \right) \\[0.15in]
                                            &= \tau( K^+ )\times \Gamma\left( K^+ \to \pi^+\pi^0 \right) \\[0.15in]
                                            &= \left( \num{1.2e-8}\unit{ s} \right) \times \left( \num{1.2e-8} \text{eV}\right) \\[0.15in]
                                            &= \left( \num{1.2e-8} \right)  \times \left( \frac{1}{6.58} \times \num{e16} \text{ eV}^{-1} \right)  \times \left( \num{1.2e-8} \text{eV}\right) \\[0.15in]
-                                           &= \frac{1.2^2}{6.58} \simeq 21\%
-\end{align*}
+                                           &= \frac{1.2^2}{6.58} \simeq \boxed{21\%}
+\end{align*}\\
 which is as much as expected from the known branching rate.\\
 \end{solution} 
 \noindent\rule{7in}{1.5pt}
@@ -63,13 +84,13 @@ At a future $e^+e^-$ linear collider operating as a Higgs factory at a centre-of
 for the process $e^+e^-\to HZ$ is 250 fb. If the collider has an instantaneous luminosity of $\num{2e34}\unit{\centi\metre^{-2}\second^{-1}}$
 and is operational for $50\%$ of the time, how many Higgs bosons will be produced in five years of running?
 \end{problem}
-        
 \begin{solution}
 Let the total number of Higgs bosons that will be produced in 5 years of running in such condition as $N$, then one could calculate $N$ as,
+
 \begin{align*}
     N &= \left( \num{2e34}\unit{\centi\metre^{-2}\second^{-1}} \right) \times \left( 5 \text{ yrs} \right) \times \left( 250 \text{ fb} \right) \times 0.5 \\[0.15in]
-      &= \left( \num{2e34}\unit{\centi\metre^{-2}\second^{-1}} \right) \left( \num{1.5768e8} \unit{\second} \right) \times \left( \num{2.5e-42} \unit{\centi\metre^2} \right) \times 0.5 \\[0.15in]
-      &= \num{3.942}
+      &= \left( \num{2e34}\unit{\centi\metre^{-2}\second^{-1}} \right) \left( \num{1.5768e8} \unit{\second} \right) \times \left( \num{2.5e-41} \unit{\centi\metre^2} \right) \times 0.5 \\[0.15in]
+      &= \num{39.42}
 \end{align*}
 \end{solution} 
 
@@ -83,11 +104,12 @@ Calculate the cross section at $\sqrt{s}=50\GeV$, expressing your answer in both
 Compare this to the total pp cross section at $\sqrt{s}=50\GeV$ which is approximately 40 mb and comment on the result.
 \end{problem}
 \begin{solution}
-Plugging in all the values we know in natural units ,
+Plugging in all the values we know in natural units,
+
 \begin{align*}
     \sigma = \frac{4\pi}{3\cdot \left( \num{2.5e3} \GeV^2 \right)\cdot 137^2} = \num{8.9e-8} \GeV^{-2}
-\end{align*}
-which could be converted into barns using $1\text{ GeV}^{-2} = 0.3894 \text{ mb}$ which gives $\sigma $
+\end{align*}\\
+which could be converted into barns using $1\text{ GeV}^{-2} = 0.3894 \text{ mb}$, gives $\boxed{\sigma = 346.5 \pb}$.
 \end{solution} 
     
 \noindent\rule{7in}{1.5pt}
@@ -99,10 +121,10 @@ which could be converted into barns using $1\text{ GeV}^{-2} = 0.3894 \text{ mb}
 A $1\GeV$ muon neutrino is fired at a $1\unit{\metre}$ thick block of iron with density $\rho=\num{7.874e3}\unit{\kilo\gram\cdot\metre^{-3}}$.
 If the average neutrino-nucleon interaction cross section is $\sigma=\num{8e-39}\unit{\square\metre}$, calculate the (small) probability that the neutrino interacts in the block.
 \end{problem}
-            
 \begin{solution}
-        
-            
+    The muon neutrino will pass through $\sim \num{7.874e3}\unit{\kilo\gram\cdot\metre^{-2}}$ of iron. As iron has atomic mass of 56, around 56 g of iron will contain $\num{6.022e23}$ number of nucleons, 
+    which is nearly $\num{8.43e28}$ nucleons for $\num{7.874e3}$ kg of iron. This could be considered as a flux of nucleons per area $\sim \num{8.43e28} \unit{m^{-2}}$. Thus the probability could be derived as 
+    the neutrino-nucleon interaction cross section multiplied with such flux of nuclei, which gives $\boxed{\sim \num{6.74e-14}}$.
 \end{solution} 
     
 \noindent\rule{7in}{1.5pt}
@@ -128,6 +150,7 @@ Under the non-relativistic limit which implies that $\gamma_a,\gamma_b \simeq 1$
     F &=  4 \left[ \left( p_a \cdot p_b \right)^2 - m_a^2 m_b^2  \right]^{\frac{1}{2}} \\[0.15in]
       &=  4 \left[ \left( E_aE_b - m_am_b \boldsymbol{\beta}_a\cdot\boldsymbol{\beta}_b\right)^2 - m_a^2 m_b^2  \right]^{\frac{1}{2}} \\[0.15in]
       &=  4 \left[ \left( E_aE_b - m_am_b \boldsymbol{\beta}_a\cdot\boldsymbol{\beta}_b\right)^2 - m_a^2 m_b^2  \right]^{\frac{1}{2}} \\[0.15in]
+      &=  4 \left[ \left( E_aE_b - m_am_b \boldsymbol{\beta}_a\cdot\boldsymbol{\beta}_b\right)^2 - m_a^2 m_b^2  \right]^{\frac{1}{2}} \\[0.15in]
 \end{align*}
 \end{solution} 
     
@@ -144,7 +167,6 @@ corresponding expression in the frame where $b$ is at rest is
     F = 4m_bp_a.
 \end{align*}
 \end{problem}
-            
 \begin{solution}
         
             

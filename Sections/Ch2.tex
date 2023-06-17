@@ -3,9 +3,9 @@
 \begin{problem}{2.1}
 When expressed in natural units the lifetime of the W boson is approximately $\tau \approx 0.5\GeV^{-1}$. What is the corresponding value in S.I. units?
 \end{problem}
-
 \begin{solution}
-
+In natural units, $\hbar = \num{1.055e-34}\unit{J\cdot s} = \num{6.582e-25} \unit{GeV\cdot s}$ which is, $1 \GeV^{-1} = \num{6.582e-25} \unit{s}$.
+Thus the lifetime of the W boson in S.I. units can be written as, $\boxed{\tau \simeq \num{3.291e-25} \unit{s}}$.\\
 \end{solution} 
 \noindent\rule{7in}{1.5pt}
 
@@ -16,11 +16,11 @@ When expressed in natural units the lifetime of the W boson is approximately $\t
 \begin{problem}{2.2}
 A cross section is measured to be 1 pb; convert this to natural units.
 \end{problem}
-
 \begin{solution}
-Taking note that $\hbar c = 0.197 \GeV\cdot\text{fm}$
+Taking note that $\hbar c = 0.197 \GeV \text{ fm}$, which is $0.197 \GeV = 1 \unit{\femto\metre}^{-1}$
+
 \begin{align*}
-    1 \pb = 100 \text{ fm}^2 = 100 \times \left( \frac{\hbar c }{0.197} \right)^2 \GeV^{-2} = 100 \times \left( \frac{\num{1.055e-34}\times\num{2.998e8}}{0.197} \right) \GeV^{-2}
+    1 \pb = 10^{-10} \text{ fm}^2 = 10^{-10} \times \left( \frac{1}{0.197} \right)^2 \GeV^{-2} = \boxed{\num{2.57e-9}\GeV^{-2}}
 \end{align*}
 \end{solution} 
 \noindent\rule{7in}{1.5pt}
@@ -30,9 +30,8 @@ Taking note that $\hbar c = 0.197 \GeV\cdot\text{fm}$
 \begin{problem}{2.3}
 Show that the process $\gamma\to e^+ e^-$ can not occur in vacuum.
 \end{problem}
-
 \begin{solution}
-
+If it were so, such process should occur in any frame. Let such frame as the rest frame of
 \end{solution} 
 \noindent\rule{7in}{1.5pt}
 
@@ -41,9 +40,8 @@ Show that the process $\gamma\to e^+ e^-$ can not occur in vacuum.
 \begin{problem}{2.4}
 A particle of mass 3 GeV is travelling in the positive z-direction with momentum 4 GeV. What are its energy and velocity?
 \end{problem}
-
 \begin{solution}
-Using the relation of $m^2=E^2- | \boldp |^2 $, one gets $E^2 = 25 \GeV^2$ thus the energy is $E=5\GeV$. Now considering the relation of $|\boldp|=E\beta$, it is seen that $\beta = |\boldp|E^{-1}=0.8$ thus the velocity is $0.8c$.\\ 
+Using the relation of $m^2=E^2- | \boldp |^2 $, one gets $E^2 = 25 \GeV^2$ thus the energy is $\boxed{E=5\GeV}$. Now considering the relation of $|\boldp|=E\beta$, it is seen that $\beta = |\boldp|E^{-1}=0.8$ thus the velocity is $\boxed{0.8c}$.\\ 
 \end{solution} 
 \noindent\rule{7in}{1.5pt}
 
@@ -66,6 +64,7 @@ z}$ and energy $E$.
 \begin{solution}
     \begin{enumerate}[label=(\alph*)]   
         \item Let the four-momentum of the given particle in the frame $\Sigma$ and $\Sigma'$ as $p=(E,0,0,p_z),p'=(E',\boldp')$ respectively. Denoting the corresponding matrix representation of the given Lorentz transformation as $\boldsymbol{\Lambda}$, one could write down the transformation of $p$ as,
+        
         \begin{align*}
             p' = \boldsymbol{\Lambda} p \implies p'^\mu &= \Lambda^{\mu}_\nu p^\nu \\[0.1in]
                    &= \begin{pmatrix}
@@ -85,6 +84,7 @@ z}$ and energy $E$.
                    \end{pmatrix} 
         \end{align*}\\
         which implies that $E' = \gamma \left( E-\beta p_z \right)$ and $p_z'=-\gamma(E\beta-p_z)$. Using such expression of $p'$, one could show that : 
+
         \begin{align*}
             \left(E'\right)^2 - \left(p_z'\right)^2 &= \gamma^2 (E-\beta p_z)^2 - \gamma^2 (E\beta - p_z)^2 \\[0.1in]
                                                     &= \gamma^2 \left[  \left( E-\beta p_z \right)^2 - \left(E\beta - p_z \right)^2 \right] \\[0.1in]
@@ -130,9 +130,27 @@ In a collider experiment, $\Lambda$ baryons can be identified from the decay $\L
     \item On average, $\Lambda$ baryons of this energy are observed to decay at a distance of 0.35 m from the point of production. Calculate the lifetime of the $\Lambda$.
 \end{enumerate}
 \end{problem}
-
 \begin{solution}
+\begin{enumerate}[label=(\alph*)]
+    \item Let the four-momenta of $\pi^-,p$ as $p_\pi = (\num{0.75}\GeV,\boldp_\pi)$,$p_p = (\num{4.25}\GeV,\boldp_p)$ respectively, which gives $p_\Lambda = p_\pi + p_p = (5 \GeV,\boldp_\pi + \boldp_p)$ as the four-momenta of $\Lambda$. 
+    Using the mass of the pion and proton, one could obtain 
 
+    \begin{align*}
+        \left| \boldp_\pi \right|^2  &= (0.75 \GeV)^2 - m_\pi^2 \simeq 0.5265 \GeV^2 \implies  \left| \boldp_\pi \right| \simeq  0.725 \GeV \\
+        \left| \boldp_p \right|^2    &= (4.25 \GeV)^2 - m_p^2 \simeq 17.18 \GeV^2 \implies  \left| \boldp_\pi \right| \simeq 4.144 \GeV
+    \end{align*}\\
+    The mass of the $\Lambda$ baryon $m_\Lambda$ can be acquired as : 
+
+    \begin{align*}
+        m_\Lambda^2 = p_\Lambda \cdot p_\Lambda &= (5 \GeV)^2 - \left| \boldp_\pi + \boldp_p \right|^2 \\[0.15in]
+                                              &= (5 \GeV)^2 - \left[ \left| \boldp_\pi \right|^2 +  \left| \boldp_p \right|^2 + 2  \left| \boldp_\pi \right| \left| \boldp_p \right| \cos 9^\circ  \right] \\[0.15in]
+                                              &= (5 \GeV)^2 - \left[  0.5265+  17.18  + 2 \cdot 0.725 \cdot 4.144 \cdot  0.98  \right] \GeV^2 \\[0.15in] 
+                                              &\simeq 1.35 \GeV^2 \implies \boxed{m_\Lambda \simeq 1.16 \GeV}
+    \end{align*}\\
+    which agrees well with experimental values.
+    \item Let the lifetime and $\beta$ of $\Lambda$ as $\tau_\Lambda$ and $\beta_\Lambda$ then one could realize that $c\beta_\Lambda \tau_\Lambda \sim 0.35 \unit{\metre}$.
+    $\beta_\Lambda$ can be simply derived using $\beta_\Lambda = \left| \boldp_\Lambda \right|/E_\Lambda \simeq 0.97$. Thus the lifetime of $\Lambda$ becomes $\boxed{\tau_\Lambda \simeq \num{0.12e-8} \unit{s}}$
+\end{enumerate}
 \end{solution} 
 \noindent\rule{7in}{1.5pt}
 
@@ -146,7 +164,6 @@ In a collider experiment, $\Lambda$ baryons can be identified from the decay $\L
     \end{align*}
     is kinematically allowed.
 \end{problem}
-
 \begin{solution}
         
 \end{solution} 
@@ -158,20 +175,22 @@ In a collider experiment, $\Lambda$ baryons can be identified from the decay $\L
 \begin{problem}{2.9}
 Find the maximum opening angle between the photons produced in the decay $\pi^0\to\gamma\gamma$ if the energy of the neutral pion is 10 GeV, given that $m_{\pi^0}=135$ MeV.
 \end{problem}
-
 \begin{solution}
 Using the results derived in Problem~\ref{p2.6} and taking account on the fact that photons are massless, one could write down 
+
 \begin{align*}
     m_{\pi_0^2} = 2E_1E_2 \left( 1- \beta_1 \beta_2 \cos \theta \right) = 2E_1E_2 \left( 1- \cos\theta \right) \implies \cos \theta =  \frac{m_{\pi_0}^2}{2E_1E_2} - 1  
-\end{align*}
+\end{align*}\\
 Taking account that $E_1+E_2 = 10 \GeV$, let $E_1=E$ and express $\theta$ in terms of $E$ as,
+
 \begin{align*}
     \cos \theta =  \frac{m_{\pi_0}^2}{2E(10-E)} - 1  
-\end{align*}
+\end{align*}\\
 In the range of $E\in[0,10]\GeV$ the RHS of the above identity will take a local minimum when $E=5\GeV$ which will give the maximum value of $\theta$, which will be denoted as $\theta^\ast$. One could get $\theta^\ast$ as,
+
 \begin{align*}
-    \cos \theta^\ast = \frac{\left( \num{1.35e-1}\GeV \right)^2}{100 \GeV^2} - 1 = -0.99981775 \implies \theta^\ast \simeq  178.906099^\circ
-\end{align*}
+    \cos \theta^\ast = \frac{\left( \num{1.35e-1}\GeV \right)^2}{100 \GeV^2} - 1 = -0.99981775 \implies \boxed{\theta^\ast \simeq  178.906099^\circ}
+\end{align*}\\
 which is nearly back-to-back.
 \end{solution} 
 
@@ -182,7 +201,6 @@ which is nearly back-to-back.
 \begin{problem}{2.10}
 The maximum of the $\pi^-p$ cross section, which occurs at $p_\pi=300$ MeV, corresponds to the resonant production of the $\Delta^0$ baryon (i.e. $\sqrt{s}=m_\Delta$). What is the mass of the $\Delta$?
 \end{problem}
-
 \begin{solution}
         
 \end{solution} 
@@ -198,7 +216,6 @@ The maximum of the $\pi^-p$ cross section, which occurs at $p_\pi=300$ MeV, corr
    \end{align*} 
    where $\theta^\ast$ is the polar angle of the $\pi^-$ in the tau-lepton rest frame, relative to the direction defined by the $\tau$ spin. Determine the laboratory frame energy distribution of the $\pi^-$ for the cases where the tau lepton spin is (i) \textit{aligned with} or (ii) \textit{opposite} to its direction of flight.
 \end{problem}
-    
 \begin{solution}
             
 \end{solution} 
@@ -214,15 +231,15 @@ The maximum of the $\pi^-p$ cross section, which occurs at $p_\pi=300$ MeV, corr
         s+t+u = m_1^2+m_2^2+m_3^2+m_4^2.
    \end{align*} 
 \end{problem}
-    
 \begin{solution}
     By definition of the Mandelstam variables, one could express $(s+t+u)$ as 
+    
     \begin{align*}
         s+t+u &= (p_1+p_2)^2 + (p_1-p_3)^2 + (p_1-p_4)^2\\[0.1in]
               &= \sum_i p_i \cdot p_i  + 2p_1\cdot p_1  + 2p_1\cdot p_2 -2 p_1 \cdot p_3 - 2 p_1 \cdot p_4  \\  
               &= \sum_i m_i^2 + 2p_1\cdot(p_1+p_2-p_3-p_4) \\
               &= \sum_i m_i^2 \qed
-    \end{align*}
+    \end{align*}\\
     The fact that in any frame $p^\mu p_\mu =m^2$ for a particle with mass $m$ is used in the third identity, and in the last step the conservation of momentum $p_1+p_2 = p_3+p_4$ is used. 
 \end{solution} 
     
@@ -233,16 +250,16 @@ The maximum of the $\pi^-p$ cross section, which occurs at $p_\pi=300$ MeV, corr
 \begin{problem}{2.13}
  At the HERA collider, 27.5 GeV electrons were collided head-on with 820 GeV protons. Calculate the centre-of-mass energy.
 \end{problem}
-    
 \begin{solution}
     Let the four-momentum of the electron and proton as $p_e = (E_e,\mathbf{p}_e),$ $p_p = (E_p,\mathbf{p}_p)$ respectively. The centre-of-mass energy $\sqrt{s}$ can be expressed as,
+    
     \begin{align*}
         s &= \left( p_e + p_p \right)^2 = p_e\cdot p_e + p_p \cdot p_p + 2 p_e \cdot p_p \\[0.1in]
           &= m_e^2 + m_p^2 + 2 \left( E_e E_p - \boldp_e \cdot \boldp_p \right) \\[0.1in]
           &= m_e^2 + m_p^2 + 2 \left( E_eE_p + \left| \boldp_e \right| \left| \boldp_p \right| \right) \simeq 4 E_e E_p \quad \quad \left(  |\boldp_i|^2 = E_i^2 - m_i^2 \sim E_i^2  \right)
-    \end{align*}
+    \end{align*}\\
     As the collision is occuring head-on, one could say that $\boldp_e \cdot \boldp_p =- \left| \boldp_e \right| \left| \boldp_p \right| $ which was used in the last identity.
-    Looking upon the order of the variables, $m_e \simeq 0.5 \MeV, m_p \simeq 93.8 \MeV$ and $E_e = 27.5 \GeV, E_p = 820 \GeV$ for an approximation it is okay to consider $m_e,m_p\sim 0$. Thus the centre-of-mass energy $\sqrt{s}\simeq 300 \GeV$ when all the needed values are plugged in.
+    Looking upon the order of the variables, $m_e \simeq 0.5 \MeV, m_p \simeq 93.8 \MeV$ and $E_e = 27.5 \GeV, E_p = 820 \GeV$ for an approximation it is okay to consider $m_e,m_p\sim 0$. Thus the centre-of-mass energy $\boxed{\sqrt{s}\simeq 300 \GeV}$ when all the needed values are plugged in.
 \end{solution}
     
 \noindent\rule{7in}{1.5pt}
@@ -250,9 +267,13 @@ The maximum of the $\pi^-p$ cross section, which occurs at $p_\pi=300$ MeV, corr
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{2.14}
-
+Consider the Compton scattering of a photon of momentum $\mathbf{k}$ and energy $E = \left| \mathbf{k} \right| = \mathbf{k}$ from an electron at rest.
+Writing the four-momenta of the scattered photon and electron respectively as $k'$ and $p'$, conservation of four- momentum is expressed as $k + p = k' + p'$.
+Use the relation $p'^2 = m_e^2$ to show that the energy of the scattered photon is given by
+\begin{align*}
+    E' = \frac{E}{1+\left( E/m_e \right)\left( 1-\cos\theta \right)}
+\end{align*}
 \end{problem}
-    
 \begin{solution}
             
 \end{solution}
@@ -262,9 +283,19 @@ The maximum of the $\pi^-p$ cross section, which occurs at $p_\pi=300$ MeV, corr
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{2.15}
-
+Using the commutation relations for position and momentum, prove that
+\begin{align*}
+    \left[ \hat{L}_x, \hat{L}_y \right] = i \hat{L}_z
+\end{align*}
+Using the commutation relations for the components of angular momenta prove
+\begin{align*}
+    \left[ \hat{L}^2, \hat{L}_x \right] = 0
+\end{align*}
+and
+\begin{align*}
+    \hat{L}^2 = \hat{L}_-\hat{L}_+ + \hat{L}_z + \hat{L}_z^2
+\end{align*}
 \end{problem}
-    
 \begin{solution}
             
 \end{solution}
@@ -274,9 +305,27 @@ The maximum of the $\pi^-p$ cross section, which occurs at $p_\pi=300$ MeV, corr
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{2.16}
-
+Show that the operators $\hat{S}_i = \frac{1}{2}\sigma_i$, where $\sigma_i$ are the three Pauli spin-matrices,
+\begin{align*}
+    \hat{S}_x = \frac{1}{2} \begin{pmatrix}
+        0 & 1 \\
+        1 & 0 
+    \end{pmatrix} \quad 
+    \hat{S}_y = \frac{1}{2} \begin{pmatrix}
+        0 & -i \\
+        i & 0 
+    \end{pmatrix} \quad \text{and} \quad 
+    \hat{S}_z = \frac{1}{2} \begin{pmatrix}
+        1 & 0 \\
+        0 & -1 
+    \end{pmatrix}
+\end{align*}
+satisfy the same algebra as the angular momentum operators, namely
+\begin{align*}
+    \left[ \hat{S}_x, \hat{S}_y \right] = i \hat{S}_z \quad \left[ \hat{S}_y, \hat{S}_z \right] = i \hat{S}_x \quad \text{and} \quad \left[ \hat{S}_z, \hat{S}_x \right] = i \hat{S}_y
+\end{align*}
+Find the eigenvalue(s) of the operator $\hat{\mathbf{S}}^2 = \frac{1}{4} \left( \hat{S}_x^2 + \hat{S}_y^2 + \hat{S}_z^2 \right)$ and deduce that the eigenstates of $\hat{S}_z$ are a suitable representation of a spin-half particle.
 \end{problem}
-    
 \begin{solution}
             
 \end{solution}
@@ -290,9 +339,6 @@ The maximum of the $\pi^-p$ cross section, which occurs at $p_\pi=300$ MeV, corr
 \begin{problem}{2.17}
 Find the third-order term in the transition matrix element of Fermi's golden rule.
 \end{problem}
-
 \begin{solution}
         
 \end{solution} 
-
-\noindent\rule{7in}{1.5pt}
