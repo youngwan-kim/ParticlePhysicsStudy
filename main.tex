@@ -30,6 +30,7 @@
         sum/.style = {draw, circle, node distance=1cm},
     }
 \usepackage{xcolor}
+\usepackage{slashed}
 \usepackage{mdframed}
 \usepackage[shortlabels]{enumitem}
 \usepackage{indentfirst}
@@ -46,6 +47,16 @@
     {\textit{Solution:}}
     {}
 
+% used to configure matrix spacings , usage : \begin{pmatrix}[1.5]
+\makeatletter
+\renewcommand*\env@matrix[1][\arraystretch]{%
+      \edef\arraystretch{#1}%
+      \hskip -\arraycolsep
+      \let\@ifnextchar\new@ifnextchar
+      \array{*\c@MaxMatrixCols c}}
+\makeatother
+
+\newcommand{\sigp}{\boldsymbol{\sigma}\cdot\boldp}
 \newcommand{\norm}[1]{\left|{#1}\right|}
 \newcommand{\pb}{\text{ pb}}
 \newcommand{\MeV}{\text{ MeV}}

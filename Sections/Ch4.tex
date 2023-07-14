@@ -10,7 +10,14 @@ Show that
 and hence the Hamiltonian of the free-particle Schrödinger equation commutes with the angular momentum operator.
 \end{problem}
 \begin{solution}
+One could expand the given commutator as, 
 
+\begin{align*}
+    \left[ \hat{\boldp}^2 , \hat{\mathbf{r}} \times \hat{\boldp} \right] &=  \left[ \hat{\boldp}_a\hat{\boldp}_a,\epsilon_{abc}r_c \hat{\boldp}_b \hat{\mathbf{c}} \right]\\[0.15in]
+        &= \epsilon_{abc}r_c \left[ \hat{\boldp}_a\hat{\boldp}_a,\hat{\boldp}_b \hat{\mathbf{c}} \right]\\[0.15in]
+        &= \epsilon_{abc}r_c \left\{ \hat{\boldp}_a \left[ \hat{\boldp}_a,\hat{\boldp}_b \hat{\mathbf{c}} \right] + \left[ \hat{\boldp}_a,\hat{\boldp}_b \hat{\mathbf{c}} \right] \hat{\boldp}_a  \right\} \\[0.15in]
+        &= \epsilon_{abc}r_c \left\{ \hat{\boldp}_a \left[ \hat{\boldp}_a,\hat{\boldp}_b \hat{\mathbf{c}} \right] + \left[ \hat{\boldp}_a,\hat{\boldp}_b \hat{\mathbf{c}} \right] \hat{\boldp}_a  \right\} \quad \impliedby  \left[ \hat{\boldp}_a,\hat{\boldp}_b \hat{\mathbf{c}} \right] = \delta_{ab} \hat{\mathbf{c}} - i \delta_{ac} \hat{\boldp}_b
+\end{align*}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -21,7 +28,65 @@ and hence the Hamiltonian of the free-particle Schrödinger equation commutes wi
 Show that $u_1$ and $u_2$ are orthogonal, i.e. $u_1^\dagger u_2 =0$.
 \end{problem}
 \begin{solution}
+Let us first denote 
 
+\begin{align*}
+    u_\uparrow = \begin{pmatrix}
+        1 \\
+        0
+    \end{pmatrix} \quad \text{and} \quad 
+    u_\downarrow = \begin{pmatrix}
+        0 \\
+        1
+    \end{pmatrix} .
+\end{align*}\\
+One should note that $u_\uparrow^{\dagger}u_\downarrow = 0$. $u_1,u_2$ could also be expressed in terms of 
+
+\begin{align*}
+    u_1 = \begin{pmatrix}[1.25]
+        u_\uparrow \\
+        \frac{\boldsymbol{\sigma}\cdot\boldp}{E+m} u_\uparrow
+    \end{pmatrix} \quad \text{and} \quad 
+    u_2 = \begin{pmatrix}[1.25]
+        u_\downarrow \\
+        \frac{\boldsymbol{\sigma}\cdot\boldp}{E+m} u_\downarrow
+    \end{pmatrix}.
+\end{align*}\\
+Now $u_1^\dagger u_2$ could be written as, 
+
+\begin{align*}
+    u_1^\dagger u_2 &=  \begin{pmatrix}[1.25]
+        u_\uparrow \\
+        \frac{\boldsymbol{\sigma}\cdot\boldp}{E+m} u_\uparrow
+    \end{pmatrix}^\dagger
+    \begin{pmatrix}[1.25]
+        u_\downarrow \\
+        \frac{\boldsymbol{\sigma}\cdot\boldp}{E+m} u_\downarrow
+    \end{pmatrix} \\[0.15in]
+    &=  \begin{pmatrix}[1.2]
+        u_\uparrow^\dagger & \frac{1}{E+m} \left(\left(\boldsymbol{\sigma}\cdot\boldp\right) u_\uparrow\right)^\dagger
+    \end{pmatrix}
+    \begin{pmatrix}[1.25]
+        u_\downarrow \\
+        \frac{\boldsymbol{\sigma}\cdot\boldp}{E+m} u_\downarrow \\
+    \end{pmatrix} \\[0.15in]
+    &=  u_\uparrow^\dagger u_\downarrow + \frac{1}{\left(E+m\right)^2} \left(\left(\boldsymbol{\sigma}\cdot\boldp\right) u_\uparrow\right)^\dagger \left(\left(\boldsymbol{\sigma}\cdot\boldp\right) u_\downarrow\right) \\[0.15in]
+    &=  u_\uparrow^\dagger u_\downarrow + \frac{1}{\left(E+m\right)^2}  u_\uparrow^\dagger \left(\boldsymbol{\sigma}\cdot\boldp\right)^\dagger \left(\boldsymbol{\sigma}\cdot\boldp\right) u_\downarrow  
+\end{align*}
+One could use the fact that,
+
+\begin{align*}
+    \left(\boldsymbol{\sigma}\cdot\boldp\right)^\dagger \left(\boldsymbol{\sigma}\cdot\boldp\right) =  \left(\boldsymbol{\sigma}\cdot\boldp\right)^2 = \begin{pmatrix}[1.5]
+        p_x^2 + p_y^2 + p_z^2 & 0 \\
+        0 & p_x^2 + p_y^2 + p_z^2 \\
+    \end{pmatrix} = \left(E^2-m^2\right)I_2
+\end{align*}\\
+Thus it could be tidied up as, 
+
+\begin{align*}
+    u_1^\dagger u_2 &=  u_\uparrow^\dagger u_\downarrow + \frac{1}{\left(E+m\right)^2}  u_\uparrow^\dagger \left(\boldsymbol{\sigma}\cdot\boldp\right)^\dagger \left(\boldsymbol{\sigma}\cdot\boldp\right) u_\downarrow  \\[0.15in]
+                    &= \left[ 1 + \frac{E^2-m^2}{\left(E+m\right)^2}  \right]  u_\uparrow^\dagger u_\downarrow = 0 \qed
+\end{align*}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -29,11 +94,36 @@ Show that $u_1$ and $u_2$ are orthogonal, i.e. $u_1^\dagger u_2 =0$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{4.3}
-Verify the statement that the Einstein energy-momentum relationship is recovered if any of the four Sirac spinors of (4.48)
+Verify the statement that the Einstein energy-momentum relationship is recovered if any of the four Dirac spinors of (4.48)
 are subtitutes into the Dirac equation written in terms of momentum, $\left( \gamma^\mu p_\mu-m \right)u=0$.
 \end{problem}
 \begin{solution}
+Let us choose $u_1$ to plug in the Dirac equation. Then it could be expressed as,
 
+\begin{align*}
+    \left(\slashed{p}-m\right)u_1 = 0 &\implies \begin{pmatrix}[1.2]
+        \left(E-m\right)I_2 & -\sigp \\
+        \sigp & -\left(E+m\right) I_2 
+    \end{pmatrix}
+    \begin{pmatrix}[1.2]
+        E+m \\
+        0 \\
+        p_z \\
+        p_x + ip_y 
+    \end{pmatrix} = 0  \\[0.15in]
+    &\implies \begin{pmatrix}[1.2]
+        E^2-m^2 \\
+        0
+    \end{pmatrix} + \sigp\begin{pmatrix}[1.2]
+        E+m-p_z \\
+        -p_x -ip_y
+    \end{pmatrix} - \left(E+m\right)\begin{pmatrix}[1.2]
+        p_z \\
+        p_x+ip_y
+    \end{pmatrix} = 0 \\[0.15in]
+    \text{[first row]} &\implies \left(E^2-m^2\right) + \left(E+m\right)p_z - \left(p_x^2+p_y^2+p_z^2\right) - \left(E+m\right) p_z = 0 \\[0.15in] 
+    &\implies E^2 = p_x^2 +p_y^2 + p_z^2 +m^2  \qed
+\end{align*}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -249,3 +339,4 @@ where $q = p'-p$ and $\Sigma^{\mu\nu}=\frac{i}{4}\left[ \gamma^\mu,\gamma^\nu \r
 \noindent\rule{7in}{1.5pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
