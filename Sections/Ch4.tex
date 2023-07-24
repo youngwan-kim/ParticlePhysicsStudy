@@ -175,7 +175,85 @@ By considering the three cases $\mu=\nu=0$, $\mu=\nu\neq 0$ and $\mu \neq \nu$ s
 \end{align*}
 \end{problem}
 \begin{solution}
+For brevity, the gamma matrices will be presented in terms of direct products as :
 
+\begin{align*}
+    \gamma^0 &= \begin{pmatrix}[1.1]
+        1 & 0 \\
+        0 & -1 
+    \end{pmatrix} \otimes I_2 \equiv \beta  \\[0.15in]
+    \gamma^i &\equiv \beta \alpha_i \\[0.15in]
+             &= \left[\begin{pmatrix}[1.1]
+                1 & 0 \\
+                0 & -1 
+            \end{pmatrix} \otimes I_2 \right] \left[\begin{pmatrix}[1.1]
+                0 & 1 \\
+                1 & 0 
+            \end{pmatrix} \otimes \sigma_i \right] \\[0.15in]
+             &= \left[\begin{pmatrix}[1.1]
+                0 & 1 \\
+                -1 & 0 
+            \end{pmatrix} \otimes \sigma_i \right]
+\end{align*}
+Then considering the three cases,
+
+\begin{enumerate}[label=(\alph*)]
+    \item  $\mu=\nu=0$
+    \begin{align*}
+        \gamma^\mu \gamma^\nu + \gamma^\nu \gamma^\mu &= 2 \gamma^0\gamma^0 \\[0.15in]
+        &= 2 \left[\begin{pmatrix}[1.1]
+            1 & 0 \\
+            0 & -1 
+        \end{pmatrix} \otimes I_2 \right] \left[\begin{pmatrix}[1.1]
+            1 & 0 \\
+            0 & -1 
+        \end{pmatrix} \otimes I_2 \right] \\[0.15in]
+        &= 2 \begin{pmatrix}[1.1]
+            1 & 0 \\
+            0 & 1 
+        \end{pmatrix} \otimes I_2  = 2I_4 = 2g^{00} I_4
+    \end{align*}
+    \item $\mu\neq0,\nu\neq0$ 
+    \begin{align*}
+        \gamma^\mu \gamma^\nu + \gamma^\nu \gamma^\mu &= \gamma^i \gamma^j + \gamma^j \gamma^i \\[0.15in]
+                                                      &= \begin{pmatrix}[1.1]
+                                                        0 & 1 \\
+                                                        -1 & 0 
+                                                    \end{pmatrix}^2  \otimes \sigma_i\sigma_j + \begin{pmatrix}[1.1]
+                                                        0 & 1 \\
+                                                        -1 & 0 
+                                                    \end{pmatrix}^2  \otimes \sigma_j\sigma_i \\[0.15in]
+                                                      &= - I_2 \otimes \left( \sigma_j\sigma_i + \sigma_i\sigma_j \right) \\[0.15in]
+                                                      &= - I_2 \otimes \left\{ \sigma_i,\sigma_j \right\} \\[0.15in]
+                                                      &= - 2 I_2 \otimes \delta_{ij} I_2 = -2 \delta_{ij}I_4  = 2g^{ij} I_4                                                      
+    \end{align*}
+    \item $\mu\neq\nu$
+    
+    Due to the result from (b), one could easily realize that when both indices are not 0, $\left\{\gamma^i,\gamma^j\right\}=0$ which is $2g^{ij}I_4$.
+    Consider one of the indices to be 0, then :
+
+    \begin{align*}
+        \gamma^\mu \gamma^\nu + \gamma^\nu \gamma^\mu &= \gamma^0 \gamma^i + \gamma^i \gamma^0 \\[0.15in]
+                                                      &= \left[ 
+                                                        \begin{pmatrix}[1.1]
+                                                            1 & 0 \\
+                                                            0 & -1 
+                                                        \end{pmatrix}
+                                                        \begin{pmatrix}[1.1]
+                                                            0 & 1 \\
+                                                            -1 & 0 
+                                                        \end{pmatrix} + 
+                                                        \begin{pmatrix}[1.1]
+                                                            0 & 1 \\
+                                                            -1 & 0 
+                                                        \end{pmatrix}
+                                                        \begin{pmatrix}[1.1]
+                                                            1 & 0 \\
+                                                            0 & -1 
+                                                        \end{pmatrix}
+                                                      \right] \otimes \sigma_i =0 = 2g^{0i} I_4 \qed
+    \end{align*}
+\end{enumerate}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -321,7 +399,8 @@ One could notice that not only for $\boldp$ but for any cartesian vector the abo
     u_A = \frac{\left(\boldsymbol{\sigma}\cdot \boldp\right)}{E-m} u_B &\implies \left(\boldsymbol{\sigma}\cdot \boldp\right) u_A = \frac{\left(\boldsymbol{\sigma}\cdot \boldp\right)^2}{E-m} u_B \\[0.15in]
                                                                        &\implies \left(\boldsymbol{\sigma}\cdot \boldp\right) u_A = \frac{ \boldp^2}{E-m} u_B \\[0.15in]
                                                                        &\implies \frac{\left(\boldsymbol{\sigma}\cdot \boldp\right)}{E+m} u_A = u_B 
-\end{align*}
+\end{align*}\\
+which is the desired result.
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -337,7 +416,66 @@ Discuss energy and charge conservation for the two cases where:
 \end{enumerate}
 \end{problem}
 \begin{solution}
-
+    %\begin{multicols}{2}
+    %    \begin{enumerate}[label=(\alph*)]
+    %        \item the negative energy solutions of the Dirac equation are interpreted as negative energy particles propagating backwards in time
+    %        \item the negative energy solutions of the Dirac equation are interpreted as positive energy antiparticles propa- gating forwards in time
+    %    \end{enumerate}
+    %\end{multicols}
+    \begin{multicols}{2}
+    \begin{enumerate}[label=(\alph*)]
+        \item the negative energy solutions of the Dirac equation are interpreted as negative energy particles propagating backwards in time
+        \begin{center}
+            \scalebox{1.25}{
+                \begin{tikzpicture}
+                    \begin{feynman}
+                        
+                        \vertex (g1);
+                        \vertex at ($(g1) + (-3.5em,3.5em) $) (e1) {\(e^-\)};
+                        \vertex at ($(g1) + (-3.5em,-3.5em) $) (e2) {\(e^-\)};
+    
+                        \vertex at ($(g1) + (3em,0)$) (g2) ;
+                        \vertex at ($(g2) + (3.5em,3.5em) $) (m1) {\(e^-\)};
+                        \vertex at ($(g2) + (3.5em,-3.5em) $) (m2) {\(e^-\)};
+                        \diagram* {
+                            {[edges=fermion]
+                              (e1) -- (g1) -- (e2),
+                              (m2) -- (g2) -- (m1)
+                            },
+                            (g1) -- [boson, edge label =\(\gamma^\ast\)] (g2)
+                        };
+    
+                    \end{feynman}
+                \end{tikzpicture}
+            }
+        \end{center} \columnbreak
+        \item the negative energy solutions of the Dirac equation are interpreted as positive energy antiparticles propa- gating forwards in time
+        \begin{center}
+            \scalebox{1.25}{
+                \begin{tikzpicture}
+                    \begin{feynman}
+                        
+                        \vertex (g1);
+                        \vertex at ($(g1) + (-3.5em,3.5em) $) (e1) {\(e^-\)};
+                        \vertex at ($(g1) + (-3.5em,-3.5em) $) (e2) {\(e^+\)};
+    
+                        \vertex at ($(g1) + (3em,0)$) (g2) ;
+                        \vertex at ($(g2) + (3.5em,3.5em) $) (m1) {\(e^-\)};
+                        \vertex at ($(g2) + (3.5em,-3.5em) $) (m2) {\(e^+\)};
+                        \diagram* {
+                            {[edges=fermion]
+                              (e1) -- (g1),  (e2) -- (g1),
+                              (g2) -- (m2) , (g2) -- (m1)
+                            },
+                            (g1) -- [boson, edge label =\(\gamma^\ast\)] (g2)
+                        };
+    
+                    \end{feynman}
+                \end{tikzpicture}
+            }
+        \end{center}
+    \end{enumerate}
+\end{multicols}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -359,7 +497,26 @@ commutes with the Dirac Hamiltonian,
 \end{align*}
 \end{problem}
 \begin{solution}
+The commutation between $\hat{h}$ and $\hat{H}_D$ could be written as,
 
+\begin{align*}
+    [ \hat{H}_D , \hat{h} ] &= \frac{1}{2p} \left[\boldsymbol{\alpha}\cdot\hat{\boldp} + \beta m,  \hat{\boldsymbol{\Sigma}}\cdot\hat{\boldp} \right] \\[0.15in]
+                            &= \frac{1}{2p}   \left[ \boldsymbol{\alpha}\cdot\hat{\boldp} , \hat{\boldsymbol{\Sigma}}\cdot\hat{\boldp}   \right] + \frac{m}{2p} \left[\beta,\hat{\boldsymbol{\Sigma}}\cdot\hat{\boldp} \right] 
+\end{align*}\\
+Let us first evaluate the second commutator : 
+
+\begin{align*}
+    \left[\beta,\hat{\boldsymbol{\Sigma}}\cdot\hat{\boldp} \right] &= \left[\beta,\Sigma_i \hatp_i\right] \\
+    &= \cancelto{0}{\left[\beta,\Sigma_i\right]\hatp_i} + \Sigma_i \cancelto{0}{\left[ \beta,\hatp_i \right]}
+\end{align*}\\
+where the second term is eliminated due to the fact that matrix operation and differentiation could be commuted (one could check oneself by operating on an arbitrary spinor). The first commutator then could be again reduced into,
+
+\begin{align*}
+    \left[ \boldsymbol{\alpha}\cdot\hat{\boldp} , \hat{\boldsymbol{\Sigma}}\cdot\hat{\boldp}   \right] &= \left[ \alpha_i\hat{p}_i , \Sigma_j \hat{p}_j \right] \\[0.1in]
+    &= \alpha_i \cancelto{0}{\left[ \hatp_i,\Sigma_j \right]}\hatp_j + \alpha_i \Sigma_j \cancelto{0}{\left[ \hatp_i,\hatp_j \right]} + \left[\alpha_i,\Sigma_j\right]\hatp_j\hatp_i + \Sigma_j \cancelto{0}{\left[ \alpha_i,\hatp_j \right]} \hatp_i \\[0.1in]
+    &=  2i \epsilon_{ijk}\alpha_k \hatp_j \hatp_i    = 2i\epsilon_{ijk}\alpha_k \left(\delta_{ji} - \hatp_i\hatp_j\right) = 2i \epsilon_{ijk}\alpha_k \hatp_i \hatp_j \\[0.1in]
+    &= 0 \qed 
+\end{align*}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -369,12 +526,34 @@ commutes with the Dirac Hamiltonian,
 \begin{problem}{4.13}
 Show that
 \begin{align*}
-    \hat{p}_{u_\uparrow} \left( \theta,\phi \right) = u_\downarrow \left( \pi-\theta,\pi+\phi \right)
+     \mathsf{P} u_\uparrow \left( \theta,\phi \right) = u_\downarrow \left( \pi-\theta,\pi+\phi \right)
 \end{align*}
 and comment on the result.
 \end{problem}
 \begin{solution}
+One could straightforwardly write down,
 
+\begin{align*}
+    \mathsf{P}u_\uparrow\left(\theta,\phi\right) = \gamma^0 u_\uparrow\left(\theta,\phi\right) &= N \gamma^0 \begin{pmatrix}[1.5] 
+        \cos \frac{\theta}{2} \\
+        e^{i\phi} \sin \frac{\theta}{2} \\
+        \frac{p}{E+m} \cos \frac{\theta}{2} \\
+        \frac{p}{E+m} e^{i\phi} \sin \frac{\theta}{2} \\
+    \end{pmatrix} = N  \begin{pmatrix}[1.5] 
+        \cos \frac{\theta}{2} \\
+        e^{i\phi} \sin \frac{\theta}{2} \\
+        -\frac{p}{E+m} \cos \frac{\theta}{2} \\
+        -\frac{p}{E+m} e^{i\phi} \sin \frac{\theta}{2} \\
+    \end{pmatrix} \\[0.15in]
+    &= N  \begin{pmatrix}[1.5] 
+        - \sin \left(\frac{\pi}{2} - \frac{\theta}{2}\right) \\
+        e^{i(\pi+\phi)} \cos \left(\frac{\pi}{2} - \frac{\theta}{2}\right) \\
+         \frac{p}{E+m} \sin \left(\frac{\pi}{2} - \frac{\theta}{2}\right) \\
+        -\frac{p}{E+m} e^{i(\pi+\phi)} \cos  \left(\frac{\pi}{2} - \frac{\theta}{2}\right) \\
+    \end{pmatrix} \\[0.15in]
+    &= u_\downarrow \left( \pi-\theta,\pi+\phi\right) \qed
+\end{align*}\\
+One could notice that in terms of spherical angles, the result above shows that the parity operator actually flips the momentum direction to $-\boldp$, which will result in the opposite helicity.
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -382,13 +561,13 @@ and comment on the result.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{4.14}
-Under the combined operation of parity and charge conjugation $(\hat{C}\hat{P})$ spinors transform as
+Under the combined operation of parity and charge conjugation $(\mathsf{CP})$ spinors transform as
 \begin{align*}
-    \psi \to \psi^C = \hat{C}\hat{P} \psi = i \gamma^2\gamma^0 \psi^\ast 
+    \psi \to \psi^C = \mathsf{CP} \psi = i \gamma^2\gamma^0 \psi^\ast 
 \end{align*}
 Show that up to an overall complex phase factor
 \begin{align*}
-    \hat{C}\hat{p}_{u_\uparrow} \left( \theta,\phi \right) = v_\downarrow  \left( \pi-\theta,\pi+\phi \right)
+    \mathsf{CP} u_\uparrow \left( \theta,\phi \right) = v_\downarrow  \left( \pi-\theta,\pi+\phi \right)
 \end{align*}
 \end{problem}
 \begin{solution}
