@@ -193,7 +193,26 @@ with $\gamma^\nu\partial_\nu$ prove that the components of $\psi$ satisfy the Kl
 \end{align*}
 \end{problem}
 \begin{solution}
+Straightforwardly following the instructions given by the problem, 
 
+\begin{align*}
+    \left( i\gamma^\mu \partial_\mu - m \right) \psi = 0  &\implies \gamma^\nu \partial_\nu \left( i\gamma^\mu \partial_\mu - m \right) \psi = 0 \\[0.15in]
+     &\implies \left[  i \gamma^\nu \partial_\nu \left( \gamma^\mu \partial_\mu  \right) - m \gamma^\nu \partial_\nu \right] \psi = 0 \\[0.15in]
+     &\implies \left[  i \gamma^\nu \left( \partial_\nu  \gamma^\mu \right) \partial_\mu   +  i \gamma^\nu  \gamma^\mu \partial_\nu   \partial_\mu    - m \gamma^\nu \partial_\nu \right] \psi = 0 \\[0.15in]
+     &\implies \left(  \frac{i}{2} \left\{ \gamma^\nu , \gamma^\mu \right\} \partial_\nu   \partial_\mu    - m \gamma^\nu \partial_\nu \right) \psi = 0 \\[0.15in]
+     &\implies \left( i g^{\nu\mu} \partial_\nu   \partial_\mu    - m \gamma^\nu \partial_\nu \right) \psi = 0 
+\end{align*}\\
+For the latter term, one could utilize the Dirac equation :
+
+\begin{align*}
+    \left( i\gamma^\mu \partial_\mu - m \right) \psi = 0  &\implies \slashed{\partial}\psi = -im \psi 
+\end{align*}\\
+Thus the above could be tidied up as, 
+
+\begin{align*}
+    \left( i g^{\nu\mu} \partial_\nu   \partial_\mu    - m \gamma^\nu \partial_\nu \right) \psi = 0 &\implies \left( i\partial^\mu\partial_\mu - m \slashed{\partial}  \right) \psi = 0 \\[0.15in]
+    &\implies \left( \partial^\mu\partial_\mu +m^2 \right) \psi = 0  \qed
+\end{align*}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -207,7 +226,19 @@ Show that
 \end{align*}
 \end{problem}
 \begin{solution}
-
+Let us seperate the cases with indices being 0 and else. 
+\begin{enumerate}[label=(\alph*)]
+    \item $\mu=0$
+        \begin{align*}
+            \gamma^{0\dagger} &= \gamma^0  \\[0.15in]
+                              &= I_4 \gamma^0  = \gamma^0\gamma^0\gamma^0 
+        \end{align*}
+    \item $\mu=k\neq 0$
+        \begin{align*}
+            \gamma^{k\dagger} &= -\gamma^k  \\[0.15in]
+                              &= -I_4 \gamma^k  = -\gamma^0\gamma^0\gamma^k  = \gamma^0\gamma^k\gamma^0 \qed
+        \end{align*}
+\end{enumerate}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -223,9 +254,9 @@ show that the corresponding equation for the adjoint spinor is
 \begin{align*}
     \overbar{u} \left( \gamma^\mu p_\mu -m \right)=0.
 \end{align*} 
-Hence, without using the explicit form for the $u$ spinors, show that the normalisation condition $u^\dagger u = 2E$ leads to1
+Hence, without using the explicit form for the $u$ spinors, show that the normalisation condition $u^\dagger u = 2E$ leads to
 \begin{align*}
-    u\overbar{u} = 2m,
+    \overbar{u}u = 2m,
 \end{align*}
 and that
 \begin{align*}
@@ -233,7 +264,37 @@ and that
 \end{align*}
 \end{problem}
 \begin{solution}
+Let us first derive the corresponding Dirac equation for the adjoint spinor. 
 
+\begin{align*}
+    \left( \gamma^\mu p_\mu - m  \right) u = 0 &\implies  u^\dagger \left( \gamma^\mu p_\mu - m   \right)^\dagger = 0 \\[0.15in]
+    &\implies \overbar{u} \gamma^0 \left( \gamma^{\mu\dagger} p_\mu - m   \right)  = 0  \quad \text{from} \quad \overbar{u} = u^\dagger \gamma^0 \iff u^\dagger = \overbar{u}\gamma^0 \\[0.15in]
+    &\implies \overbar{u} \left( \gamma^0 \gamma^{\mu\dagger} \gamma^0 p_\mu - m \gamma^0 \gamma^0 \right) = 0 \\[0.15in]
+    &\implies \overbar{u} \left(   \gamma^\mu p_\mu - m \right) = 0  \quad \text{from} \quad \gamma^0\gamma^\mu\gamma^0 = \gamma^{\mu\dagger} 
+\end{align*}\\
+In order to obtain the other relations, let us start from evaluating $\overbar{u}\gamma^\mu u$ first.
+
+\begin{align*}
+    \overbar{u}\gamma^\mu u &= \frac{1}{m} \overbar{u} \gamma^\mu \slashed{p} u \quad \impliedby \slashed{p}u = mu  \\[0.15in]
+                            &= \frac{1}{m} \overbar{u} \gamma^\mu \gamma^\nu p_\nu u = \frac{1}{m} \overbar{u} \left[ 2g^{\mu\nu}- \gamma^\nu \gamma^\mu \right] p_\nu u \\[0.15in]
+                            &= \frac{1}{m} \left[ 2\overbar{u}u p^\mu - \overbar{u} \gamma^\nu \gamma^\mu  p_\nu u \right]  \\[0.15in]
+                            &= \frac{1}{m} \left[ 2\overbar{u}u p^\mu - \overbar{u} \slashed{p} \gamma^\mu u \right] \quad \impliedby \overbar{u}\slashed{p} = m \overbar{u} \\[0.15in]
+                            &= \frac{1}{m} \left[ 2\overbar{u}u p^\mu - m \overbar{u} \gamma^\mu u \right]   \\[0.15in]
+                            &\iff \overbar{u}\gamma^\mu u = \frac{1}{m}\overbar{u}p^\mu u
+\end{align*}\\
+Under such relation letting $\mu=0$ gives 
+
+\begin{align*}
+    \overbar{u}\gamma^0 u = \frac{1}{m}\overbar{u}p^0 u &\implies u^\dagger \gamma^0 \gamma^0 u = \frac{E}{m} \overbar{u} u \\[0.15in]
+                                                        &\implies u^\dagger u  =  \frac{E}{m} \overbar{u} u \\[0.15in]
+                                                        &\implies 2E =  \frac{E}{m} \overbar{u} u \\[0.15in]
+                                                        &\implies \overbar{u} u = 2m 
+\end{align*}\\
+Now plugging in such relation back into $\overbar{u}\gamma^\mu u $ gives,
+
+\begin{align*}
+    \overbar{u}\gamma^\mu u  = \frac{1}{m}\overbar{u} u p^\mu = 2p^\mu. \qed
+\end{align*}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -241,13 +302,26 @@ and that
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{4.10}
-Demonstrate that the two relations of Equation (4.45) are consistnet by showing that
+Demonstrate that the two relations of Equation (4.45) are consistent by showing that
 \begin{align*}
     \left( \boldsymbol{\sigma} \cdot \boldp \right)^2 = \boldp^2.
 \end{align*}
 \end{problem}
 \begin{solution}
+One could easily show that
 
+\begin{align*}
+    \left(\boldsymbol{\sigma}\cdot \boldp \right)^2 &= \sigma^i\sigma^j p_i p_j \\[0.15in]
+                                                    &= \frac{1}{2} \left( \sigma^i\sigma^j  +  \sigma^j\sigma^i \right) p_i p_j \impliedby \left\{ \sigma^i, \sigma^j\right\} = 2\delta^{ij} \\[0.15in]
+                                                    &= \delta^{ij} p_i p_j = \boldp^2. \qed
+\end{align*}\\
+One could notice that not only for $\boldp$ but for any cartesian vector the above should hold. This relation leads to the equivalence of, 
+
+\begin{align*}
+    u_A = \frac{\left(\boldsymbol{\sigma}\cdot \boldp\right)}{E-m} u_B &\implies \left(\boldsymbol{\sigma}\cdot \boldp\right) u_A = \frac{\left(\boldsymbol{\sigma}\cdot \boldp\right)^2}{E-m} u_B \\[0.15in]
+                                                                       &\implies \left(\boldsymbol{\sigma}\cdot \boldp\right) u_A = \frac{ \boldp^2}{E-m} u_B \\[0.15in]
+                                                                       &\implies \frac{\left(\boldsymbol{\sigma}\cdot \boldp\right)}{E+m} u_A = u_B 
+\end{align*}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
