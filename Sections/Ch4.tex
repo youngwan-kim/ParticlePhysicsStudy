@@ -586,7 +586,52 @@ Starting from the Dirac equation, derive the identity
 where $q = p'-p$ and $\Sigma^{\mu\nu}=\frac{i}{4}\left[ \gamma^\mu,\gamma^\nu \right]$
 \end{problem}
 \begin{solution}
+Using the Dirac equation for $u(p)$, one could write down $\overbar{u}(p')\gamma^\mu u(p)$ as,
 
+\begin{align}
+    \overbar{u}(p')\gamma^\mu u(p) &= \frac{1}{m}  \overbar{u}(p')\gamma^\mu \slashed{p} u(p)  \label{4.15.1} \\[0.15in]
+                                   &= \frac{1}{m}  \overbar{u}(p')\gamma^\mu \gamma^\nu p_\nu u(p) \nonumber \\[0.15in]
+                                   &= \frac{1}{m}  \overbar{u}(p')\left( 2g^{\mu\nu} - \gamma^\nu \gamma^\mu \right) p_\nu u(p) \nonumber \\[0.15in]
+                                   &= \frac{2}{m}  \overbar{u}(p') p^\mu  u(p) - \frac{1}{m}  \overbar{u}(p') \slashed{p} \gamma^\mu   u(p)    \label{4.15.2}
+\end{align}\\
+One could do the same using the Dirac equation for the adjoint case,
+
+\begin{align}
+    \overbar{u}(p')\gamma^\mu u(p) &= \frac{1}{m}  \overbar{u}(p')  \slashed{p'} \gamma^\mu u(p)  \label{4.15.3} \\[0.15in]
+                                   &= \frac{1}{m}  \overbar{u}(p')\gamma^\nu \gamma^\mu p'_\nu u(p) \nonumber \\[0.15in]
+                                   &= \frac{1}{m}  \overbar{u}(p')\left( 2g^{\nu\mu} - \gamma^\mu \gamma^\nu \right) p'_\nu u(p) \nonumber \\[0.15in]
+                                   &= \frac{2}{m}  \overbar{u}(p') p'^\mu  u(p) - \frac{1}{m}  \overbar{u}(p') \gamma^\mu   \slashed{p'} u(p)   \label{4.15.4}
+\end{align}\\
+Using the above relations one could again express  $\overbar{u}(p')\gamma^\mu u(p)$ as,
+
+\begin{align}
+    \overbar{u}(p')\gamma^\mu u(p) &= \frac{1}{2} \left\{ \frac{1}{m}  \overbar{u}(p')\gamma^\mu \slashed{p} u(p)  + \frac{1}{m}  \overbar{u}(p')  \slashed{p'} \gamma^\mu u(p) \right\} \nonumber \\[0.15in]
+                                   &= \frac{1}{m}   \overbar{u}(p') (p+p')^\mu  u(p)  - \frac{1}{2m} \overbar{u}(p') \left\{ \slashed{p}\gamma^\mu + \gamma^\mu \slashed{p'} \right\}  u(p) \label{4.15.5}
+\end{align}\\
+Before moving on, one could again use another relation that could be derived from (\ref{4.15.1}) to (\ref{4.15.4}) as :
+
+\begin{align}
+    (\ref{4.15.1}) = (\ref{4.15.2}) &\implies \frac{1}{m}  \overbar{u}(p')\gamma^\mu \slashed{p} u(p) = \frac{2}{m}  \overbar{u}(p') p^\mu  u(p) - \frac{1}{m}  \overbar{u}(p') \slashed{p} \gamma^\mu   u(p) \nonumber \\[0.15in]
+                                    &\implies 2 \overbar{u}(p') p^\mu  u(p) = \overbar{u}(p') \left\{ \gamma^\mu \slashed{p} + \slashed{p}\gamma^\mu \right\} u(p)  \label{4.15.6} \\[0.15in]
+    (\ref{4.15.3}) = (\ref{4.15.4}) &\implies  \overbar{u}(p')  \slashed{p'} \gamma^\mu u(p)  = \frac{2}{m}  \overbar{u}(p') p'^\mu  u(p) - \frac{1}{m}  \overbar{u}(p') \gamma^\mu   \slashed{p'} u(p)    \nonumber \\[0.15in]
+                                    &\implies 2 \overbar{u}(p') p'^\mu  u(p) = \overbar{u}(p') \left\{ \gamma^\mu \slashed{p'} + \slashed{p'}\gamma^\mu \right\} u(p)   \label{4.15.7}
+\end{align}\\
+Adding up both (\ref{4.15.6}) and (\ref{4.15.7}) gives, 
+
+\begin{align}
+    \overbar{u}(p') (p+p')^\mu  u(p) = \frac{1}{2} \overbar{u}(p') \left\{ \gamma^\mu \slashed{p'} + \slashed{p'}\gamma^\mu + \gamma^\mu \slashed{p} + \slashed{p}\gamma^\mu \right\} u(p) \label{4.15.8}
+\end{align}\\
+Plugging (\ref{4.15.8}) into (\ref{4.15.5}) but splitting the first term into half gives, 
+
+\begin{align}
+    \overbar{u}(p')\gamma^\mu u(p) &=   \frac{1}{2m}   \overbar{u}(p') (p+p')^\mu  u(p) + \frac{1}{2m}   \overbar{u}(p') (p+p')^\mu  u(p)  - \frac{1}{2m} \overbar{u}(p') \left\{ \slashed{p}\gamma^\mu + \gamma^\mu \slashed{p'} \right\}  u(p)  \nonumber \\[0.15in]
+                                   &=   \frac{1}{2m}   \overbar{u}(p') (p+p')^\mu  u(p) + \frac{1}{4m} \overbar{u}(p') \left\{ \gamma^\mu \slashed{p'} + \slashed{p'}\gamma^\mu + \gamma^\mu \slashed{p} + \slashed{p}\gamma^\mu \right\} u(p) - \frac{1}{2m} \overbar{u}(p') \left\{ \slashed{p}\gamma^\mu + \gamma^\mu \slashed{p'} \right\}  u(p)  \nonumber \\[0.15in]
+                                   &=   \frac{1}{2m}   \overbar{u}(p') (p+p')^\mu  u(p) - \frac{1}{4m} \overbar{u}(p') \left\{  \gamma^\mu \slashed{p'} - \slashed{p'}\gamma^\mu - \gamma^\mu \slashed{p} + \slashed{p}\gamma^\mu \right\} u(p)  \nonumber \\[0.15in]
+                                   &=   \frac{1}{2m}   \overbar{u}(p') (p+p')^\mu  u(p) - \frac{1}{4m} \overbar{u}(p') \left\{ \gamma^\mu (\slashed{p'}-\slashed{p}) - (\slashed{p'}-\slashed{p}) \gamma^\mu \right\} u(p)  \nonumber \\[0.15in]
+                                   &=   \frac{1}{2m}   \overbar{u}(p') (p+p')^\mu  u(p) - \frac{1}{4m} \overbar{u}(p') \left[  \gamma^\mu , \slashed{q} \right] u(p)  \nonumber \\[0.15in]
+                                   &=   \frac{1}{2m}   \overbar{u}(p') (p+p')^\mu  u(p) - \frac{1}{4m} \overbar{u}(p') \left[  \gamma^\mu , \gamma^\nu \right] q_\nu u(p)  \nonumber \\[0.15in]
+                                   &=   \frac{1}{2m}   \overbar{u}(p') (p+p')^\mu  u(p) + \frac{i}{m} \overbar{u}\left(p'\right) \Sigma^{\mu\nu} q_\nu u(p) \qed \nonumber
+\end{align}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
