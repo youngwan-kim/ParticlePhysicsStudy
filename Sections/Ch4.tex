@@ -17,7 +17,8 @@ One could expand the given commutator as,
         &= \epsilon_{abc}r_c \left[ \hat{\boldp}_a\hat{\boldp}_a,\hat{\boldp}_b \hat{\mathbf{c}} \right]\\[0.15in]
         &= \epsilon_{abc}r_c \left\{ \hat{\boldp}_a \left[ \hat{\boldp}_a,\hat{\boldp}_b \hat{\mathbf{c}} \right] + \left[ \hat{\boldp}_a,\hat{\boldp}_b \hat{\mathbf{c}} \right] \hat{\boldp}_a  \right\} \\[0.15in]
         &= \epsilon_{abc}r_c \left\{ \hat{\boldp}_a \left[ \hat{\boldp}_a,\hat{\boldp}_b \hat{\mathbf{c}} \right] + \left[ \hat{\boldp}_a,\hat{\boldp}_b \hat{\mathbf{c}} \right] \hat{\boldp}_a  \right\} \quad \impliedby  \left[ \hat{\boldp}_a,\hat{\boldp}_b \hat{\mathbf{c}} \right] = \delta_{ab} \hat{\mathbf{c}} - i \delta_{ac} \hat{\boldp}_b
-\end{align*}
+\end{align*}\\
+which will eliminate due to the contraction between $\epsilon_{abc}$ and $\delta_{ab},\delta_{ac}$. 
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -482,7 +483,7 @@ Discuss energy and charge conservation for the two cases where:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{problem}{4.12}
+\begin{problem}{4.12} \label{P4.12}
 Verify that the helicity operator
 \begin{align*}
     \hat{h} = \frac{\hat{\boldsymbol{\Sigma}}\cdot\hat{\boldp}}{2p} = \frac{1}{2p}
@@ -523,7 +524,7 @@ where the second term is eliminated due to the fact that matrix operation and di
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{problem}{4.13}
+\begin{problem}{4.13} \customlabel{P4.13}{4.13}
 Show that
 \begin{align*}
      \mathsf{P} u_\uparrow \left( \theta,\phi \right) = u_\downarrow \left( \pi-\theta,\pi+\phi \right)
@@ -571,7 +572,37 @@ Show that up to an overall complex phase factor
 \end{align*}
 \end{problem}
 \begin{solution}
+Using the result of Problem \ref{P4.13} which shows how $\mathsf{P}$ acts on helicity eigen-spinors, one only needs to show that 
 
+\begin{align*}
+    \mathsf{CP} u_\uparrow \left( \theta,\phi \right) &=   \mathsf{C} u_\downarrow \left( \pi- \theta, \pi+ \phi \right) = v_\downarrow \left( \pi- \theta, \pi+ \phi \right) \\[0.15in]
+    &\implies \mathsf{C} u_\downarrow \left( \theta',   \phi' \right) = v_\downarrow \left( \theta',   \phi' \right) \nonumber 
+\end{align*}\\
+up to a certain complex phase factor. One could directly compute,
+
+\begin{align*}
+    \mathsf{C} u_\downarrow \left( \theta,  \phi \right) &= i\gamma^2 u_\downarrow \left( \theta,  \phi \right)^\ast \\[0.15in]
+                &= N \begin{pmatrix}
+                    0 & i\sigma_2  \\
+                    -i\sigma_2 & 0 
+                \end{pmatrix}\begin{pmatrix}[1.15]
+                    -\sin\theta \\
+                    \cos \theta e^{i\phi} \\
+                    r\sin\theta \\
+                    -r\cos \theta e^{i\phi}
+                \end{pmatrix}^\ast \quad \text{where} \quad r \equiv \frac{p}{E+m} \\[0.15in]
+                &= -N \begin{pmatrix}[1.15]
+                    r\cos\theta e^{-i\phi}\\
+                    r\sin \theta  \\
+                    \cos\theta e^{-i\phi} \\
+                    \sin \theta 
+                \end{pmatrix} = -N e^{-i\phi} \begin{pmatrix}[1.15]
+                    r\cos\theta \\
+                    r\sin \theta e^{i\phi}  \\
+                    \cos\theta  \\
+                    \sin \theta e^{i\phi} 
+                \end{pmatrix} = -e^{-i\phi} v_\downarrow \left(\theta,\phi\right) \qed
+\end{align*}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}

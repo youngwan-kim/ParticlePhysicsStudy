@@ -40,6 +40,13 @@
     
 \renewcommand{\thesubsection}{\thesection.\alph{subsection}}
 
+\makeatletter
+\newcommand{\customlabel}[2]{%
+   \protected@write \@auxout {}{\string \newlabel {#1}{{#2}{\thepage}{#2}{#1}{}} }%
+   \hypertarget{#1}{#2}
+}
+\makeatother
+
 \newenvironment{problem}[2][Problem]
     { \begin{mdframed}[backgroundcolor=gray!20] \textbf{#1 #2} \\}
     {  \end{mdframed}}
