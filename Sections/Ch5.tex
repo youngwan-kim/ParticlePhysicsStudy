@@ -8,7 +8,120 @@ Draw the two time-ordered diagrams for the s-channel process shown in Figure 5.5
 \noindent {\footnotesize Hint: one of the time-ordered diagrams is non-intuitive, remember that in second-order perturbation theory the intermediate state does not conserve energy.}
 \end{problem}
 \begin{solution}
+Similar with the t-channel case introduced in the text, one could draw the time-ordered diagram for the s-channel case as,
 
+\begin{equation}
+    \begin{gathered}
+        \begin{tikzpicture}
+            \begin{feynman}
+                \vertex (g1);
+                \vertex at ($(g1) + (-2.5em,3.5em) $) (a) {\(a\)};
+                \vertex at ($(g1) + (-2.5em,-3.5em) $) (b) {\(b\)};
+
+                \vertex at ($(g1) + (4em,0)$) (g2) ;
+                \vertex at ($(g2) + (2.5em,3.5em) $) (c) {\(c\)};
+                \vertex at ($(g2) + (2.5em,-3.5em) $) (d) {\(d\)};
+                \diagram* {
+                    {[edges=fermion]
+                      (a) --[edge label =\(p_1\)] (g1) -- [edge label =\(p_2\)] (b),
+                      (d) --[edge label =\(p_4\)] (g2) -- [edge label =\(p_3\)] (c)
+                    },
+                    (g1) -- [edge label =\(X\)] (g2)
+                };
+
+            \end{feynman}
+        \end{tikzpicture}        
+    \end{gathered} \quad = \quad  \begin{gathered}
+        \begin{tikzpicture}
+            \begin{feynman}
+                \vertex (g1) ;
+                \vertex [above=0.25em of g1] {\(V_{fj}\)};
+                \vertex at ($(g1) + (-5.5em,1.5em) $) (a) {\(a\)};
+                \vertex at ($(g1) + (-5.5em,-1.5em) $) (b) {\(b\)};
+
+                \vertex at ($(g1) + (-3em,-6.5em)$) (g2) ;
+                \vertex [below=0.25em of g2] {\(V_{ji}\)};
+                \vertex at ($(g2) + (5.5em,1.5em) $) (c) {\(c\)};
+                \vertex at ($(g2) + (5.5em,-1.5em) $) (d) {\(d\)};
+
+                \vertex at ($(g2) + (-1.25em,-3.5em)$) (i) {\(i\)};
+                \vertex at ($(i) + (0em, 13em)$) (i0);
+                \vertex at ($(g2) + (1.5em,-3.5em)$) (j) {\(j\)};
+                \vertex at ($(j) + (0em, 13em)$) (j0);
+                \vertex at ($(j) + (2.75em, 0em)$) (f) {\(f\)};
+                \vertex at ($(f) + (0em, 13em)$) (f0);
+                \diagram* {
+                    {[edges=fermion]
+                      (a) --[edge label =\(p_1\),near start] (g1) -- [edge label =\(p_2\), near end] (b),
+                      (d) --[edge label =\(p_4\),near start] (g2) -- [edge label =\(p_3\), near end] (c)
+                    },
+                    (g1) -- [edge label=\(X\),near start] (g2),
+                    (i) -- [scalar ](i0), (j) -- [scalar] (j0) , (f) -- [scalar] (f0)
+                };
+
+            \end{feynman}
+        \end{tikzpicture}        
+    \end{gathered} \quad + \quad \begin{gathered}
+        \begin{tikzpicture}
+            \begin{feynman}
+                \vertex (g1);
+                \vertex [below=0.25em of g1] {\(V_{ji}\)};
+                \vertex at ($(g1) + (-4.5em,1.5em) $) (a) {\(a\)};
+                \vertex at ($(g1) + (-4.5em,-1.5em) $) (b) {\(b\)};
+
+                \vertex at ($(g1) + (2.5em,5.5em)$) (g2) ;
+                \vertex at ($(g2) + (4.5em,1.5em) $) (c) {\(c\)};
+                \vertex at ($(g2) + (4.5em,-1.5em) $) (d) {\(d\)};
+                
+                \vertex [above=0.25em of g2] {\(V_{fj}\)};
+                \vertex at ($(g1) + (-3em,-3.5em)$) (i) {\(i\)};
+                \vertex at ($(i) + (0em, 13em)$) (i0);
+                \vertex at ($(g1) + (1.25em,-3.5em)$) (j) {\(j\)};
+                \vertex at ($(j) + (0em, 13em)$) (j0);
+                \vertex at ($(j) + (4.25em, 0em)$) (f) {\(f\)};
+                \vertex at ($(f) + (0em, 13em)$) (f0);
+                \diagram* {
+                    {[edges=fermion]
+                      (a) --[edge label =\(p_1\),near start] (g1) -- [edge label =\(p_2\), near end] (b),
+                      (d) --[edge label =\(p_4\),near start] (g2) -- [edge label =\(p_3\), near end] (c)
+                    },
+                    (g1) -- [edge label'=\(X\)] (g2),
+                    (i) -- [scalar ](i0), (j) -- [scalar] (j0) , (f) -- [scalar] (f0)
+                };
+
+            \end{feynman}
+        \end{tikzpicture}        
+    \end{gathered} \nonumber
+\end{equation}\\
+For the first diagram, one could write down the second-order perturbation term as :
+
+\begin{align*}
+    \mathcal{T}_{fi}^{(1)} = \frac{1}{E_i - E_j} V_{fj}^{(1)} V_{ji}^{(1)} &= \frac{1}{E_i - E_j} \bra{X+a+b}V\ket{0} \bra{0}V\ket{X+c+d} \\[0.15in]
+                           &= \frac{1}{\left(E_a+E_b\right)-\left(E_a+E_b+E_X+E_c+E_d\right)} \cdot  \frac{\mathcal{M}_{\scriptstyle a\to b+X}}{\sqrt{2E_X2E_a2E_b}} \cdot \frac{\mathcal{M}_{\scriptstyle c\to d+X}}{\sqrt{2E_X2E_c2E_d}} \\[0.15in]
+                           &= -\frac{1}{E_X + E_c + E_d } \cdot \frac{g_a g_c}{2E_X} \cdot \frac{1}{\sqrt{2E_a2E_b2E_c2E_d}}
+\end{align*}\\
+where we again assume scalar LI matrix elements. Similarly the corresponding term for the second diagram could be calculated as :
+
+\begin{align*}
+    \mathcal{T}_{fi}^{(2)} = \frac{1}{E_i - E_j} V_{fj}^{(2)} V_{ji}^{(2)} &= \frac{1}{E_i - E_j} \bra{c+d}V\ket{X} \bra{X}V\ket{a+b} \\[0.15in]
+                          &= \frac{1}{\left(E_a+E_b\right)-E_X} \cdot  \frac{\mathcal{M}_{\scriptstyle c\to d+X}}{\sqrt{2E_X2E_c2E_d}} \cdot \frac{\mathcal{M}_{\scriptstyle a\to b+X}}{\sqrt{2E_X2E_a2E_b}} \\[0.15in]
+                          &= \frac{1}{E_a + E_b - E_X } \cdot \frac{g_a g_c}{2E_X} \cdot \frac{1}{\sqrt{2E_a2E_b2E_c2E_d}}
+\end{align*}\\
+The full LI matrix element then could be written as,
+
+\begin{align*}
+    \mathcal{M}_{fi} &= \sqrt{2E_a2E_b2E_c2E_d} \left\{ \mathcal{T}_{fi}^{(1)}  + \mathcal{T}_{fi}^{(2)}  \right\} \\[0.15in]
+                     &= \frac{g_a g_c}{2E_X}\left[\frac{1}{E_a + E_b - E_X }-\frac{1}{ E_c + E_d +E_X}  \right] \quad \impliedby  \quad
+                     \begin{matrix}
+                        E_a + E_b = E_c + E_d \\
+                        \text{\footnotesize (from energy conservation)}
+                     \end{matrix} \\[0.15in]
+                     &= \frac{g_a g_c}{2E_X}\left[\frac{1}{E_a + E_b - E_X }-\frac{1}{ E_a + E_b +E_X}  \right] \\[0.15in]
+                     &= \frac{g_a g_c}{2E_X} \cdot \frac{2E_X}{\left(E_a+E_b\right)^2 - E_X^2} \\[0.15in]
+                     &= \frac{g_a g_c}{\left(E_a+E_b\right)^2 - \left(\boldp_a + \boldp_b \right)^2 - m_X^2} \quad \impliedby \quad q \equiv p_a + p_b \\[0.15in] 
+                     &= \frac{g_a g_c}{q^2- m_X^2} \qed
+\end{align*}\\
+which shows that the propagator term for s-channel diagrams also show the same form with 
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -19,7 +132,48 @@ Draw the two time-ordered diagrams for the s-channel process shown in Figure 5.5
 Draw the two lowest-order Feynman diagrams for the Compton scattering process $\gamma e^- \to \gamma e^- $.
 \end{problem}
 \begin{solution}
+\begin{center}
+    \scalebox{1.25}{
+    \begin{tikzpicture}
+        \begin{feynman}
+            \vertex (g1);
+            \vertex at ($(g1) + (-2.5em,3.5em) $) (a) {\(\gamma\)};
+            \vertex at ($(g1) + (-2.5em,-3.5em) $) (b) {\(e^-\)};
 
+            \vertex at ($(g1) + (4em,0)$) (g2) ;
+            \vertex at ($(g2) + (2.5em,3.5em) $) (c) {\(\gamma\)};
+            \vertex at ($(g2) + (2.5em,-3.5em) $) (d) {\(e^-\)};
+            \diagram* {
+                {[edges=boson]
+                  (a) -- (g1) ,  (g2) -- (c)
+                },
+                {[edges=fermion]
+                  (b) -- (g1) -- (g2) -- (d)
+                }
+            };
+        \end{feynman}
+    \end{tikzpicture} \hspace*{1cm}
+    \begin{tikzpicture}
+        \begin{feynman}
+            \vertex (a2) ;
+            \vertex at ($(a2) + (-3.5em,1.5em) $) (a1) {${e^-}$};
+            \vertex at ($(a2) + (3.5em,1.5em) $) (a3) {$\gamma$};
+    
+            \vertex[below=4.5em of a2] (b2);        
+            \vertex at ($(b2) + (-3.5em,-1.5em) $) (b1) {$\gamma$};
+            \vertex at ($(b2) + (3.5em,-1.5em) $) (b3) {$e^-$};
+    
+            \diagram* {
+                {[edges=fermion]
+                  (a1) -- (a2) -- (b2) -- (b3) ,
+                },
+                  (b1) -- [boson] (b2) , (a2) -- [boson] (a3)
+            };
+            
+        \end{feynman}
+    \end{tikzpicture}
+    }
+\end{center}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -30,7 +184,65 @@ Draw the two lowest-order Feynman diagrams for the Compton scattering process $\
  Draw the lowest-order t-channel and u-channel Feynman diagrams for $e^+e^-\to\gamma\gamma$ and use the Feynman rules for QED to write down the corresponding matrix elements.
 \end{problem}
 \begin{solution}
+\begin{enumerate}[label=(\alph*)]
+    \item t-channel
+    
+    \begin{equation}
+        \begin{gathered}
+        \scalebox{1.25}{\begin{tikzpicture}
+            \begin{feynman}
+                \vertex (a2) ;
+                \vertex [above = 0.25em of a2] (a2l) {\(\scriptstyle \mu\)};
+                \vertex at ($(a2) + (-4em,1.5em) $) (a1) {$e^-$};
+                \vertex at ($(a2) + (4em,1.5em) $) (a3) {$\gamma$};
+                
+                \vertex [below=4.5em of a2] (b2);   
+                \vertex [below = 0.25em of b2] (b2l) {\(\scriptstyle \nu\)};     
+                \vertex at ($(b2) + (-4em,-1.5em) $) (b1) {$e^+$};
+                \vertex at ($(b2) + (4em,-1.5em) $) (b3) {$\gamma$};
+                
+                \diagram* {
+                    {[edges=fermion]
+                      (a1) -- [edge label'=\(p_1\), near end] (a2) -- [edge label=\(\scriptstyle q\equiv p_3-p_1\)]  (b2) -- [edge label'=\(p_2\),near start]  (b1) ,
+                    },
+                      (b3) -- [boson, edge label'=\(p_4\), near end] (b2) , (a2) -- [boson,edge label'=\(p_3\), near start] (a3)
+                };
+            
+            \end{feynman}
+        \end{tikzpicture}
+        }
+        \end{gathered} = e^2 \epsilon^\ast_\mu(p_3)\gamma^\mu u(p_1) \left[  \frac{i\left(\slashed{q}+m\right)}{q^2-m^2}\right] \epsilon^\ast_\nu(p_4)\gamma^\nu \overbar{v}(p_2) \nonumber
+    \end{equation}
 
+    \item u-channel
+    
+    \begin{equation}
+        \begin{gathered}
+        \scalebox{1.25}{\begin{tikzpicture}
+            \begin{feynman}
+                \vertex (a2) ;
+                \vertex [above = 0.25em of a2] (a2l) {\(\scriptstyle \mu\)};
+                \vertex at ($(a2) + (-4em,1.5em) $) (a1) {$e^-$};
+                \vertex at ($(a2) + (4em,1.5em) $) (a3) {$\gamma$};
+                
+                \vertex [below=4.5em of a2] (b2);   
+                \vertex [below = 0.25em of b2] (b2l) {\(\scriptstyle \nu\)};     
+                \vertex at ($(b2) + (-4em,-1.5em) $) (b1) {$e^+$};
+                \vertex at ($(b2) + (4em,-1.5em) $) (b3) {$\gamma$};
+                
+                \diagram* {
+                    {[edges=fermion]
+                      (a1) -- [edge label'=\(p_1\), near end] (a2) -- [edge label'=\(\scriptstyle q \equiv p_4-p_1\)]  (b2) -- [edge label'=\(p_2\),near start]  (b1) ,
+                    },
+                      (b3) -- [boson, edge label'=\(p_4\), near start] (a2) , (b2) -- [boson,edge label'=\(p_3\), near end] (a3)
+                };
+            
+            \end{feynman}
+        \end{tikzpicture}
+        }
+        \end{gathered} = e^2 \epsilon^\ast_\mu(p_4)\gamma^\mu u(p_1) \left[  \frac{i\left(\slashed{q}+m\right)}{q^2-m^2}\right] \epsilon^\ast_\nu(p_3)\gamma^\nu \overbar{v}(p_2) \nonumber
+    \end{equation}
+\end{enumerate}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
