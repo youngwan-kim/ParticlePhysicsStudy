@@ -3,7 +3,11 @@
 \section{Electron-Positron Annihilation}
     
 \begin{problem}{6.1}
+Using the properties of the $\gamma$-matrices of (4.33) and (4.34), and the definition of $\gamma^5\equiv\gamma^0\gamma^1\gamma^2\gamma^3$, show that
 
+\begin{align*}
+    \left(\gamma^5\right)^2 = 1 \quad \text{,} \quad \gamma^{5\dagger} = \gamma^5 \quad \text{and} \quad \gamma^5\gamma^\mu = - \gamma^\mu\gamma^5 \\
+\end{align*}
 \end{problem}
 \begin{solution}
 
@@ -14,7 +18,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{6.2}
+    Show that the chiral projection operators 
 
+    \begin{align*}
+        P_R = \frac{1}{2}\left(1+\gamma^5\right) \quad \text{and} \quad P_L = \frac{1}{2}\left(1-\gamma^5\right)
+    \end{align*}\\
+    satisfy 
+
+    \begin{align*}
+        P_R + P_L = 1 \comma P_R P_R = P_R \comma P_L P_L = P_L \andtxt P_LP_R = 0 \\
+    \end{align*}
 \end{problem}
 \begin{solution}
 
@@ -25,7 +38,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{6.3}
+    Show that
 
+    \begin{align*}
+        \Lambda^+ = \frac{m+\slashed{p}}{2m} \andtxt \Lambda^- = \frac{m-\slashed{p}}{2m}
+    \end{align*}\\
+    are also projection operators, and show that they respectively project out particle and antiparticle states, i.e.
+
+    \begin{align*}
+        \Lambda^+ u = u \comma \Lambda^- v = v \andtxt \Lambda^+ v = \Lambda^- u = 0 \\
+    \end{align*}
 \end{problem}
 \begin{solution}
 
@@ -36,7 +58,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{6.4}
+    Show that the helicity operator can be expressed as
 
+    \begin{align*}
+        \hat{h} = - \frac{1}{2} \frac{\gamma^0\gamma^5\boldsymbol{\gamma}\cdot\boldp}{p}\\
+    \end{align*}
 \end{problem}
 \begin{solution}
 
@@ -47,7 +73,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{6.5}
-
+    In general terms, explain why high-energy electron-positron colliders must also have high instantaneous luminosities.
 \end{problem}
 \begin{solution}
 
@@ -58,7 +84,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{6.6}
+    For a spin-1 system, the eigenstate of the operator $\hat{S}_n = \mathbf{n}\cdot\hat{\mathbf{S}}$ with eigenvalue +1 
+    corresponds to the spin being in the direction $\hat{\mathbf{n}}$. Writing this state in terms of the eigenstates of $\hat{S}_z$, i.e.
 
+    \begin{align*}
+        \ket{1,+1}_\theta = \alpha \ket{1,-1} + \beta \ket{1,0} + \gamma \ket{1,+1}
+    \end{align*}\\
+    and taking $\mathbf{n} = \left(\sin\theta,0,\cos\theta\right)$ show that
+
+    \begin{align*}
+        \ket{1,+1}_\theta = \frac{1}{2}\left(1-\cos\theta\right)\ket{1,-1} + \frac{1}{\sqrt{2}} \sin\theta \ket{1,0} + \frac{1}{2}\left(1+\cos\theta\right) \ket{1,+1}
+    \end{align*}\\
+
+    \noindent {\footnotesize Hint: Write $\hat{S}_x$ in terms of the ladder operators.}
 \end{problem}
 \begin{solution}
 
@@ -69,7 +107,57 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{6.7}
+    Using helicity amplitudes, calculate the differential cross section for $e^-\mu^- \to e^-\mu^-$ scattering in the following
+    steps :
 
+    \begin{enumerate}[label=(\alph*)]
+        \item From the Feynman rules for QED, show that the lowest-order QED matrix element for $e^-\mu^- \to e^-\mu^-$ is 
+        
+        \begin{align*}
+            \mathcal{M}_{fi} = -\frac{e^2}{\left(p_1-p_3\right)^2} g_{\mu\nu} \left[\overbar{u}(p_3)\gamma^\mu u(p_1)\right]\left[\overbar{u}(p_4)\gamma^\nu u(p_2)\right]
+        \end{align*}\\
+        where $p_1$ and $p_3$ are the four-momenta of the initial and final state $e^-$, and $p_2$ and $p_4$ are the four-momenta of the initial and final state $\mu^-$.
+
+        \item Working in the centre-of-mass frame, and writing the four-momenta of the initial- and final-state $e^-$ as $p_1^\mu = (E_1,0,0,p)$ 
+        and $p_3^\mu = (E_1,p\sin\theta,0,p\cos\theta)$ respectively, show that the electron currents for the four possible helicity combinations are
+
+        \begin{align*}
+            \overbar{u}_\downarrow(p_3)\gamma^\mu u_\downarrow(p_1) &= 2 (E_1 c , ps,-ips, pc) \\
+            \overbar{u}_\uparrow(p_3)\gamma^\mu u_\downarrow(p_1)   &= 2 (ms,0,0,0) \\
+            \overbar{u}_\uparrow(p_3)\gamma^\mu u_\uparrow(p_1) &= 2 (E_1 c, ps ,ips,pc) \\
+            \overbar{u}_\downarrow(p_3)\gamma^\mu u_\uparrow(p_1) &= -2 (ms,0,0,0)
+        \end{align*}\\
+        where $m$ is the electron mass, $s=\sin(\theta/2)$ and $c=\cos(\theta/2)$.
+
+        \item Explain why the effect of the parity operator $\hat{\mathsf{P}}=\gamma^0$ is 
+        
+        \begin{align*}
+            \hat{\mathsf{P}} u_\uparrow (p,\theta,\phi) = \hat{\mathsf{P}} u_\downarrow (p,\pi-\theta,\pi+\theta)
+        \end{align*}\\
+        Hence, or otherwise, show that the muon currents for the four helicity combinations are
+
+        \begin{align*}
+            \overbar{u}_\downarrow(p_4)\gamma^\mu u_\downarrow(p_2) &= 2 (E_2 c , -ps,-ips, -pc) \\
+            \overbar{u}_\uparrow(p_4)\gamma^\mu u_\downarrow(p_2)   &= 2 (Ms,0,0,0) \\
+            \overbar{u}_\uparrow(p_4)\gamma^\mu u_\uparrow(p_2) &= 2 (E_2 c, -ps ,ips,-pc) \\
+            \overbar{u}_\downarrow(p_4)\gamma^\mu u_\uparrow(p_2) &= -2 (Ms,0,0,0)
+        \end{align*}\\
+        where $M$ is the muon mass.
+
+        \item For the relativistic limit where $E\gg M$, , show that the matrix element squared for the case where the incoming $e^-$ and incoming $\mu^-$ are both left-handed is given by
+        
+        \begin{align*}
+            |\mathcal{M}_{LL}|^2 = \frac{4e^2s^2}{(p_1-p_3)^4}.
+        \end{align*}\\
+        where $s=(p_1+p_2)^2$. Find the corresponding expressions for $|\mathcal{M}_{RL}|^2,|\mathcal{M}_{RR}|^2$ and $|\mathcal{M}_{LR}|^2$.
+
+        \item In this relativistic limit, show that the differential cross section for unpolarised $e^-\mu^- \to e^-\mu^-$ scattering in the centre-of-mass frame is
+        
+        \begin{align*}
+            \frac{\dif\sigma}{\dif\Omega} = \frac{2\alpha^2}{s} \cdot \frac{1+\frac{1}{4}(1+\cos\theta)^2}{(1-\cos\theta)^2}.\\
+        \end{align*}
+        
+    \end{enumerate}
 \end{problem}
 \begin{solution}
 
@@ -80,7 +168,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{6.8}
+    Using $\gamma^\mu\gamma^\nu + \gamma^\nu\gamma^\mu = 2g^{\mu\nu}$, prove that 
 
+    \begin{align*}
+        \gamma^\mu\gamma_\mu =4 \comma \gamma^\mu \slashed{a}  \gamma_\mu = - 2 \slashed{a} \andtxt \gamma^\mu \slashed{a} \slashed{b} \gamma_\mu = 4 a\cdot b \\
+    \end{align*}
 \end{problem}
 \begin{solution}
 
@@ -91,7 +183,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{6.9}
-
+Prove the relation $ \left(\overbar{\psi}\gamma^\mu\gamma^5\phi\right)^\dagger=\overbar{\phi}\gamma^\mu\gamma^5\psi$.
 \end{problem}
 \begin{solution}
 
@@ -102,7 +194,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{6.10}
-
+Use the trace formalism to calculate the QED spin-averaged matrix element squared for $e^+e^-\to ff$ including the electron mass term.
 \end{problem}
 \begin{solution}
 
@@ -113,6 +205,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{6.11}
+Neglecting the electron mass term, verify that the matrix element for $e^- f \to e^- f$ given in (6.67) can be obtained from the matrix element for $e^+e^-\to ff$ given in (6.63) using crossing symmetry with the substitutions
+
+\begin{align*}
+    p_1 \to p_1 \comma p_2 \to -p_3 \comma p_3 \to p_4 \andtxt p_4 \to -p_2 \\
+\end{align*}
 
 \end{problem}
 \begin{solution}
@@ -124,7 +221,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{6.12}
-
+Write down the matrix elements, $\mathcal{M}_1$ and $\mathcal{M}_2$, for the two Feynman diagrams for the Compton scattering process $e^-\gamma\to e^-\gamma$. From first principles, express the spin-averaged matrix element $\expval{|\mathcal{M}_1+\mathcal{M}_2|^2}$ as a trace. You will need the completeness relation for the photon polarisation states (see Appendix D).
 \end{problem}
 \begin{solution}
 
