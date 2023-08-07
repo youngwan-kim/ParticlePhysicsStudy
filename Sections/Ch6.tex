@@ -6,11 +6,31 @@
 Using the properties of the $\gamma$-matrices of (4.33) and (4.34), and the definition of $\gamma^5\equiv\gamma^0\gamma^1\gamma^2\gamma^3$, show that
 
 \begin{align*}
-    \left(\gamma^5\right)^2 = 1 \quad \text{,} \quad \gamma^{5\dagger} = \gamma^5 \quad \text{and} \quad \gamma^5\gamma^\mu = - \gamma^\mu\gamma^5 \\
+    \left(\gamma^5\right)^2 = 1 \quad \text{,} \quad \gamma^{5\dagger} = i\gamma^5 \quad \text{and} \quad \gamma^5\gamma^\mu = - \gamma^\mu\gamma^5 \\
 \end{align*}
 \end{problem}
 \begin{solution}
-
+    \begin{enumerate}[label=(\alph*)]
+        \item $\left(\gamma^5\right)^2 = 1 $
+            \begin{align*}
+                \left(\gamma^5\right)^2 &= -\gamma^0\gamma^1\gamma^2\gamma^3 \gamma^0\gamma^1\gamma^2\gamma^3 \\[0.12in]
+                                        &= \left(-1\right)^4 \gamma^0\gamma^0 \gamma^1\gamma^2\gamma^3 \gamma^1\gamma^2\gamma^3 \\[0.12in]
+                                        &= \left(-1\right)^6  \gamma^1  \gamma^1 \gamma^2\gamma^3\gamma^2\gamma^3 \\[0.12in]
+                                        &= \left(-1\right)^8  \gamma^2\gamma^2 \gamma^3\gamma^3 = 1 \qed
+            \end{align*}
+        \item $\gamma^{5\dagger} = \gamma^5$
+            \begin{align*}
+                \gamma^{5\dagger} = \left(i\gamma^0\gamma^1\gamma^2\gamma^3\right)^\dagger &= -i\gamma^{3\dagger}\gamma^{2\dagger}\gamma^{1\dagger}\gamma^{0\dagger} \\[0.12in]
+                &= -i \left(-1\right)^3 \gamma^3 \gamma^2 \gamma^1 \gamma^0 \\[0.12in]
+                &= -i \left(-1\right)^3 \left(-1\right)^6 \gamma^0\gamma^1\gamma^2\gamma^3 = \gamma^5 \qed
+            \end{align*}
+        \item $\gamma^5\gamma^\mu = - \gamma^\mu\gamma^5$
+            \begin{align*}
+                \gamma^5\gamma^\mu &=  i\gamma^0\gamma^1\gamma^2\gamma^3 \gamma^\mu \\[0.12in]
+                                   &= \left(-1\right)^3 \gamma^\mu i\gamma^0\gamma^1\gamma^2\gamma^3 = -\gamma^\mu \gamma^5 \qed \\
+            \end{align*}
+            Here the fact that $\mu$ will be one of $0,1,2,3$ is used to obtain the $\left(-1\right)^3$ factor, as one of the indices will be identical, thus not giving an additional $-1$ factor when switching the position of $\gamma^\mu$.
+    \end{enumerate}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -30,7 +50,24 @@ Using the properties of the $\gamma$-matrices of (4.33) and (4.34), and the defi
     \end{align*}
 \end{problem}
 \begin{solution}
-
+    \begin{enumerate}[label=(\alph*)]
+        \item $ P_R + P_L = 1$ : Trivial 
+        \item $ P_R P_R = P_R$ 
+        
+            \begin{align*}
+                P_R P_R  = \frac{1}{4} \left(1+\gamma^5\right) \left(1+\gamma^5\right) &= \frac{1}{4} \left(1+2\gamma^5+\gamma^5\gamma^5\right) = \frac{1}{4} \left(2+2\gamma^5\right) = P_R \qed \\
+            \end{align*}
+        \item $ P_L P_L = P_L$ 
+        
+            \begin{align*}
+                P_L P_L  = \frac{1}{4} \left(1-\gamma^5\right) \left(1-\gamma^5\right) &= \frac{1}{4} \left(1-2\gamma^5+\gamma^5\gamma^5\right) = \frac{1}{4} \left(2-2\gamma^5\right) = P_L \qed\\
+            \end{align*}
+        \item $ P_L P_R = 0$
+        
+            \begin{align*}
+                P_L P_R  = \frac{1}{4} \left(1-\gamma^5\right) \left(1+\gamma^5\right) = \frac{1}{4} \left( 1- \gamma^5\gamma^5\right) = 0 \qed \\
+            \end{align*}
+    \end{enumerate}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -50,7 +87,46 @@ Using the properties of the $\gamma$-matrices of (4.33) and (4.34), and the defi
     \end{align*}
 \end{problem}
 \begin{solution}
+    \begin{enumerate}[label=(\alph*)]
+        \item Show that $\Lambda^\pm$ are projection operators.
+        
+        \begin{itemize}
+            \item $ \Lambda^+ + \Lambda^- = 1$ : Trivial
+            
+            \item $\Lambda^+\Lambda^+ = \Lambda^+$
+            
+                \begin{align*}
+                    \Lambda^+ \Lambda^+ = \frac{1}{4m^2} \left(m+\pslash\right)\left(m+\pslash\right) &= \frac{1}{4m^2} \left( m^2 + 2m\pslash + \pslash\pslash \right)  \\[0.12in]
+                    &= \frac{1}{4m^2} \left( 2m^2 + 2m\pslash \right) = \Lambda^+
+                \end{align*}
+                where the following identity is used : 
 
+                \begin{align*}
+                    \pslash \pslash = \gamma^\mu p_\mu \gamma^\nu p_\nu = \frac{1}{2} \left\{\gamma^\mu,\gamma^\nu \right\} p_\mu p_\nu = p \cdot p = m^2 
+                \end{align*}\\
+            
+            \item  $\Lambda^-\Lambda^- = \Lambda^-$
+            
+                \begin{align*}
+                    \Lambda^- \Lambda^- = \frac{1}{4m^2} \left(m-\pslash\right)\left(m-\pslash\right) &= \frac{1}{4m^2} \left( m^2 - 2m\pslash + \pslash\pslash \right)  \\[0.12in]
+                    &= \frac{1}{4m^2} \left( 2m^2 - 2m\pslash \right) = \Lambda^-
+                \end{align*}
+
+            \item  $\Lambda^+\Lambda^- = 0$
+            
+                \begin{align*}
+                    \Lambda^+ \Lambda^- = \frac{1}{4m^2} \left(m+\pslash\right)\left(m-\pslash\right) &= \frac{1}{4m^2} \left( m^2 -  \pslash\pslash \right) = 0 \\
+                \end{align*}
+        \end{itemize}
+        \item Using the Dirac equations, $\left(\pslash-m\right)u=0$ and $\left(\pslash+m\right)v=0$ one could easily show the projections : 
+
+        \begin{align*}
+            \Lambda^+ u &= \frac{1}{2m} \left(m+\pslash\right) u = \frac{1}{2m} \left(mu+\pslash u\right) = \frac{2mu}{2m} = u \\[0.12in]
+            \Lambda^+ v &= \frac{1}{2m} \left(m+\pslash\right) v =0  \\[0.12in]
+            \Lambda^- v &= \frac{1}{2m} \left(m-\pslash\right) v = \frac{1}{2m} \left(mv-\pslash v\right) = \frac{2mv}{2m} = v \\[0.12in]
+            \Lambda^- u &= \frac{1}{2m} \left(m-\pslash\right) u =0 \qed
+        \end{align*}
+    \end{enumerate}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -65,7 +141,28 @@ Using the properties of the $\gamma$-matrices of (4.33) and (4.34), and the defi
     \end{align*}
 \end{problem}
 \begin{solution}
+Using the following form of the helicity operator, 
 
+\begin{align*}
+    \hat{h} = \frac{1}{2p} \hat{\Sigma} \cdot \hatp = \frac{1}{2p} \left(1\otimes \boldsymbol{\sigma}\cdot\boldp\right)\\
+\end{align*}
+Using the properties of Kronecker prodcuts, one could decompose $1\otimes \boldsymbol{\sigma}\cdot\boldp$ as 
+
+\begin{align} \label{P6.4.1}
+    1\otimes \boldsymbol{\sigma}\cdot\boldp = \left(i\sigma^2 \otimes 1 \right)  \left(i\sigma^2 \otimes  \boldsymbol{\sigma}\cdot\boldp  \right)  \\ \nonumber
+\end{align}
+The two terms in the right-hand side of (\ref{P6.4.1}) can be again written as, 
+
+\begin{align}
+     i\sigma^2 \otimes 1 &= -\sigma^1\sigma^3 \otimes 1 \nonumber \\  \label{P6.4.2}
+                         &= -\left(\sigma^1\otimes 1\right)  \left(\sigma^3\otimes 1\right) = -\gamma^0 \gamma^5  \\[0.12in]  \label{P6.4.3}
+    i\sigma^2 \otimes  \boldsymbol{\sigma}\cdot\boldp &=  \left(i\sigma^2 \otimes \sigma^j\right)p_j = \boldsymbol{\gamma} \cdot \boldp \\ \nonumber
+\end{align}
+where the expression of gamma matrices, $\gamma^0 = \sigma^3 \otimes 1$, $\gamma^j=i\sigma^2\otimes\sigma^j$ and $\gamma^5=\gamma^1\otimes 1$ is used. Plugging in (\ref{P6.4.2}) and (\ref{P6.4.3}) into the original expression of the helicity operator,
+
+\begin{align*}
+    \hat{h} =  \frac{1}{2p} \left(1\otimes \boldsymbol{\sigma}\cdot\boldp\right) = -\frac{1}{2p} \gamma^0 \gamma^5 \boldsymbol{\gamma} \cdot \boldp  \qed \\
+\end{align*}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
