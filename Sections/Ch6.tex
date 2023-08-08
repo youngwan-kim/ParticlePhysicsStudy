@@ -173,7 +173,7 @@ where the expression of gamma matrices, $\gamma^0 = \sigma^3 \otimes 1$, $\gamma
     In general terms, explain why high-energy electron-positron colliders must also have high instantaneous luminosities.
 \end{problem}
 \begin{solution}
-
+As seen in the text, the cross section $\sigma$ for electron-positron annihilation decreases as the center-of-mass energy $\sqrt{s}$ increases, from the relation $\sigma \sim s^{-1}$. Thus, such colliders must have high instantaneous luminosities in order to compensate the decreasing effect on the cross section stemming from the high collision energy.
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -196,7 +196,31 @@ where the expression of gamma matrices, $\gamma^0 = \sigma^3 \otimes 1$, $\gamma
     \noindent {\footnotesize Hint: Write $\hat{S}_x$ in terms of the ladder operators.}
 \end{problem}
 \begin{solution}
+Using the given $\mathbf{n}$, the operator $\hat{S}_n$ can be written as $\sin\theta \hat{S}_x + \cos \theta \hat{S}_z$. 
 
+\begin{align*}
+    \hat{S}_n = \sin\theta \hat{S}_x + \cos \theta \hat{S}_z = \frac{1}{2}\sin\theta \left(\hat{S}_+ + \hat{S}_-\right) + \cos \theta \hat{S}_z \\
+\end{align*}
+where $\hat{S}_\pm$ are the ladder operators which follows $\hat{S}_\pm \ket{1,m} = \sqrt{2-m(m\pm 1)}\ket{1,m\pm 1}$. Then using the above expression of $\hat{S}_n$, one could write down 
+
+\begin{align*}
+    \hat{S}_n  \ket{1,+1}_\theta &= \frac{1}{2}\sin\theta \left(\hat{S}_+ + \hat{S}_-\right)  \ket{1,+1}_\theta  + \cos \theta \hat{S}_z  \ket{1,+1}_\theta \\[0.12in]
+    &= \left(\frac{1}{\sqrt{2}}\sin\theta\beta -\alpha\cos\theta \right) \ket{1,-1} + \frac{1}{\sqrt{2}} \left(\alpha+\gamma\right)\ket{1,0} + \left( \frac{1}{\sqrt{2}}\sin\theta\beta + \gamma\cos\theta \right) \ket{1,+1} \\
+\end{align*}
+and from the definition of $\hat{S}_n$, it should satisfy $\hat{S}_n \ket{1,+1}_\theta=\ket{1,+1}_\theta$ which gives a set of linear equations of $\alpha,\beta$ and $\gamma$ : 
+
+\begin{align*}
+    \alpha &= \frac{1}{\sqrt{2}}\sin\theta\beta -\alpha\cos\theta  \\[0.1in]
+    \beta  &=  \frac{1}{\sqrt{2}} \left(\alpha+\gamma\right)\\[0.1in]
+    \gamma &=  \frac{1}{\sqrt{2}}\sin\theta\beta + \gamma\cos\theta \\
+\end{align*}
+which gives the following solution : 
+
+\begin{align*}
+    \alpha &=  \frac{1}{2}\left(1-\cos\theta\right)  \\[0.1in]
+    \beta  &=  \frac{1}{\sqrt{2}} \sin\theta \\[0.1in]
+    \gamma &=  \frac{1}{2}\left(1+\cos\theta\right)  \qed \\
+\end{align*}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -257,7 +281,47 @@ where the expression of gamma matrices, $\gamma^0 = \sigma^3 \otimes 1$, $\gamma
     \end{enumerate}
 \end{problem}
 \begin{solution}
+    \begin{enumerate}[label=(\alph*)]
+        \item Obtain lowest-order QED matrix element.
+            \begin{equation}
+                \begin{aligned}
+                    \begin{gathered}
+                    \scalebox{1.25}{\begin{tikzpicture}
+                        \begin{feynman}
+                            \vertex (a2) ;
+                            \vertex [above = 0.25em of a2] (a2l) {\(\scriptstyle \mu\)};
+                            \vertex at ($(a2) + (-4em,1.5em) $) (a1) {$e^-$};
+                            \vertex at ($(a2) + (4em,1.5em) $) (a3) {$e^-$};
 
+                            \vertex [below=4.5em of a2] (b2);   
+                            \vertex [below = 0.25em of b2] (b2l) {\(\scriptstyle \nu\)};     
+                            \vertex at ($(b2) + (-4em,-1.5em) $) (b1) {$\mu^-$};
+                            \vertex at ($(b2) + (4em,-1.5em) $) (b3) {$\mu^-$};
+
+                            \diagram* {
+                                {[edges=fermion]
+                                  (a1) -- [edge label'=\(p_1\), near end] (a2) -- [edge label'=\(p_2\), near start] (a3),
+                                  (b1) -- [edge label'=\(p_3\),near start] (b2) -- [edge label'=\(p_4\),near end] (b3) ,
+                                }, % [edge label=\(\scriptstyle q\equiv p_3-p_1\)]
+                                  (a2) -- [boson,edge label=\(\scriptstyle q\equiv p_3-p_1\)] (b2)
+                            };
+                        
+                        \end{feynman}
+                    \end{tikzpicture}
+                    }
+                    \end{gathered} &= \overbar{u}(p_3) ie\gamma^\mu u(p_1) \frac{-ig^{\mu\nu}}{(p_3-p_1)^2}\overbar{u}(p_4)ie\gamma^\nu u(p_2) \nonumber \\
+                    &= -\frac{e^2}{\left(p_1-p_3\right)^2} g_{\mu\nu} \left[\overbar{u}(p_3)\gamma^\mu u(p_1)\right]\left[\overbar{u}(p_4)\gamma^\nu u(p_2)\right] \qed \\ 
+                \end{aligned}
+            \end{equation}
+            
+        \item 
+
+        \item 
+
+        \item 
+
+        \item 
+    \end{enumerate}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -283,7 +347,14 @@ where the expression of gamma matrices, $\gamma^0 = \sigma^3 \otimes 1$, $\gamma
 Prove the relation $ \left(\overbar{\psi}\gamma^\mu\gamma^5\phi\right)^\dagger=\overbar{\phi}\gamma^\mu\gamma^5\psi$.
 \end{problem}
 \begin{solution}
+One could show that :
 
+\begin{align*}
+    \left(\overbar{\psi}\gamma^\mu\gamma^5\phi\right)^\dagger = \left( \psi^\dagger \gamma^0 \gamma^\mu \gamma^5 \phi \right)^\dagger &= -  \left( \psi^\dagger \gamma^0  \gamma^5 \gamma^\mu \phi \right)^\dagger \\[0.12in]
+    &= - \phi^\dagger \gamma^{\mu\dagger} \gamma^{5\dagger} \gamma^{0\dagger}  \psi \\[0.12in]
+    &=  - \phi^\dagger \left(\gamma^0 \gamma^{\mu} \gamma^0\right) \gamma^5 \gamma^0  \psi \\[0.12in]
+    &=  - \phi^\dagger \gamma^0    \gamma^\mu \gamma^0  \gamma^5 \gamma^0    \psi  = \phi^\dagger \gamma^0    \gamma^\mu \gamma^0  \gamma^0  \gamma^5   \psi =\overbar{\phi}\gamma^\mu\gamma^5\psi \qed 
+\end{align*}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
