@@ -149,7 +149,7 @@ Using the following form of the helicity operator,
 Using the properties of Kronecker prodcuts, one could decompose $1\otimes \boldsymbol{\sigma}\cdot\boldp$ as 
 
 \begin{align} \label{P6.4.1}
-    1\otimes \boldsymbol{\sigma}\cdot\boldp = \left(i\sigma^2 \otimes 1 \right)  \left(i\sigma^2 \otimes  \boldsymbol{\sigma}\cdot\boldp  \right)  \\ \nonumber
+    1\otimes \boldsymbol{\sigma}\cdot\boldp = - \left(i\sigma^2 \otimes 1 \right)  \left(i\sigma^2 \otimes  \boldsymbol{\sigma}\cdot\boldp  \right)  \\ \nonumber
 \end{align}
 The two terms in the right-hand side of (\ref{P6.4.1}) can be again written as, 
 
@@ -158,10 +158,10 @@ The two terms in the right-hand side of (\ref{P6.4.1}) can be again written as,
                          &= -\left(\sigma^1\otimes 1\right)  \left(\sigma^3\otimes 1\right) = -\gamma^0 \gamma^5  \\[0.12in]  \label{P6.4.3}
     i\sigma^2 \otimes  \boldsymbol{\sigma}\cdot\boldp &=  \left(i\sigma^2 \otimes \sigma^j\right)p_j = \boldsymbol{\gamma} \cdot \boldp \\ \nonumber
 \end{align}
-where the expression of gamma matrices, $\gamma^0 = \sigma^3 \otimes 1$, $\gamma^j=i\sigma^2\otimes\sigma^j$ and $\gamma^5=\gamma^1\otimes 1$ is used. Plugging in (\ref{P6.4.2}) and (\ref{P6.4.3}) into the original expression of the helicity operator,
+where the expression of gamma matrices, $\gamma^0 = \sigma^3 \otimes 1$, $\gamma^j=i\sigma^2\otimes\sigma^j$ and $\gamma^5=\sigma^1\otimes 1$ is used. Plugging in (\ref{P6.4.2}) and (\ref{P6.4.3}) into the original expression of the helicity operator,
 
 \begin{align*}
-    \hat{h} =  \frac{1}{2p} \left(1\otimes \boldsymbol{\sigma}\cdot\boldp\right) = -\frac{1}{2p} \gamma^0 \gamma^5 \boldsymbol{\gamma} \cdot \boldp  \qed \\
+    \hat{h} =  \frac{1}{2p} \left(1\otimes \boldsymbol{\sigma}\cdot\boldp\right) = -\frac{1}{2p} \gamma^5 \gamma^0 \boldsymbol{\gamma} \cdot \boldp  =  \frac{1}{2p} \gamma^0 \gamma^5 \boldsymbol{\gamma} \cdot \boldp  \qed \\
 \end{align*}
 \end{solution}
 
@@ -300,8 +300,8 @@ which gives the following solution :
 
                             \diagram* {
                                 {[edges=fermion]
-                                  (a1) -- [edge label'=\(p_1\), near end] (a2) -- [edge label'=\(p_2\), near start] (a3),
-                                  (b1) -- [edge label'=\(p_3\),near start] (b2) -- [edge label'=\(p_4\),near end] (b3) ,
+                                  (a1) -- [edge label'=\(p_1\), near end] (a2) -- [edge label'=\(p_3\), near start] (a3),
+                                  (b1) -- [edge label'=\(p_2\),near start] (b2) -- [edge label'=\(p_4\),near end] (b3) ,
                                 }, % [edge label=\(\scriptstyle q\equiv p_3-p_1\)]
                                   (a2) -- [boson,edge label=\(\scriptstyle q\equiv p_3-p_1\)] (b2)
                             };
@@ -309,18 +309,76 @@ which gives the following solution :
                         \end{feynman}
                     \end{tikzpicture}
                     }
-                    \end{gathered} &= \overbar{u}(p_3) ie\gamma^\mu u(p_1) \frac{-ig^{\mu\nu}}{(p_3-p_1)^2}\overbar{u}(p_4)ie\gamma^\nu u(p_2) \nonumber \\
-                    &= -\frac{e^2}{\left(p_1-p_3\right)^2} g_{\mu\nu} \left[\overbar{u}(p_3)\gamma^\mu u(p_1)\right]\left[\overbar{u}(p_4)\gamma^\nu u(p_2)\right] \qed \\ 
+                    \end{gathered}  = -i\mathcal{M} &= \overbar{u}(p_3) ie\gamma^\mu u(p_1) \frac{-ig^{\mu\nu}}{(p_3-p_1)^2}\overbar{u}(p_4)ie\gamma^\nu u(p_2) \nonumber \\[-0.5in]
+                    &= \frac{ie^2}{\left(p_1-p_3\right)^2} g_{\mu\nu} \left[\overbar{u}(p_3)\gamma^\mu u(p_1)\right]\left[\overbar{u}(p_4)\gamma^\nu u(p_2)\right] \qed \\[0.35in]
                 \end{aligned}
             \end{equation}
             
-        \item 
+        \item Letting the incoming and outgoing $e^-$ with $\left(\theta',\phi'\right)=(0,0)$ and $(\theta,0)$ respectively, one could write down the corresponding spinors as ,
+        
+        \begin{align*}
+            u_\uparrow (p_1) = \sqrt{E_1+m} \spinor{1.2}{1}{0}{\frac{p}{E_1+m}}{0} &\comma u_\downarrow (p_1) = \sqrt{E_1+m} \spinor{1.2}{0}{1}{0}{\frac{-p}{E_1+m}} \\[0.12in]
+            u_\uparrow (p_3) = \sqrt{E_1+m} \spinor{1.2}{c}{s}{\frac{p}{E_1+m}c}{\frac{p}{E_1+m}s} &\comma u_\downarrow (p_3) = \sqrt{E_1+m} \spinor{1.2}{-s}{c}{\frac{p}{E_1+m}s}{\frac{-p}{E_1+m}c} \\
+        \end{align*}
+        Using such expression of the spinors, one could directly calculate the possible electron currents as : 
+
+        \begin{align*}
+            \overbar{u}_\downarrow(p_3)\gamma^\mu u_\downarrow(p_1) &= 2 (E_1 c , ps,-ips, pc) \\
+            \overbar{u}_\uparrow(p_3)\gamma^\mu u_\downarrow(p_1)   &= 2 (ms,0,0,0) \\
+            \overbar{u}_\uparrow(p_3)\gamma^\mu u_\uparrow(p_1) &= 2 (E_1 c, ps ,ips,pc) \\
+            \overbar{u}_\downarrow(p_3)\gamma^\mu u_\uparrow(p_1) &= -2 (ms,0,0,0) \\
+        \end{align*}
+        (Trust me I really did all the calculations lol)
 
         \item 
 
-        \item 
+        \item Denoting the corresponding helicity configuration with momentum $p_i$ as $h_i$, $\mathcal{M}_{LL}$ can be expressed as, 
 
-        \item 
+            \begin{align}
+                \mathcal{M}_{LL} &= -\frac{e^2}{(p_1-p_3)^2} \sum_{h_3,h_4 \in \{L,R\}} j^e_{Lh_3} \cdot j^\mu_{Lh_4} \nonumber \\[0.125in]  \label{P.6.7.d1}
+                &=  -\frac{e^2}{(p_1-p_3)^2} \big[ j^e_{LL}\cdot j^\mu_{LL}+ j^e_{LL}\cdot j^\mu_{LR} + j^e_{LR}\cdot j^\mu_{LL} + j^e_{LR}\cdot j^\mu_{LR} \big] \\ \nonumber
+            \end{align}
+        Noting that under the relativistic limit of $E\gg M$, the only term that survives in (\ref{P.6.7.d1}) is $j^e_{LL}\cdot j^\mu_{LL}$ which can be calculated as,
+
+            \begin{align*}
+                j^e_{LL}\cdot j^\mu_{LL} &= 4 \left(E_1 \cos\halftheta , p \sin\halftheta,-ip\sin\halftheta , p\cos\halftheta \right) \cdot \left( E_2 \cos\halftheta , -p \sin\halftheta , -ip\sin\halftheta , -p\cos\halftheta \right) \\[0.12in]
+                &= 4\left(E_1E_2 \cos^2\halftheta +p^2\sin^2\halftheta + p^2 \sin^2\halftheta + p^2 \cos^2 \halftheta \right) \\[0.12in]
+                &= 4E_1E_2 = 2 \left(p_1+p_2\right)^2 \equiv 2s^2  \\ 
+            \end{align*}
+        Plugging this back into (\ref{P.6.7.d1}) and squaring the matrix element gives,
+
+            \begin{align*}
+                \left| \mathcal{M}_{LL} \right|^2 = \frac{e^4}{(p_1-p_3)^4} \left(j^e_{LL}\cdot j^\mu_{LL}\right)^2 =  \frac{4e^4s^4}{(p_1-p_3)^4} \qed \\
+            \end{align*}
+        For the other helicity combinations, the same could be done. 
+
+            \begin{align*}
+                \left|\mathcal{M}_{RL}\right|^2 &= \frac{e^4}{(p_1-p_3)^4}\left[ \sum_{h_3,h_4 \in \{L,R\}} j^e_{Rh_3} \cdot j^\mu_{Lh_4}\right]^2  \\[0.125in] 
+                &=  \frac{e^4}{(p_1-p_3)^4} \big[\cancelto{0}{j^e_{RL}\cdot j^\mu_{LL}}+ \cancelto{0}{j^e_{RL}\cdot j^\mu_{LR} }+ j^e_{RR}\cdot j^\mu_{LL} + \cancelto{0}{j^e_{RR}\cdot j^\mu_{LR}} \big]^2 \\[0.125in]
+                &= \frac{16e^4}{(p_1-p_3)^4} \left( E_1E_2\cos^2\halftheta + p^2 \sin^2\halftheta - p^2 \sin^2\halftheta + p^2 \cos^2\halftheta \right)^2 \\[0.125in]
+                &= \frac{4e^4s^4}{(p_1-p_3)^4}  \cos^4\halftheta 
+            \end{align*}
+
+        Again, 
+
+            \begin{align*}
+                \left|\mathcal{M}_{RR}\right|^2 &= \frac{e^4}{(p_1-p_3)^4} \left(j^e_{RR}\cdot j^\mu_{RR}\right)^2  \\[0.125in] 
+                &= \frac{16e^4}{(p_1-p_3)^4} \left( E_1E_2\cos^2\halftheta + p^2 \sin^2\halftheta + p^2 \sin^2\halftheta + p^2 \cos^2\halftheta \right)^2 =  \frac{4e^4s^4}{(p_1-p_3)^4} 
+            \end{align*}
+
+        And finally, 
+
+            \begin{align*}
+                \left|\mathcal{M}_{LR}\right|^2 &= \frac{e^4}{(p_1-p_3)^4} \left(j^e_{LL}\cdot j^\mu_{RR}\right)^2  \\[0.125in] 
+                &= \frac{16e^4}{(p_1-p_3)^4} \left( E_1E_2\cos^2\halftheta + p^2 \sin^2\halftheta - p^2 \sin^2\halftheta + p^2 \cos^2\halftheta \right)^2 = \frac{4e^4s^4}{(p_1-p_3)^4}  \cos^4\halftheta \\
+            \end{align*}
+
+        \item Averaging out all the helicity dependent amplitudes from (d), one would obtain 
+        
+            \begin{align*}
+                \expval{\left|\mathcal{M}_{fi}\right|^2} &= \frac{1}{4} \left\{ \left|\mathcal{M}_{LR}\right|^2 + \left|\mathcal{M}_{LR}\right|^2  + \left|\mathcal{M}_{LR}\right|^2  + \left|\mathcal{M}_{LR}\right|^2  \right\} \\[0.12in]
+                &= \frac{2e^4s^4}{(p_1-p_3)^4} \left( 1+ \cos^4\halftheta \right)
+            \end{align*}
     \end{enumerate}
 \end{solution}
 
@@ -336,7 +394,27 @@ which gives the following solution :
     \end{align*}
 \end{problem}
 \begin{solution}
+    \begin{enumerate}[label=(\alph*)]
+        \item $\gamma^\mu\gamma_\mu =4$
+        
+            \begin{align*}
+                \gamma^\mu\gamma_\mu = \frac{1}{2}g_{\nu\mu} \left(\gamma^\mu\gamma^\nu + \gamma^\nu\gamma^\mu\right) = g^{\mu\nu} g_{\mu\nu} = 4 \qed
+            \end{align*}
 
+        \item $ \gamma^\mu \slashed{a}  \gamma_\mu = - 2 \slashed{a}$
+        
+            \begin{align*}
+                \gamma^\mu \slashed{a}  \gamma_\mu = a_\nu \gamma^\mu \gamma^\nu  \gamma_\mu &= a_\nu \left( 2g^{\mu\nu} - \gamma^\nu\gamma^\mu \right)\gamma_\mu  \\[0.12in]
+                &= 2a^\mu\gamma_\mu - \slashed{a} \gamma^\mu\gamma_\mu = 2\slashed{a} - 4\slashed{a} = -2 \slashed{a} \qed 
+            \end{align*}
+
+        \item $\gamma^\mu \slashed{a} \slashed{b} \gamma_\mu = 4 a\cdot b$
+        
+            \begin{align*}
+                \gamma^\mu \slashed{a} \slashed{b} \gamma_\mu = a_\nu b_\rho \gamma^\mu \gamma^\nu \gamma^\rho \gamma_\mu &= \frac{1}{2} a_\nu b_\rho \gamma^\mu \left\{ \gamma^\nu ,\gamma^\rho \right\} \gamma_\mu \\[0.12in]
+                &= \frac{1}{2} a_\nu b_\rho 2 g^{\nu\rho} \gamma^\mu\gamma_\mu = 4 a\cdot b \qed 
+            \end{align*}
+    \end{enumerate}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
