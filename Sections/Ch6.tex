@@ -376,8 +376,10 @@ which gives the following solution :
         \item Averaging out all the helicity dependent amplitudes from (d), one would obtain 
         
             \begin{align*}
-                \expval{\left|\mathcal{M}_{fi}\right|^2} &= \frac{1}{4} \left\{ \left|\mathcal{M}_{LR}\right|^2 + \left|\mathcal{M}_{LR}\right|^2  + \left|\mathcal{M}_{LR}\right|^2  + \left|\mathcal{M}_{LR}\right|^2  \right\} \\[0.12in]
-                &= \frac{2e^4s^4}{(p_1-p_3)^4} \left( 1+ \cos^4\halftheta \right)
+                \expval{\left|\mathcal{M}_{fi}\right|^2} &= \frac{1}{4} \left\{ \left|\mathcal{M}_{LR}\right|^2 + \left|\mathcal{M}_{RR}\right|^2  + \left|\mathcal{M}_{RL}\right|^2  + \left|\mathcal{M}_{LL}\right|^2  \right\} \\[0.12in]
+                &= \frac{2e^4s^4}{(p_1-p_3)^4} \left( 1+ \cos^4\halftheta \right) \\[0.12in]
+                &= \frac{2e^4s^4}{(p_1-p_3)^4} \left[ 1+ \frac{1}{4}\left(1+\cos\theta\right)^2 \right] \\[0.12in]
+                &= \frac{e^4s^4}{2E_1^4 \left( 1-\cos\theta\right)^2} \left[ 1+ \frac{1}{4}\left(1+\cos\theta\right)^2 \right] \impliedby \left(p_1-p_3\right)^2 \simeq -2p_1\cdot p_3 = -2 E_1^2 \left(1-\cos\theta \right)\\[0.12in]
             \end{align*}
     \end{enumerate}
 \end{solution}
@@ -443,7 +445,33 @@ One could show that :
 Use the trace formalism to calculate the QED spin-averaged matrix element squared for $e^+e^-\to ff$ including the electron mass term.
 \end{problem}
 \begin{solution}
+The spin-averaged amplitude $\expval{\mathcal{M}_{fi}^2}$ for the $e^+e^-\to ff$ without neglecting both mass terms, can be written as 
 
+\begin{align*}
+    \expval{\mathcal{M}_{fi}^2} = \frac{1}{4} \sum_{\text{spins}} \left| \mathcal{M}_{fi}\right|^2 = \frac{Q_f^2 e^4}{4q^4} \tr\left[ (\slashed{p}_2 - m_e) \gamma^\mu (\slashed{p}_1 + m_e) \gamma^\nu \right] \times \tr\left[ (\slashed{p}_3 + m_f) \gamma_\mu (\slashed{p}_4 - m_f) \gamma_\nu \right]
+\end{align*}\\
+The first trace term can be calculated as,
+
+\begin{align*}
+    \tr\left[ (\slashed{p}_2 - m_e) \gamma^\mu (\slashed{p}_1 + m_e) \gamma^\nu \right] &= \tr \left[  \pslash_2\gamma^\mu\pslash_1\gamma^\nu + m_e\cancelto{0}{ \pslash_2 \gamma^\mu \gamma^\nu}  - m_e \cancelto{0}{\gamma^\mu \pslash_1 \gamma^\nu}    -m_e^2 \gamma^\mu \gamma^\nu \right] \\[0.12in]
+    &= \tr \left[  p_{1\sigma}p_{2\rho}\gamma^\rho \gamma^\mu \gamma^\sigma \gamma^\nu -m_e^2 \gamma^\mu \gamma^\nu \right] \\[0.12in]
+    &= p_{1\sigma}p_{2\rho} \tr \left[  \gamma^\rho \gamma^\mu \gamma^\sigma \gamma^\nu \right] -m_e^2  \tr \left[ \gamma^\mu \gamma^\nu \right] \\[0.12in]
+    &= 4 p_{1\sigma}p_{2\rho} \left( g^{\rho\mu} g^{\sigma\nu} - g^{\rho\sigma}g^{\mu\nu} + g^{\rho\nu}g^{\mu\sigma} \right) -4 m_e^2 g^{\mu\nu} \\[0.12in]
+    &= 4\left[ p_{1\nu}p_{2\mu} + p_{1\mu}p_{2\nu} -\left( p_1\cdot p_2 + m_e^2 \right) g^{\mu\nu}\right]
+\end{align*}\\
+Observing the second trace term, one could realize that switching $p_1\leftrightarrow p_3$, $p_2\leftrightarrow p_4$, $\mu \leftrightarrow \nu$ and $m_e \leftrightarrow m_f$ in the first trace term will be identical to the second one due to the fact that traces remain the same under cyclic permutations. Thus,
+
+\begin{align*}
+    \tr\left[ (\slashed{p}_3 + m_f) \gamma_\mu (\slashed{p}_4 - m_f) \gamma_\nu \right] = 4\left[ p_3^\mu p_4^\nu + p_3^\nu p_4^\mu -\left( p_3\cdot p_4 + m_f^2 \right) g_{\nu\mu}\right]
+\end{align*}\\
+Using these two trace expressions, the spin-averaged amplitude can be fully written down as 
+
+\begin{align*}
+    \expval{\mathcal{M}_{fi}^2}  &= 4Q_f^2  \frac{  e^4}{q^4}  \left[ p_{1\nu}p_{2\mu} + p_{1\mu}p_{2\nu} -\left( p_1\cdot p_2 + m_e^2 \right) g^{\mu\nu}\right] \times \left[ p_3^\mu p_4^\nu + p_3^\nu p_4^\mu -\left( p_3\cdot p_4 + m_f^2 \right) g_{\nu\mu}\right] \\[0.12in]
+    &= 8Q_f^2  \frac{e^4}{q^4} \Big[  \left(p_1\cdot p_4\right)\left(p_2\cdot p_3\right) + \left(p_1\cdot p_3\right)\left(p_2\cdot p_4\right) + m_e^2 \left( p_3\cdot p_4 \right)  + m_f^2 \left( p_1\cdot p_2 \right) + 2 m_e^2  m_f^2   \Big] \\[0.12in]
+    &=  \frac{ 2Q_f^2 e^4}{(m_e^2 + p_1 \cdot p_2)^2} \Big[  \left(p_1\cdot p_4\right)\left(p_2\cdot p_3\right) + \left(p_1\cdot p_3\right)\left(p_2\cdot p_4\right) + m_e^2 \left( p_3\cdot p_4 \right)  + m_f^2 \left( p_1\cdot p_2 \right) + 2 m_e^2  m_f^2   \Big] 
+\end{align*}\\
+Under the limit of $m_e \sim 0 $ the above coincides with equation (6.63) and going further by neglecting the fermion mass reduces to (6.25), which is as expected.
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -470,7 +498,113 @@ Neglecting the electron mass term, verify that the matrix element for $e^- f \to
 Write down the matrix elements, $\mathcal{M}_1$ and $\mathcal{M}_2$, for the two Feynman diagrams for the Compton scattering process $e^-\gamma\to e^-\gamma$. From first principles, express the spin-averaged matrix element $\expval{|\mathcal{M}_1+\mathcal{M}_2|^2}$ as a trace. You will need the completeness relation for the photon polarisation states (see Appendix D).
 \end{problem}
 \begin{solution}
+Starting from the two leading order Feynman diagrams that contribute to the Compton scattering process, using QED Feynman rules one could write down the corresponding matrix elements as, \\
 
+\begin{equation}
+    \begin{aligned}
+        \begin{gathered}
+        \scalebox{1.25}{\begin{tikzpicture}
+            \begin{feynman}
+                \vertex (a2) ;
+                \vertex [above = 0.25em of a2] (a2l) {\(\scriptstyle \mu\)};
+                \vertex at ($(a2) + (-4em,1.5em) $) (a1) {$e^-$};
+                \vertex at ($(a2) + (4em,1.5em) $) (a3) {$\gamma$};
+                
+                \vertex [below=4.5em of a2] (b2);   
+                \vertex [below = 0.25em of b2] (b2l) {\(\scriptstyle \nu\)};     
+                \vertex at ($(b2) + (-4em,-1.5em) $) (b1) {$\gamma$};
+                \vertex at ($(b2) + (4em,-1.5em) $) (b3) {$e^-$};
+                
+                \diagram* {
+                    {[edges=fermion]
+                      (a1) -- [edge label'=\(p_1\), near end] (a2) -- [edge label=\(\scriptstyle q\equiv p_3-p_1\)]  (b2) -- [edge label'=\(p_4\),near end]  (b3) ,
+                    },
+                      (b1) -- [boson, edge label'=\(p_2\), near start] (b2) , (a2) -- [boson,edge label'=\(p_3\), near start] (a3)
+                };
+            
+            \end{feynman}
+        \end{tikzpicture}
+        }
+        \end{gathered}  :  -i\mathcal{M}_1   &= e^2   \overbar{u}(p_4) \slashed{\epsilon} (p_2) \left[  \frac{i\left(\slashed{q}+m\right)}{q^2-m^2}\right]  \slashed{\epsilon}^\ast(p_3) u(p_1)  \nonumber \\[-0.5in]
+        &= i e^2 \overbar{u}(p_4) \slashed{\epsilon} (p_2)   \left[  \frac{ \pslash_3-\pslash_1+m }{(p_3-p_1)^2-m^2}\right] \slashed{\epsilon}^\ast(p_3) u(p_1)  \equiv  i e^2 \overbar{u}(p_4) \Gamma_1 u(p_1)   \\[0.55in]
+    \end{aligned}
+\end{equation}
+And for the other diagram, \\
+
+\begin{equation}
+    \begin{aligned}
+        \begin{gathered}
+        \scalebox{1.25}{\begin{tikzpicture}
+            \begin{feynman}
+                \vertex (g1);
+                \vertex [left = 0.25em of g1] (g1l) {\(\scriptstyle \mu\)};
+                \vertex at ($(g1) + (-2.5em,3.5em) $) (a) {\(\gamma\)};
+                \vertex at ($(g1) + (-2.5em,-3.5em) $) (b) {\(e^-\)};
+
+                \vertex at ($(g1) + (4em,0)$) (g2) ;
+                \vertex [right = 0.25em of g2] (g2l) {\(\scriptstyle \nu\)};
+                \vertex at ($(g2) + (2.5em,3.5em) $) (c) {\(\gamma\)};
+                \vertex at ($(g2) + (2.5em,-3.5em) $) (d) {\(e^-\)};
+                \diagram* {
+                    {[edges=boson]
+                    (a) -- [edge label=\(p_1\), near start]  (g1) ,  (g2) -- [edge label=\(p_3\), near end] (c)
+                    },
+                    {[edges=fermion]
+                    (b) -- [edge label'=\(p_2\)] (g1) -- [edge label=\(\scriptstyle q\equiv p_1+p_2\)]  (g2) -- [edge label'=\(p_4\)] (d)
+                    }
+                };
+            
+            \end{feynman}
+        \end{tikzpicture}
+        }
+        \end{gathered}  :  -i\mathcal{M}_2   &= e^2 \overbar{u}(p_4) \slashed{\epsilon}^\ast (p_3)   \left[  \frac{i\left(\slashed{q}+m\right)}{q^2-m^2}\right] \slashed{\epsilon}(p_1) u(p_2) \nonumber \\[-0.5in]
+        &= i e^2 \overbar{u}(p_4) \slashed{\epsilon}^\ast (p_3)   \left[  \frac{ \pslash_1+\pslash_2+m }{(p_1+p_2)^2-m^2}\right]  \slashed{\epsilon}(p_1) u(p_2) \equiv  i e^2 \overbar{u}(p_4) \Gamma_2 u(p_2)     \\[0.55in]
+    \end{aligned}
+\end{equation}
+In total, there will be 4 terms in the spin-averaged matrix element,
+
+\begin{align*}
+    \expval{|\mathcal{M}_1+\mathcal{M}_2|^2} = \expval{\mathcal{M}_1\mathcal{M}_1^\dagger} + \expval{\mathcal{M}_1\mathcal{M}_2^\dagger} + \expval{\mathcal{M}_2\mathcal{M}_1^\dagger} + \expval{\mathcal{M}_2\mathcal{M}_2^\dagger}
+\end{align*}\\
+which could be calculated term-by-term. 
+
+\begin{enumerate}[label=(\alph*)]
+    \item $\expval{\mathcal{M}_1\mathcal{M}_1^\dagger} $
+    
+    \begin{align}
+        \expval{\mathcal{M}_1\mathcal{M}_1^\dagger} &= \frac{e^4}{4}  \sum_{\lambda,\lambda'} \sum_{s,s'} \left[  \overbar{u}^s_a(p_4) \Gamma^1_{ab}(\lambda,\lambda')u^{s'}_b(p_1)\right] \left[  \overbar{u}^{s'}_c(p_1)\overbar{\Gamma}^1_{cd}(\lambda,\lambda')u^s_d(p_4)\right] \nonumber \\[0.12in]
+        &=  \frac{e^4}{4} \sum_{\lambda,\lambda'} \left[ \sum_{s} u^s_d(p_4) \overbar{u}^s_a(p_4) \right]  \left[ \sum_{s'}u^{s'}_b(p_1)   \overbar{u}^{s'}_c(p_1) \right] \Gamma^1_{ab}(\lambda,\lambda') \overbar{\Gamma}^1_{cd}(\lambda,\lambda') \nonumber \\[0.15in]
+        &= \frac{e^4}{4}  (\pslash_4+m)_{da}  (\pslash_1+m)_{bc}  \sum_{\lambda,\lambda'} \Gamma^1_{ab}(\lambda,\lambda') \overbar{\Gamma}^1_{cd}(\lambda,\lambda') \label{P6.12.1}
+    \end{align}\\
+    Using the following expression for $\Gamma^1$,
+
+    \begin{align*}
+        \Gamma^1_{ab}(\lambda,\lambda') \equiv \epsilon^\lambda_\mu \epsilon^{\lambda' \ast}_\nu (\gamma^\mu T \gamma^\nu)_{ab} \quad \text{where} \quad T \equiv \frac{\pslash_3-\pslash_1+m}{(p_3-p_1)^2-m^2}
+    \end{align*}\\
+    which gives the adjoint as,
+
+    \begin{align*}
+        \overbar{\Gamma}^1 &\equiv \gamma^0 \Gamma^{1\dagger} \gamma^0  = \epsilon^{\lambda\ast}_{\mu'} \epsilon^{\lambda'}_{\nu'} \gamma^0 \gamma^{\nu\dagger} T^\dagger \gamma^{\mu\dagger} \gamma^0 =  \epsilon^{\lambda\ast}_{\mu'} \epsilon^{\lambda'}_{\nu'} \gamma^{\nu'} T \gamma^{\mu'} \\[0.15in]
+        &\implies \overbar{\Gamma}^1_{cd}(\lambda,\lambda') = \epsilon^{\lambda\ast}_{\mu'} \epsilon^{\lambda'}_{\nu'} (\gamma^{\nu'} T \gamma^{\mu'})_{cd}
+    \end{align*}\\
+    Plugging in the above expressions back into equation (\ref{P6.12.1}) yields,
+
+    \begin{align*}
+        \expval{\mathcal{M}_1\mathcal{M}_1^\dagger} &= \frac{e^4}{4}  (\pslash_4+m)_{da}  (\pslash_1+m)_{bc}  \sum_{\lambda,\lambda'} \Gamma^1_{ab}(\lambda,\lambda') \overbar{\Gamma}^1_{cd}(\lambda,\lambda') \\[0.12in]
+        &= \frac{e^4}{4}  (\pslash_4+m)_{da}  (\pslash_1+m)_{bc} \left[ \sum_{\lambda}  \epsilon^{\lambda\ast}_{\mu'} \epsilon^\lambda_\mu \right] \left[ \sum_{\lambda'}  \epsilon^{\lambda' \ast}_\nu \epsilon^{\lambda'}_{\nu'} \right]  (\gamma^\mu T \gamma^\nu)_{ab} (\gamma^{\nu'} T \gamma^{\mu'})_{cd} \\[0.12in]
+        &= \frac{e^4}{4}  (\pslash_4+m)_{da}  (\pslash_1+m)_{bc} \left[ g_{\mu\mu'} g_{\nu\nu'} \right](\gamma^\mu T \gamma^\nu)_{ab} (\gamma^{\nu'} T \gamma^{\mu'})_{cd}  \\[0.12in]
+        &= \frac{e^4}{4}  (\pslash_4+m)_{da}  (\pslash_1+m)_{bc} (\gamma^\mu T \gamma^\nu)_{ab} (\gamma_{\nu} T \gamma_{\mu})_{cd}  \\[0.12in]
+        &= \frac{e^4}{4} \tr \left[ \gamma^\mu T \gamma^\nu (\pslash_1+m) \gamma_{\nu} T \gamma_{\mu} (\pslash_4+m )\right] 
+    \end{align*}\\
+    Fully expanding $T$, one could finally obtain 
+
+    \begin{align}
+        \expval{\mathcal{M}_1\mathcal{M}_1^\dagger} = \frac{e^4}{4\left[(p_3-p_1)^2-m^2\right]^2} \tr \left[ \gamma^\mu (\pslash_3-\pslash_1 +m) \gamma^\nu (\pslash_1 + m ) \gamma_\nu  (\pslash_3-\pslash_1 +m) \gamma_\mu (\pslash_4 + m ) \right]
+    \end{align}
+    \item $\expval{\mathcal{M}_1\mathcal{M}_2^\dagger} $
+    \item $\expval{\mathcal{M}_2\mathcal{M}_1^\dagger} $
+    \item $\expval{\mathcal{M}_2\mathcal{M}_2^\dagger} $
+\end{enumerate}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
