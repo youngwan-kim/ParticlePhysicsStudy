@@ -602,11 +602,24 @@ which could be calculated term-by-term.
         \expval{\mathcal{M}_1\mathcal{M}_1^\dagger} = \frac{e^4}{4\left[(p_3-p_1)^2-m^2\right]^2} \tr \left[ \gamma^\mu (\pslash_3-\pslash_1 +m) \gamma^\nu (\pslash_1 + m ) \gamma_\nu  (\pslash_3-\pslash_1 +m) \gamma_\mu (\pslash_4 + m ) \right]
     \end{align}
     \item $\expval{\mathcal{M}_1\mathcal{M}_2^\dagger} $
+    
+    \begin{align}
+        \expval{\mathcal{M}_1\mathcal{M}_2^\dagger} &= \frac{e^4}{4}  \sum_{\lambda,\lambda'} \sum_{s,s'} \left[  \overbar{u}^s_a(p_4) \Gamma^1_{ab}(\lambda,\lambda')u^{s'}_b(p_1)\right] \left[  \overbar{u}^{s'}_c(p_1)\overbar{\Gamma}^2_{cd}(\lambda,\lambda')u^s_d(p_4)\right] \nonumber \\[0.12in]
+        &=  \frac{e^4}{4} \sum_{\lambda,\lambda'} \left[ \sum_{s} u^s_d(p_4) \overbar{u}^s_a(p_4) \right]  \left[ \sum_{s'}u^{s'}_b(p_1)   \overbar{u}^{s'}_c(p_1) \right] \Gamma^1_{ab}(\lambda,\lambda') \overbar{\Gamma}^1_{cd}(\lambda,\lambda') \nonumber \\[0.15in]
+        &= \frac{e^4}{4}  (\pslash_4+m)_{da}  (\pslash_1+m)_{bc}  \sum_{\lambda,\lambda'} \Gamma^1_{ab}(\lambda,\lambda') \overbar{\Gamma}^1_{cd}(\lambda,\lambda')  
+    \end{align}\\
+    Again,
     \item $\expval{\mathcal{M}_2\mathcal{M}_1^\dagger} $
     \item $\expval{\mathcal{M}_2\mathcal{M}_2^\dagger} $
+    
+    \begin{align}
+        \expval{\mathcal{M}_2\mathcal{M}_2^\dagger} &= \frac{e^4}{4}  \sum_{\lambda,\lambda'} \sum_{s,s'} \left[  \overbar{u}^s_a(p_4) \Gamma^2_{ab}(\lambda,\lambda')u^{s'}_b(p_2)\right] \left[  \overbar{u}^{s'}_c(p_4)\overbar{\Gamma}^2_{cd}(\lambda,\lambda')u^s_d(p_2)\right] \nonumber \\[0.12in]
+        &=  \frac{e^4}{4} \sum_{\lambda,\lambda'} \left[ \sum_{s} u^s_d(p_4) \overbar{u}^s_a(p_4) \right]  \left[ \sum_{s'}u^{s'}_b(p_1)   \overbar{u}^{s'}_c(p_1) \right] \Gamma^1_{ab}(\lambda,\lambda') \overbar{\Gamma}^1_{cd}(\lambda,\lambda') \nonumber \\[0.15in]
+        &= \frac{e^4}{4}  (\pslash_4+m)_{da}  (\pslash_1+m)_{bc}  \sum_{\lambda,\lambda'} \Gamma^1_{ab}(\lambda,\lambda') \overbar{\Gamma}^1_{cd}(\lambda,\lambda') \label{P6.12.1}
+    \end{align}\\
 \end{enumerate}
 \end{solution}
 
-\noindent\rule{7in}{1.5pt}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
