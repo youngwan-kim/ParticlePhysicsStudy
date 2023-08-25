@@ -35,30 +35,31 @@ This repository has an action that triggers $\LaTeX$ compilation when pushed, so
 | 13      | Neutrinos and Neutrino Oscillations              | $\color{red}{\textsf{Not Uploaded}}$   | $\color{red}{\textsf{Not Started}}$     |
 | 14      | CP Violation and Weak Hadronic Interactions      | $\color{red}{\textsf{Not Uploaded}}$   | $\color{red}{\textsf{Not Started}}$     |
 | 15      | Electroweak Unification                          | $\color{red}{\textsf{Not Uploaded}}$   | $\color{red}{\textsf{Not Started}}$     |
-| 15      | Tests of the Standard Model                      | $\color{red}{\textsf{Not Uploaded}}$   | $\color{red}{\textsf{Not Started}}$     |
-| 15      | The Higgs Boson                                  | $\color{red}{\textsf{Not Uploaded}}$   | $\color{red}{\textsf{Not Started}}$     |
+| 16      | Tests of the Standard Model                      | $\color{red}{\textsf{Not Uploaded}}$   | $\color{red}{\textsf{Not Started}}$     |
+| 17      | The Higgs Boson                                  | $\color{red}{\textsf{Not Uploaded}}$   | $\color{red}{\textsf{Not Started}}$     |
 
 ## Solution Progress By Chapter
 
-### Introduction
+|Chapter                                      | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |13  | 14 | 15  | 16 | 17  |   
+|---------------------------------------------|---|---|---|---|---|---|---|---|---|----|----|----|----|----|-----|----|-----|  
+|Introduction                                 | $\color{orange}{\triangle}$ | $\color{green}{\circ}$  | $\color{green}{\circ}$  | $\color{green}{\circ}$  | $\color{green}{\circ}$  | $\color{orange}{\triangle}$ |  $\color{green}{\circ?}$  |  $\color{green}{\circ?}$  | $\color{orange}{\triangle}$  | $\color{green}{\circ}$  | $\color{red}{\times}$ | -  | -  | -  | -   | -  | -   |  
+|Underlying Concepts                          | $\color{green}{\circ}$ | $\color{green}{\circ}$ | $\color{orange}{\triangle}$ | $\color{green}{\circ}$ | $\color{orange}{\triangle}$ | $\color{green}{\circ}$ | $\color{green}{\circ}$ | $\color{red}{\times}$ | $\color{green}{\circ}$ | $\color{red}{\times}$ | $\color{red}{\times}$ | $\color{green}{\circ}$   | $\color{green}{\circ}$   | $\color{red}{\times}$   | $\color{red}{\times}$    | $\color{red}{\times}$   | $\color{red}{\times}$    |  
+|Decay Rates and Cross Sections               | $\color{green}{\circ}$  | $\color{green}{\circ}$  | $\color{green}{\circ}$  | $\color{orange}{\triangle}$ | $\color{green}{\circ}$  | $\color{green}{\circ?}$ | $\color{orange}{\triangle}$ | $\color{red}{\times}$ | $\color{red}{\times}$ | $\color{red}{\times}$ |  - | -  | -  | -  | -   | -  |  -  |  
+|The Dirac Equation                           | $\color{orange}{\triangle}$ | $\color{green}{\circ}$  | $\color{green}{\circ}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{green}{\circ}$ | $\color{green}{\circ}$ | $\color{green}{\circ}$ | $\color{green}{\circ}$ | $\color{green}{\circ}$ | $\color{orange}{\triangle}$ | $\color{green}{\circ}$ | $\color{green}{\circ}$ | $\color{green}{\circ}$ | $\color{green}{\circ}$ | -  |  -  |  
+|Interaction by Particle Exchange             | $\color{green}{\circ}$ | $\color{green}{\circ}$ | $\color{green}{\circ}$ | - | - | - | - | - | - | -  | -  | -  | -  | -  |  -  | -  |  -  |  
+|Electron-Positron Annihilation               | $\color{green}{\circ}$ | $\color{green}{\circ}$ | $\color{green}{\circ}$ | $\color{green}{\circ}$ | $\color{green}{\circ}$ | $\color{green}{\circ}$ | $\color{orange}{\triangle}$ | $\color{green}{\circ}$ | $\color{green}{\circ}$ | $\color{green}{\circ}$ | $\color{red}{\times}$ | $\color{orange}{\triangle}$  | -  | -  |  -  | -  |  -  |  
+|Electron-Proton Elastic Scattering           | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$ | $\color{red}{\times}$ | $\color{red}{\times}$ | $\color{red}{\times}$ | $\color{red}{\times}$ | - |  - | -  | -  | -  | -  |  -  |  - |  -  |  
+|Deep Inelastic Scattering                    | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | - |  - | -  | -  | -  | -  |  -  |  - |  -  |  
+|Symmetries and the Quark Model               | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$   | -                       | -  | -  | -  |  -  |  - |  -  |  
+|Quantum Chromodynamics                       | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  |  -                      | -                       | -  | -  | -  |  -  |  - |  -  |  
+|The Weak Interaction                         | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$ | $\color{red}{\times}$  | $\color{red}{\times}$    | -                       | -  | -  | -  |  -  |  - |  -  |  
+|The Weak Interactions of Leptons             | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | - | -  |  -                      | -                       | -  | -  | -  |  -  |  - |  -  |  
+|Neutrinos and Neutrino Oscillations          | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  |  -                      | -                       | -  | -  | -  |  -  |  - |  -  |  
+|CP Violation and Weak Hadronic Interactions  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$   | $\color{red}{\times}$   | $\color{red}{\times}$   | $\color{red}{\times}$   | $\color{red}{\times}$   |  -  |  - | - |  
+|Electroweak Unification                      | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | - | -  | -  | - | -  | - | -  | - | -   | -   |  - |  - |  
+|Tests of the Standard Model                  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$   | $\color{red}{\times}$   | -  | - | -   | -   |  - |  - |  
+|The Higgs Boson                              | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$   | $\color{red}{\times}$   | $\color{red}{\times}$   | $\color{red}{\times}$   | -   | -   |  - |  - |  
 
-| Problem         | Solved   |
-| --------------  | -------- |
-| 1               |          |
-| 2               |          |
-| 3               |          |
-| 4               |          |
-| 5               |          |
-| 6               |          |
-| 7               |          |
-| 8               |          |
-| 9               |          |
-| 10              |          |
-| 11              |          |
-| 12              |          |
-| 13              |          |
-| 14              |          |
-| 15              |          |
 
 ## Contributing
 
