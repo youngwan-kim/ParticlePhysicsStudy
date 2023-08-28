@@ -12,6 +12,8 @@ This book is an excellent resource for understanding the fundamental concepts of
 
 You can find the book on [Amazon](https://a.co/d/bVARRXf).
 
+Some problems have been patched from the official [errata](https://www.hep.phy.cam.ac.uk/~thomson/MPP/ModernParticlePhysics_Errata.pdf).
+
 ## Actions
 
 This repository has an action that triggers $\LaTeX$ compilation when pushed, so downloading the artifacts from the latest build from [actions](https://github.com/youngwan-kim/ParticlePhysicsStudy/actions) will get you the latest version of the solution.
@@ -25,7 +27,7 @@ This repository has an action that triggers $\LaTeX$ compilation when pushed, so
 | 3       | Decay Rates and Cross Sections                   | $\color{green}{\textsf{Completed}}$    | $\color{orange}{\textsf{In Progress}}$  |
 | 4       | The Dirac Equation                               | $\color{green}{\textsf{Completed}}$    | $\color{orange}{\textsf{In Progress}}$  |
 | 5       | Interaction by Particle Exchange                 | $\color{green}{\textsf{Completed}}$    | $\color{green}{\textsf{Completed}}$     |
-| 6       | Electron-Positron Annihilation                   | $\color{green}{\textsf{Completed}}$    | $\color{orange}{\textsf{In Progress}}$  |
+| 6       | Electron-Positron Annihilation                   | $\color{green}{\textsf{Completed}}$    | $\color{orange}{\textsf{Completed}}$  |
 | 7       | Electron-Proton Elastic Scattering               | $\color{green}{\textsf{Completed}}$    | $\color{red}{\textsf{Not Started}}$     |
 | 8       | Deep Inelastic Scattering                        | $\color{green}{\textsf{Completed}}$   | $\color{red}{\textsf{Not Started}}$     |
 | 9       | Symmetries and the Quark Model                   | $\color{red}{\textsf{Not Uploaded}}$   | $\color{red}{\textsf{Not Started}}$     |
@@ -47,7 +49,7 @@ This repository has an action that triggers $\LaTeX$ compilation when pushed, so
 |Decay Rates and Cross Sections               | $\color{green}{\bigcirc}$  | $\color{green}{\bigcirc}$  | $\color{green}{\bigcirc}$  | $\color{green}{\bigcirc?}$ | $\color{green}{\bigcirc}$  | $\color{green}{\bigcirc?}$ | $\color{orange}{\triangle}$ | $\color{red}{\times}$ | $\color{red}{\times}$ | $\color{red}{\times}$ |  - | -  | -  | -  | -   | -  |  -  |  
 |The Dirac Equation                           | $\color{orange}{\triangle}$ | $\color{green}{\bigcirc}$  | $\color{green}{\bigcirc}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$ | $\color{orange}{\triangle}$ | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$ | -  |  -  |  
 |Interaction by Particle Exchange             | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$ | - | - | - | - | - | - | -  | -  | -  | -  | -  |  -  | -  |  -  |  
-|Electron-Positron Annihilation               | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$ | $\color{orange}{\triangle}$ | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$ | $\color{red}{\times}$ | $\color{orange}{\triangle}$  | -  | -  |  -  | -  |  -  |  
+|Electron-Positron Annihilation               | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$ | $\color{green}{\bigcirc}$  | -  | -  |  -  | -  |  -  |  
 |Electron-Proton Elastic Scattering           | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$ | $\color{red}{\times}$ | $\color{red}{\times}$ | $\color{red}{\times}$ | $\color{red}{\times}$ | - |  - | -  | -  | -  | -  |  -  |  - |  -  |  
 |Deep Inelastic Scattering                    | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | - |  - | -  | -  | -  | -  |  -  |  - |  -  |  
 |Symmetries and the Quark Model               | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$  | $\color{red}{\times}$   | -                       | -  | -  | -  |  -  |  - |  -  |  

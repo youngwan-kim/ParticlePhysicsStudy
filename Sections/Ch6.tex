@@ -253,7 +253,7 @@ which gives the following solution :
         \item Explain why the effect of the parity operator $\hat{\mathsf{P}}=\gamma^0$ is 
         
         \begin{align*}
-            \hat{\mathsf{P}} u_\uparrow (p,\theta,\phi) = \hat{\mathsf{P}} u_\downarrow (p,\pi-\theta,\pi+\theta)
+            \hat{\mathsf{P}} u_\uparrow (p,\theta,\phi) =   u_\downarrow (p,\pi-\theta,\pi+\theta)
         \end{align*}\\
         Hence, or otherwise, show that the muon currents for the four helicity combinations are
 
@@ -330,7 +330,7 @@ which gives the following solution :
         \end{align*}
         (Trust me I really did all the calculations lol)
 
-        \item 
+        \item The effect of $\hat{\mathsf{P}}$ on helicity states was once discussed in Problem (\ref{P4.13}), that acting such operator will actually flip the spatial part of $p$ also leading to an opposite helicity state, hence $u_\downarrow$. Also, considering how the four-momenta are set from the electron currents, one could notice that by substituting $E_1 \leftrightarrow E_2$ and $m \leftrightarrow M$ while having all the electron current helicity transformed under $\hat{\mathsf{P}}$ will get us the full set of the muon current helicity combinations. 
 
         \item Denoting the corresponding helicity configuration with momentum $p_i$ as $h_i$, $\mathcal{M}_{LL}$ can be expressed as, 
 
@@ -342,13 +342,13 @@ which gives the following solution :
 
             \begin{align*}
                 j^e_{LL}\cdot j^\mu_{LL} &= 4 \left(E_1 \cos\halftheta , p \sin\halftheta,-ip\sin\halftheta , p\cos\halftheta \right) \cdot \left( E_2 \cos\halftheta , -p \sin\halftheta , -ip\sin\halftheta , -p\cos\halftheta \right) \\[0.12in]
-                &= 4\left(E_1E_2 \cos^2\halftheta +p^2\sin^2\halftheta + p^2 \sin^2\halftheta + p^2 \cos^2 \halftheta \right) \\[0.12in]
-                &= 4E_1E_2 = 2 \left(p_1+p_2\right)^2 \equiv 2s^2  \\ 
+                &= 4\left(E_1E_2 \cos^2\halftheta +p^2\sin^2\halftheta + p^2 \sin^2\halftheta + p^2 \cos^2 \halftheta \right)  \impliedby p^2 \sim E_1^2 \sim E_2^2 (E\gg M)\\[0.12in]
+                &= 4E_1E_2 = 2 \left(p_1+p_2\right)^2 \equiv 2s  \\ 
             \end{align*}
         Plugging this back into (\ref{P.6.7.d1}) and squaring the matrix element gives,
 
             \begin{align*}
-                \left| \mathcal{M}_{LL} \right|^2 = \frac{e^4}{(p_1-p_3)^4} \left(j^e_{LL}\cdot j^\mu_{LL}\right)^2 =  \frac{4e^4s^4}{(p_1-p_3)^4} \qed \\
+                \left| \mathcal{M}_{LL} \right|^2 = \frac{e^4}{(p_1-p_3)^4} \left(j^e_{LL}\cdot j^\mu_{LL}\right)^2 =  \frac{4e^4s^2}{(p_1-p_3)^4} \qed \\
             \end{align*}
         For the other helicity combinations, the same could be done. 
 
@@ -356,30 +356,37 @@ which gives the following solution :
                 \left|\mathcal{M}_{RL}\right|^2 &= \frac{e^4}{(p_1-p_3)^4}\left[ \sum_{h_3,h_4 \in \{L,R\}} j^e_{Rh_3} \cdot j^\mu_{Lh_4}\right]^2  \\[0.125in] 
                 &=  \frac{e^4}{(p_1-p_3)^4} \big[\cancelto{0}{j^e_{RL}\cdot j^\mu_{LL}}+ \cancelto{0}{j^e_{RL}\cdot j^\mu_{LR} }+ j^e_{RR}\cdot j^\mu_{LL} + \cancelto{0}{j^e_{RR}\cdot j^\mu_{LR}} \big]^2 \\[0.125in]
                 &= \frac{16e^4}{(p_1-p_3)^4} \left( E_1E_2\cos^2\halftheta + p^2 \sin^2\halftheta - p^2 \sin^2\halftheta + p^2 \cos^2\halftheta \right)^2 \\[0.125in]
-                &= \frac{4e^4s^4}{(p_1-p_3)^4}  \cos^4\halftheta 
+                &= \frac{4e^4s^2}{(p_1-p_3)^4}  \cos^4\halftheta 
             \end{align*}
 
         Again, 
 
             \begin{align*}
                 \left|\mathcal{M}_{RR}\right|^2 &= \frac{e^4}{(p_1-p_3)^4} \left(j^e_{RR}\cdot j^\mu_{RR}\right)^2  \\[0.125in] 
-                &= \frac{16e^4}{(p_1-p_3)^4} \left( E_1E_2\cos^2\halftheta + p^2 \sin^2\halftheta + p^2 \sin^2\halftheta + p^2 \cos^2\halftheta \right)^2 =  \frac{4e^4s^4}{(p_1-p_3)^4} 
+                &= \frac{16e^4}{(p_1-p_3)^4} \left( E_1E_2\cos^2\halftheta + p^2 \sin^2\halftheta + p^2 \sin^2\halftheta + p^2 \cos^2\halftheta \right)^2 =  \frac{4e^4s^2}{(p_1-p_3)^4} 
             \end{align*}
 
         And finally, 
 
             \begin{align*}
                 \left|\mathcal{M}_{LR}\right|^2 &= \frac{e^4}{(p_1-p_3)^4} \left(j^e_{LL}\cdot j^\mu_{RR}\right)^2  \\[0.125in] 
-                &= \frac{16e^4}{(p_1-p_3)^4} \left( E_1E_2\cos^2\halftheta + p^2 \sin^2\halftheta - p^2 \sin^2\halftheta + p^2 \cos^2\halftheta \right)^2 = \frac{4e^4s^4}{(p_1-p_3)^4}  \cos^4\halftheta \\
+                &= \frac{16e^4}{(p_1-p_3)^4} \left( E_1E_2\cos^2\halftheta + p^2 \sin^2\halftheta - p^2 \sin^2\halftheta + p^2 \cos^2\halftheta \right)^2 = \frac{4e^4s^2}{(p_1-p_3)^4}  \cos^4\halftheta \\
             \end{align*}
 
         \item Averaging out all the helicity dependent amplitudes from (d), one would obtain 
         
             \begin{align*}
                 \expval{\left|\mathcal{M}_{fi}\right|^2} &= \frac{1}{4} \left\{ \left|\mathcal{M}_{LR}\right|^2 + \left|\mathcal{M}_{RR}\right|^2  + \left|\mathcal{M}_{RL}\right|^2  + \left|\mathcal{M}_{LL}\right|^2  \right\} \\[0.12in]
-                &= \frac{2e^4s^4}{(p_1-p_3)^4} \left( 1+ \cos^4\halftheta \right) \\[0.12in]
-                &= \frac{2e^4s^4}{(p_1-p_3)^4} \left[ 1+ \frac{1}{4}\left(1+\cos\theta\right)^2 \right] \\[0.12in]
-                &= \frac{e^4s^4}{2E_1^4 \left( 1-\cos\theta\right)^2} \left[ 1+ \frac{1}{4}\left(1+\cos\theta\right)^2 \right] \impliedby \left(p_1-p_3\right)^2 \simeq -2p_1\cdot p_3 = -2 E_1^2 \left(1-\cos\theta \right)\\[0.12in]
+                &= \frac{2e^4s^2}{(p_1-p_3)^4} \left( 1+ \cos^4\halftheta \right) \\[0.12in]
+                &= \frac{2e^4s^2}{(p_1-p_3)^4} \left[ 1+ \frac{1}{4}\left(1+\cos\theta\right)^2 \right] \\[0.12in]
+                &= \frac{e^4s^2}{2E_1^4 \left( 1-\cos\theta\right)^2} \left[ 1+ \frac{1}{4}\left(1+\cos\theta\right)^2 \right] \impliedby \left(p_1-p_3\right)^2 \simeq -2p_1\cdot p_3 = -2 E_1^2 \left(1-\cos\theta \right)\\[0.12in]
+                &\simeq \frac{8e^4 }{  \left( 1-\cos\theta\right)^2} \left[ 1+ \frac{1}{4}\left(1+\cos\theta\right)^2 \right]  
+            \end{align*}\\
+            Then, the differential cross section can be written as,
+
+            \begin{align*}
+                \frac{\dif\sigma}{\dif\Omega} &= \frac{1}{64\pi^2 s}  \expval{\left|\mathcal{M}_{fi}\right|^2} = \frac{1}{8\pi^2 s} \cdot \frac{e^4 }{  \left( 1-\cos\theta\right)^2} \left[ 1+ \frac{1}{4}\left(1+\cos\theta\right)^2 \right]  \impliedby e^4 = 16\pi^2\alpha^2\\[0.12in]
+                &= \frac{2\alpha^2}{s} \cdot\frac{1 }{  \left( 1-\cos\theta\right)^2} \left[ 1+ \frac{1}{4}\left(1+\cos\theta\right)^2 \right] \qed
             \end{align*}
     \end{enumerate}
 \end{solution}
@@ -484,10 +491,15 @@ Neglecting the electron mass term, verify that the matrix element for $e^- f \to
 \begin{align*}
     p_1 \to p_1 \comma p_2 \to -p_3 \comma p_3 \to p_4 \andtxt p_4 \to -p_2 \\
 \end{align*}
-
 \end{problem}
 \begin{solution}
+    One could directly verify by substituting four-vectors as the problem required,
 
+    \begin{align*}
+        \expval{\mathcal{M}_{e^+e^-\to ff}^2} &= 2 \frac{Q_f^2 e^4}{\left(p_1\cdot p_2\right)^2} \left[ \left(p_1 \cdot p_3\right) \left( p_2 \cdot p_4 \right) + \left(p_1 \cdot p_4\right)\left( p_2 \cdot p_3 \right) + m_f^2 \left( p_1 \cdot p_2\right) \right] \\[0.12in]
+        &\longrightarrow   2 \frac{Q_f^2 e^4}{\left(p_1\cdot p_3\right)^2} \left[ \left(p_1 \cdot p_4\right) \left(- p_3 \cdot- p_2 \right) + \left(p_1 \cdot -p_2\right)\left( -p_3 \cdot p_4 \right) + m_f^2 \left( p_1 \cdot - p_3\right) \right] \\[0.12in]
+        &= 2 \frac{Q_f^2 e^4}{\left(p_1\cdot p_3\right)^2} \left[ \left(p_1 \cdot p_4\right) \left( p_2 \cdot  p_3 \right) + \left(p_1 \cdot p_2\right)\left( p_3 \cdot p_4 \right) - m_f^2 \left( p_1 \cdot   p_3\right) \right] =   \expval{\mathcal{M}_{e^-f\to e^-f}^2} \qed
+    \end{align*}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -526,7 +538,7 @@ Starting from the two leading order Feynman diagrams that contribute to the Comp
         \end{tikzpicture}
         }
         \end{gathered}  :  -i\mathcal{M}_1   &= e^2   \overbar{u}(p_4) \slashed{\epsilon} (p_2) \left[  \frac{i\left(\slashed{q}+m\right)}{q^2-m^2}\right]  \slashed{\epsilon}^\ast(p_3) u(p_1)  \nonumber \\[-0.5in]
-        &= i e^2 \overbar{u}(p_4) \slashed{\epsilon} (p_2)   \left[  \frac{ \pslash_3-\pslash_1+m }{(p_3-p_1)^2-m^2}\right] \slashed{\epsilon}^\ast(p_3) u(p_1)  \equiv  i e^2 \overbar{u}(p_4) \Gamma_1 u(p_1)   \\[0.55in]
+        &= i e^2 \overbar{u}(p_4) \slashed{\epsilon} (p_2)   \left[  \frac{ \pslash_3-\pslash_1+m }{(p_3-p_1)^2-m^2}\right] \slashed{\epsilon}^\ast(p_3) u(p_1)  \equiv  i e^2 \overbar{u}(p_4) \Gamma^1 u(p_1)   \\[0.55in]
     \end{aligned}
 \end{equation}
 And for the other diagram, \\
@@ -547,18 +559,18 @@ And for the other diagram, \\
                 \vertex at ($(g2) + (2.5em,-3.5em) $) (d) {\(e^-\)};
                 \diagram* {
                     {[edges=boson]
-                    (a) -- [edge label=\(p_1\), near start]  (g1) ,  (g2) -- [edge label=\(p_3\), near end] (c)
+                    (a) -- [edge label=\(p_3\), near start]  (g1) ,  (g2) -- [edge label=\(p_2\), near end] (c)
                     },
                     {[edges=fermion]
-                    (b) -- [edge label'=\(p_2\)] (g1) -- [edge label=\(\scriptstyle q\equiv p_1+p_2\)]  (g2) -- [edge label'=\(p_4\)] (d)
+                    (b) -- [edge label'=\(p_1\)] (g1) -- [edge label=\(\scriptstyle q\equiv p_1+p_3\)]  (g2) -- [edge label'=\(p_4\)] (d)
                     }
                 };
             
             \end{feynman}
         \end{tikzpicture}
         }
-        \end{gathered}  :  -i\mathcal{M}_2   &= e^2 \overbar{u}(p_4) \slashed{\epsilon}^\ast (p_3)   \left[  \frac{i\left(\slashed{q}+m\right)}{q^2-m^2}\right] \slashed{\epsilon}(p_1) u(p_2) \nonumber \\[-0.5in]
-        &= i e^2 \overbar{u}(p_4) \slashed{\epsilon}^\ast (p_3)   \left[  \frac{ \pslash_1+\pslash_2+m }{(p_1+p_2)^2-m^2}\right]  \slashed{\epsilon}(p_1) u(p_2) \equiv  i e^2 \overbar{u}(p_4) \Gamma_2 u(p_2)     \\[0.55in]
+        \end{gathered}  :  -i\mathcal{M}_2   &= e^2 \overbar{u}(p_4) \slashed{\epsilon}^\ast (p_2)   \left[  \frac{i\left(\slashed{q}+m\right)}{q^2-m^2}\right] \slashed{\epsilon}(p_3) u(p_1) \nonumber \\[-0.5in]
+        &= i e^2 \overbar{u}(p_4) \slashed{\epsilon}^\ast (p_2)   \left[  \frac{ \pslash_1+\pslash_3+m }{(p_1+p_3)^2-m^2}\right]  \slashed{\epsilon}(p_3) u(p_1) \equiv  i e^2 \overbar{u}(p_4) \Gamma^2 u(p_1)     \\[0.55in]
     \end{aligned}
 \end{equation}
 In total, there will be 4 terms in the spin-averaged matrix element,
@@ -599,25 +611,62 @@ which could be calculated term-by-term.
     Fully expanding $T$, one could finally obtain 
 
     \begin{align}
-        \expval{\mathcal{M}_1\mathcal{M}_1^\dagger} = \frac{e^4}{4\left[(p_3-p_1)^2-m^2\right]^2} \tr \left[ \gamma^\mu (\pslash_3-\pslash_1 +m) \gamma^\nu (\pslash_1 + m ) \gamma_\nu  (\pslash_3-\pslash_1 +m) \gamma_\mu (\pslash_4 + m ) \right]
+        \expval{\mathcal{M}_1\mathcal{M}_1^\dagger} = \frac{e^4}{4\left[(p_3-p_1)^2-m^2\right]^2} \tr \left[ \gamma^\mu (\pslash_3-\pslash_1 +m) \gamma^\nu (\pslash_1 + m ) \gamma_\nu  (\pslash_3-\pslash_1 +m) \gamma_\mu (\pslash_4 + m ) \right] \label{P6.12.a.1}
     \end{align}
     \item $\expval{\mathcal{M}_1\mathcal{M}_2^\dagger} $
     
     \begin{align}
-        \expval{\mathcal{M}_1\mathcal{M}_2^\dagger} &= \frac{e^4}{4}  \sum_{\lambda,\lambda'} \sum_{s,s'} \left[  \overbar{u}^s_a(p_4) \Gamma^1_{ab}(\lambda,\lambda')u^{s'}_b(p_1)\right] \left[  \overbar{u}^{s'}_c(p_1)\overbar{\Gamma}^2_{cd}(\lambda,\lambda')u^s_d(p_4)\right] \nonumber \\[0.12in]
+        \expval{\mathcal{M}_1\mathcal{M}_2^\dagger} &= \frac{e^4}{4}  \sum_{\lambda,\lambda'} \sum_{s,s'} \left[  \overbar{u}^s_a(p_4) \Gamma^1_{ab}(\lambda,\lambda')u^{s'}_b(p_1)\right] \left[  \overbar{u}^{s'}_c(p_1)\overbar{\Gamma}^2_{cd}(\lambda,\lambda')u^{s}_d(p_4)\right] \nonumber \\[0.12in]
         &=  \frac{e^4}{4} \sum_{\lambda,\lambda'} \left[ \sum_{s} u^s_d(p_4) \overbar{u}^s_a(p_4) \right]  \left[ \sum_{s'}u^{s'}_b(p_1)   \overbar{u}^{s'}_c(p_1) \right] \Gamma^1_{ab}(\lambda,\lambda') \overbar{\Gamma}^1_{cd}(\lambda,\lambda') \nonumber \\[0.15in]
-        &= \frac{e^4}{4}  (\pslash_4+m)_{da}  (\pslash_1+m)_{bc}  \sum_{\lambda,\lambda'} \Gamma^1_{ab}(\lambda,\lambda') \overbar{\Gamma}^1_{cd}(\lambda,\lambda')  
+        &= \frac{e^4}{4}  (\pslash_4+m)_{da}  (\pslash_1+m)_{bc}  \sum_{\lambda,\lambda'} \Gamma^1_{ab}(\lambda,\lambda') \overbar{\Gamma}^2_{cd}(\lambda,\lambda')  \label{P6.12.b}
     \end{align}\\
-    Again,
+    Again, using the similar calculation used before, one could see that
+    
+    \begin{align}
+        \Gamma^2_{cd} = \epsilon^{\lambda'\ast}_\mu \epsilon^{\lambda}_{\nu} \left( \gamma^\mu T' \gamma^\nu \right)_{cd} \andtxt \overbar{\Gamma}^2_{cd} = \epsilon^{\lambda'}_\mu \epsilon^{\lambda\ast}_{\nu} ( \gamma^{\nu} T' \gamma^{\mu} )_{cd} \quad \text{where} \quad T' \equiv \frac{\pslash_1+\pslash_3+m}{(p_1+p_3)^2 - m^2}
+    \end{align}\\
+    Then (\ref{P6.12.b}) becomes,
+
+    \begin{align}
+        \expval{\mathcal{M}_1\mathcal{M}_2^\dagger} &= \frac{e^4}{4} (\pslash_4+m)_{da}  (\pslash_1+m)_{bc} \left( \gamma^\mu T \gamma^\nu \right)_{ab} \left( \gamma_\nu T' \gamma_\mu \right)_{cd} \nonumber \\[0.12in]
+        &=  \frac{e^4}{4} \Tr{\gamma^\mu T \gamma^\nu (\pslash_1+m) \gamma_\nu T' \gamma_\mu (\pslash_4+m)} \nonumber \\[0.12in]
+        &=  \frac{e^4}{4\left[(p_1-p_3)^2-m^2\right]\left[(p_1+p_3)^2-m^2\right]} \Tr{\gamma^\mu (\pslash_3-\pslash_1+m) \gamma^\nu (\pslash_1+m) \gamma_\nu (\pslash_1+\pslash_3+m) \gamma_\mu (\pslash_4+m)} \label{P6.12.b.1}
+    \end{align}
+
     \item $\expval{\mathcal{M}_2\mathcal{M}_1^\dagger} $
+    
+    \begin{align}
+        \expval{\mathcal{M}_2\mathcal{M}_1^\dagger} &= \frac{e^4}{4}  \sum_{\lambda,\lambda'} \sum_{s,s'} \left[  \overbar{u}^s_a(p_4) \Gamma^2_{ab}(\lambda,\lambda')u^{s'}_b(p_1)\right] \left[  \overbar{u}^{s'}_c(p_1)\overbar{\Gamma}^1_{cd}(\lambda,\lambda')u^{s}_d(p_4)\right] \nonumber \\[0.12in]
+        &=  \frac{e^4}{4} \sum_{\lambda,\lambda'} \left[ \sum_{s} u^s_d(p_4) \overbar{u}^s_a(p_4) \right]  \left[ \sum_{s'}u^{s'}_b(p_1)   \overbar{u}^{s'}_c(p_1) \right] \Gamma^2_{ab}(\lambda,\lambda') \overbar{\Gamma}^1_{cd}(\lambda,\lambda') \nonumber \\[0.15in]
+        &= \frac{e^4}{4}  (\pslash_4+m)_{da}  (\pslash_1+m)_{bc}  \sum_{\lambda,\lambda'} \Gamma^2_{ab}(\lambda,\lambda') \overbar{\Gamma}^1_{cd}(\lambda,\lambda')  \label{P6.12.c}
+    \end{align}\\
+    Using expressions of $\Gamma^1,\Gamma^2$, one could further write down (\ref{P6.12.c}) as, 
+
+    \begin{align}
+        \expval{\mathcal{M}_2\mathcal{M}_1^\dagger} &=  \frac{e^4}{4}  (\pslash_4+m)_{da}  (\pslash_1+m)_{bc} \left( \gamma^\mu T' \gamma^\nu \right)_{ab}  \left( \gamma_\nu T \gamma_\mu \right)_{cd} \nonumber \\[0.12in]
+        &=  \frac{e^4}{4} \Tr{    \gamma^\mu T' \gamma^\nu   (\pslash_1+m)   \gamma_\nu T \gamma_\mu   (\pslash_4+m)  } \nonumber \\[0.12in]
+        &=  \frac{e^4}{4\left[(p_1-p_3)^2-m^2\right]\left[(p_1+p_3)^2-m^2\right]} \Tr{    \gamma^\mu  (\pslash_1+\pslash_3+m)  \gamma^\nu   (\pslash_1+m)   \gamma_\nu (\pslash_3-\pslash_1+m) \gamma_\mu   (\pslash_4+m)  }  \label{P6.12.c.1}
+    \end{align}
+
     \item $\expval{\mathcal{M}_2\mathcal{M}_2^\dagger} $
     
     \begin{align}
-        \expval{\mathcal{M}_2\mathcal{M}_2^\dagger} &= \frac{e^4}{4}  \sum_{\lambda,\lambda'} \sum_{s,s'} \left[  \overbar{u}^s_a(p_4) \Gamma^2_{ab}(\lambda,\lambda')u^{s'}_b(p_2)\right] \left[  \overbar{u}^{s'}_c(p_4)\overbar{\Gamma}^2_{cd}(\lambda,\lambda')u^s_d(p_2)\right] \nonumber \\[0.12in]
-        &=  \frac{e^4}{4} \sum_{\lambda,\lambda'} \left[ \sum_{s} u^s_d(p_4) \overbar{u}^s_a(p_4) \right]  \left[ \sum_{s'}u^{s'}_b(p_1)   \overbar{u}^{s'}_c(p_1) \right] \Gamma^1_{ab}(\lambda,\lambda') \overbar{\Gamma}^1_{cd}(\lambda,\lambda') \nonumber \\[0.15in]
-        &= \frac{e^4}{4}  (\pslash_4+m)_{da}  (\pslash_1+m)_{bc}  \sum_{\lambda,\lambda'} \Gamma^1_{ab}(\lambda,\lambda') \overbar{\Gamma}^1_{cd}(\lambda,\lambda') \label{P6.12.1}
+        \expval{\mathcal{M}_2\mathcal{M}_2^\dagger} &= \frac{e^4}{4}  \sum_{\lambda,\lambda'} \sum_{s,s'} \left[  \overbar{u}^{s'}_a(p_4) \Gamma^2_{ab}(\lambda,\lambda')u^{s}_b(p_1)\right] \left[  \overbar{u}^{s}_c(p_1)\overbar{\Gamma}^2_{cd}(\lambda,\lambda')u^{s'}_d(p_4)\right] \nonumber \\[0.12in]
+        &=  \frac{e^4}{4} \sum_{\lambda,\lambda'} \left[ \sum_{s} u^s_b(p_1) \overbar{u}^s_c(p_1) \right]  \left[ \sum_{s'} u^{s'}_d(p_4)   \overbar{u}^{s'}_a(p_4) \right] \Gamma^2_{ab}(\lambda,\lambda') \overbar{\Gamma}^2_{cd}(\lambda,\lambda') \nonumber \\[0.15in]
+        &= \frac{e^4}{4}  (\pslash_1+m)_{bc}  (\pslash_4+m)_{da}  \sum_{\lambda,\lambda'} \Gamma^2_{ab}(\lambda,\lambda') \overbar{\Gamma}^2_{cd}(\lambda,\lambda') \nonumber \\[0.12in]
+        &= \frac{e^4}{4}  (\pslash_1+m)_{bc}  (\pslash_4+m)_{da} \left( \gamma^\mu T' \gamma^\nu \right)_{ab} \left( \gamma_\nu T' \gamma_\mu \right)_{cd} \nonumber \\[0.12in]
+        &= \frac{e^4}{4\left[(p_1+p_3)^2-m^2\right]^2} \tr \left[ \gamma^\mu (\pslash_1+\pslash_3 +m) \gamma^\nu (\pslash_1 + m ) \gamma_\nu  (\pslash_1+\pslash_3 +m) \gamma_\mu (\pslash_4 + m ) \right] \label{P6.12.d.1}
     \end{align}\\
 \end{enumerate}
+
+Then, adding up (\ref{P6.12.a.1}),(\ref{P6.12.b.1}),(\ref{P6.12.c.1}) and (\ref{P6.12.d.1}) one could get the total spin-averaged matrix element as, 
+
+\begin{align*}
+    \expval{|\mathcal{M}_1+\mathcal{M}_2|^2} &= \frac{e^4}{4\left[(p_1-p_3)^2-m^2\right]^2} \tr \left[ \gamma^\mu (\pslash_3-\pslash_1 +m) \gamma^\nu (\pslash_1 + m ) \gamma_\nu  (\pslash_3-\pslash_1 +m) \gamma_\mu (\pslash_4 + m ) \right] \\[0.12in]
+    &+  \frac{e^4}{4\left[(p_1-p_3)^2-m^2\right]\left[(p_1+p_3)^2-m^2\right]} \left\{ \Tr{\gamma^\mu (\pslash_3-\pslash_1+m) \gamma^\nu (\pslash_1+m) \gamma_\nu (\pslash_1+\pslash_3+m) \gamma_\mu (\pslash_4+m)}  \right. \\[0.08in]
+    &\hspace{2.in} + \left. \Tr{    \gamma^\mu  (\pslash_1+\pslash_3+m)  \gamma^\nu   (\pslash_1+m)   \gamma_\nu (\pslash_3-\pslash_1+m) \gamma_\mu   (\pslash_4+m)  }  \right\}  \\[0.12in]
+    &+ \frac{e^4}{4\left[(p_1+p_3)^2-m^2\right]^2} \tr \left[ \gamma^\mu (\pslash_1+\pslash_3 +m) \gamma^\nu (\pslash_1 + m ) \gamma_\nu  (\pslash_1+\pslash_3 +m) \gamma_\mu (\pslash_4 + m ) \right] 
+\end{align*}
 \end{solution}
 
 
