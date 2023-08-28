@@ -11,10 +11,10 @@ Explaining your reasoning, state whether each of the sixteen diagrams below repr
     \item Invalid, due to the fact that $\nu_e$ has no electric charge. 
     \item Valid.
     \item Valid.
-    \item Invalid.
+    \item Invalid. Flavor shouldn't change. 
     \item Valid.
-    \item Invalid.
-    \item Invalid.
+    \item Invalid. Flavor shouldn't change. 
+    \item Invalid. Flavor shouldn't change. 
     \item Invalid, leptons do not carry color charge.
     \item Valid. 
     \item Valid.
@@ -22,7 +22,7 @@ Explaining your reasoning, state whether each of the sixteen diagrams below repr
     \item Invalid.
     \item Valid.
     \item Valid.
-    \item Invalid.
+    \item Invalid. No such 4-point vertex in QED.
 \end{enumerate}
 \end{solution} 
 \noindent\rule{7in}{1.5pt}
@@ -553,7 +553,8 @@ which eventually gives $p=0.3BR=0.528\GeV$. The threshold mass for Čerenkov rad
 
 \begin{align*}
     \sqrt{n^2-1} p = 0.75 \times p = 0.396 \GeV
-\end{align*}
+\end{align*}\\
+thus in such situation it would be able to identity whether the track corresponds to a pion or kaon, as only $m_\pi$ is smaller than the threshold Čerenkov radiation mass.
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -581,5 +582,19 @@ At the LEP $e^+e^-$ collider, which had a circumference of 27 km, the electron a
 Calculate the instantaneous luminosity on the assumption that the beams collided head-on.
 \end{problem}
 \begin{solution}
+The instantaneous luminosity $\mathcal{L}$ could be computed as,
 
-\end{solution}
+\begin{align*}
+    \mathcal{L} = f\frac{n_1n_2}{4\pi \sigma_x \sigma_y}
+\end{align*}\\
+As the problem states, the given effective area $\num{1.8e4} \unit{\micro\meter^2}=\num{1.8e-4} \unit{\centi\meter^2}$ of the bunches will correspond to $\sigma_x \sigma_y$. In this case, the bunches are seperated $27/4 = 6.75 \unit{km}$ and as the leptons were accelerated $\sim 0.99c$, the temporal separation between the beams will be $\simeq 5 \unit{\micro\second}$ where relativistic effects are folded in, thus the collision frequency will be $f \simeq 200 \unit{\kilo\hertz}$. Using the beam current $\num{1.0e-3}\unit{C\cdot s^{-1}}$, the number of electrons can be derived using
+
+\begin{align*}
+    n_1 = n_2 = \frac{\num{1.0}\unit{\milli\ampere}}{ef}=\frac{\num{1.0e-3}\unit{C\cdot s^{-1}}}{\num{1.62e-19}\unit{C}} \times 5 \unit{\micro\second} \simeq \num{3.5e10}
+\end{align*}\\
+Then using all the numbers derived, the instantaneous luminosity can be calculated as,
+
+\begin{align*}
+    \mathcal{L} = \num{2.0e5} \unit{s^{-1}} \times \frac{\left( \num{3.5e10}\right)^2}{\num{1.8e-4}\unit{\centi\meter^2}} \simeq \num{1.3e30} \unit{cm^{-2}\cdot s^{-1}}
+\end{align*}
+\end{solution}\\
