@@ -136,7 +136,22 @@ which could be interpreted as the root-mean-squared charge radius using the resu
     From the slope and intercept of the right plot of Figure 7.7, obtain values for $G_{\text{M}}(0.292\text{GeV}^2 )$ and $G_{\text{E}}(0.292\text{GeV}^2)$
 \end{problem}
 \begin{solution}
+    The value of $\tau$ can be first calculated as, $\tau=Q^2/4m_p^2\simeq 0.082$. From the slope, one could obtain $G_M(Q^2)$ for $Q^2=0.292\GeV^2$ as,
 
+    \begin{align*}
+        m \simeq 0.3 = 2\tau \left[G_M(Q^2)\right]^2 \implies G_M(Q^2) \simeq \sqrt{\frac{0.3}{2\tau}}\simeq 1.352
+    \end{align*}\\
+
+    and using the intercept which is $\simeq 0.4$ one could get
+
+    \begin{align*}
+        c \simeq 0.4 = \frac{1}{1+\tau}\cdot \left[ G_E(Q^2)^2 + \tau G_M(Q^2)^2 \right] \implies G_E(Q^2)^2 \simeq  0.4(1+\tau)-\tau G_M(Q^2)^2 \simeq 0.282
+    \end{align*}\\
+    Thus, one could conclude that:
+
+    \begin{align*}
+        \boxed{G_E(0.292\GeV^2) \simeq 0.531 \andtxt  G_M(0.292\GeV^2) \simeq 1.352}
+    \end{align*}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -147,11 +162,76 @@ which could be interpreted as the root-mean-squared charge radius using the resu
     Use the data of Figure 7.7 to estimate $G_E (Q^2 )$ at $Q^2 = 0.500 \GeV^2 $.
 \end{problem}
 \begin{solution}
+In order to calculate $G_E(Q^2)$ at $Q^2 = 0.5 \GeV^2$, one would have to extract two points with different $\theta$ from the $(E_1,\frac{\dif\sigma}{\dif\Omega})$ plot that corresponds to $Q^2 = 0.5 \GeV^2$ and transcribe it into $\left(\tan^2\left(\frac{\theta}{2}\right),\frac{\dif\sigma}{\dif\Omega}/\left(\frac{\dif\sigma}{\dif\Omega}\right)_0\right)$ and get the slope and intercept that would eventually be used to derive $G_E(Q^2)$ and $G_M(Q^2)$. As there are abundant amount of datapoints in $\theta=75^\circ,135^\circ$, two of those curves will be used for the calculation mentioned above. Of course one could further obtain additional points and do a linear regression, but here for brevity estimation will be done by just using two points. 
 
+\begin{enumerate}[label=(\alph*)]
+    \item $\theta=75^\circ$ ($\cos\theta \simeq 0.25$)
+    
+        Using the relation (7.32), one could derive the corresponding $E_1$ for $Q^2=0.5\GeV^2$ as  
+
+        \begin{align*}
+            Q^2 = \frac{2 \cdot 0.938 \GeV \cdot E_1^2 (1-0.25)}{0.938 \GeV +E_1(1-0.25)} = 0.5 \GeV^2 \implies 2.814E_1^2 - 0.75E_1 -0.938 = 0  
+        \end{align*}\\
+        Solving the quadratic equation, the physical solution gives $E_1 \simeq 725 \MeV$. The corresponding $\frac{\dif\sigma}{\dif\Omega}$ at $E_1 \simeq 725 \MeV$ gives $10^{-32} \text{cm}^2/\text{steradian}$ from Fig7.7. One would also need to calculate $\left( \frac{\dif\sigma}{\dif\Omega} \right)_0$, which shows to beam
+
+        \begin{align*}
+            \left( \frac{\dif\sigma}{\dif\Omega} \right)_0 &= \frac{\alpha^2}{4E_1^2\sin^4\frac{\theta}{2}}\left[ \frac{m_p}{m_p+E_1(1-\cos\theta)} \right] \cos^2\frac{\theta}{2} \\[0.15in]
+            &\simeq \frac{\num{5.3e-5}}{4\cdot0.725^2 \GeV^2 \cdot 0.137} \times \frac{0.938  }{0.938  + 0.725 (1-0.25)} \times 0.629 \simeq \num{2.871e-32} \unit{cm}^2
+        \end{align*}\\
+        Thus from $\theta=75^\circ$, the following point is obtained :
+
+        \begin{align} \label{P7.7a}
+            \left( \tan^2\frac{\theta}{2}, \frac{\dif\sigma}{\dif\Omega}\cdot\left(  \frac{\dif\sigma}{\dif\Omega} \right)_0^{-1} \right)_{\theta=75^\circ} \simeq \left( 0.5887 , 0.3483 \right)
+        \end{align}\\
+
+    \item $\theta=135^\circ$ ($\cos\theta \simeq -0.70$)
+    
+        Similarly, one could do the same for $\theta=135^\circ$ by first obtaining the corresponding $E_1$ value as :
+
+        \begin{align*}
+            Q^2 = \frac{2 \cdot 0.938 \GeV \cdot E_1^2 (1+0.7)}{0.938 \GeV +E_1(1+0.7)} = 0.5 \GeV^2 \implies 6.378E_1^2 - 1.7 E_1 -0.938 = 0  
+        \end{align*}\\
+        Again, the quadratic equation gives a physical solution of $E_1\simeq 539 \MeV$ and the corresponding point gives $\frac{\dif\sigma}{\dif\Omega} \simeq \num{2e-33}\unit{cm^2/steradian}$ from Fig7.7, and again 
+        
+        \begin{align*}
+            \left( \frac{\dif\sigma}{\dif\Omega} \right)_0 &= \frac{\alpha^2}{4E_1^2\sin^4\frac{\theta}{2}}\left[ \frac{m_p}{m_p+E_1(1-\cos\theta)} \right] \cos^2\frac{\theta}{2} \\[0.15in]
+            &\simeq \frac{\num{5.3e-5}}{4\cdot0.539^2 \GeV^2 \cdot 0.728} \times \frac{0.938  }{0.938  + 0.539 (1+0.7)} \times 0.146 \simeq \num{1.792e-33} \unit{cm}^2
+        \end{align*}\\
+        Which finally gives, 
+
+        \begin{align}  \label{P7.7b}
+            \left( \tan^2\frac{\theta}{2}, \frac{\dif\sigma}{\dif\Omega}\cdot\left(  \frac{\dif\sigma}{\dif\Omega} \right)_0^{-1} \right)_{\theta=135^\circ} \simeq \left( 5.8284 , 1.1160 \right)
+        \end{align}\\
+\end{enumerate}
+Using the two points obtained from (\ref{P7.7a}) and (\ref{P7.7b}), a linear relation having a slope of $\simeq0.1465$ and an intercept of $\simeq0.2620$ can be derived, which is also shown in Figure \ref{fig:P7.7}. \\
+
+\begin{figure}[htbp!] % You can specify the placement of the figure using [htbp]
+    \centering
+    \includegraphics[width=0.575\textwidth]{Figures/Ch7/P7.7.pdf}
+    \caption{Linear relation obtained for $Q^2=0.5\GeV^2$}
+    \label{fig:P7.7}  
+\end{figure}
+  
+The slope and intercept will be used to compute $G_M(Q^2)$ and $G_E(Q^2)$, where $\tau=Q^2/4m_p^2 \simeq 0.071$ :
+
+\begin{align*}
+    m \simeq 0.1465 = 2\tau \left[G_M(Q^2)\right]^2 \implies G_M(Q^2) \simeq \sqrt{\frac{0.1465}{2\cdot 0.071}}\simeq 1.015
+\end{align*}\\
+
+and using the intercept which is $\simeq 0.4$ one could get
+
+\begin{align*}
+    c \simeq 0.2620 = \frac{1}{1+\tau}\cdot \left[ G_E(Q^2)^2 + \tau G_M(Q^2)^2 \right] \implies G_E(Q^2)^2 \simeq  0.2620(1+0.071)-0.071 \cdot G_M(Q^2)^2 \simeq 0.2074
+\end{align*}\\
+Thus one could finally say that,
+
+\begin{align*}
+    G_E(0.5\GeV^2) \simeq \boxed{0.4554}
+\end{align*}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
-
+ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{7.8}
@@ -160,7 +240,7 @@ which could be interpreted as the root-mean-squared charge radius using the resu
     \begin{align*}
         G(Q^2)= \frac{G(0)}{\left( 1+Q^2/Q_0^2 \right)^2}
     \end{align*}\\
-    with $Q_0 = 0.71 \GeV$. Taking $Q_2 \approx \mathbf{q}^2$, show that this implies that proton has an exponential charge distri-bution of the form
+    with $Q_0^2 = 0.71 \GeV^2$. Taking $Q_2 \approx \mathbf{q}^2$, show that this implies that proton has an exponential charge distri-bution of the form
 
     \begin{align*}
         \rho(\mathbf{r}) = \rho_0 e^{-\frac{r}{a}}
