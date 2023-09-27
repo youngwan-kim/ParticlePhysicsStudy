@@ -240,7 +240,7 @@ Thus one could finally say that,
     \begin{align*}
         G(Q^2)= \frac{G(0)}{\left( 1+Q^2/Q_0^2 \right)^2}
     \end{align*}\\
-    with $Q_0^2 = 0.71 \GeV^2$. Taking $Q_2 \approx \mathbf{q}^2$, show that this implies that proton has an exponential charge distri-bution of the form
+    with $Q_0^2 = 0.71 \GeV^2$. Taking $Q^2 \approx \mathbf{q}^2$, show that this implies that proton has an exponential charge distri-bution of the form
 
     \begin{align*}
         \rho(\mathbf{r}) = \rho_0 e^{-\frac{r}{a}}
@@ -248,9 +248,37 @@ Thus one could finally say that,
     and find the value of a.
 \end{problem}
 \begin{solution}
+Under the approximation of $Q^2 \approx \mathbf{q}^2 $ one could write down 
 
+\begin{align*}
+    G(Q^2) \simeq G(\mathbf{q}^2) = \int e^{i\mathbf{q}\cdot \mathbf{r}} \rho(\mathbf{r} ) \dif^3 \mathbf{r} \implies \rho(\mathbf{r}) \simeq \int e^{-i \mathbf{q}\cdot \mathbf{r} } G(\mathbf{q}^2) \dif^3 \mathbf{q}
+\end{align*}\\
+From the dipole approximation of the form factors given, the above could be further calculated while defining $\theta$ as the angle between $\mathbf{q}$ and $\mathbf{r}$ and $\phi$ as the remaining azimuthal angle : 
+
+\begin{align}
+    \rho(\mathbf{r}) &\simeq \int e^{-i \mathbf{q}\cdot \mathbf{r} } G(\mathbf{q}^2) \dif^3 \mathbf{q} \nonumber \\[0.15in] \nonumber
+    &= \int_0^\infty \int_{+1}^{-1} \int_0^{2\pi} \exp \left( -i qr \cos \theta \right)  \frac{G(0)}{(1+q^2/Q_0^2)^2} q^2 \dif q \dif(-\cos\theta) \dif \phi \\[0.15in]\nonumber
+    &= 2\pi G(0) \int_0^\infty \int_{-1}^{+1} \exp \left( -i qr \cos \theta \right)  \frac{1}{(1+q^2/Q_0^2)^2} q^2 \dif q \dif \cos\theta  \\[0.15in]\nonumber
+    &= 2\pi G(0) \int_0^\infty  \frac{\sin(qr)}{qr}  \frac{1}{(1+q^2/Q_0^2)^2} q^2 \dif q  \\[0.15in]
+    &=  2\pi G(0) \cdot \frac{1}{r} \int_0^\infty  \frac{q \sin(qr)}{(1+q^2/Q_0^2)^2} \dif q   \label{P7.8}
+\end{align}\\
+By using integration by parts and other computational techniques, the $q$ integration can be done as the following,
+
+\begin{align*}
+    \int_0^\infty \frac{q\sin(qr)}{(1+q^2/Q_0^2)^2} \dif q = \frac{1}{4}\pi r Q_0^2 e^{-Q_0r}
+\end{align*}\\
+and again plugging into (\ref{P7.8}) gives 
+
+\begin{align*}
+    \rho(\mathbf{r}) &\simeq  2\pi G(0) \cdot \frac{1}{r} \int_0^\infty  \frac{q \sin(qr)}{(1+q^2/Q_0^2)^2} \dif q \\[0.125in]
+    &= \left[ \frac{1}{2} \pi^2 G(0) Q_0^3 \right] e^{-Q_0 r} \equiv \rho_0 e^{-\frac{r}{a}} \qed
+\end{align*}\\
+which succesfully shows that when form factors are approximated as a dipole function the charge distribution will take an exponential form. The value of $a=Q_0^{-1}$ can be directly computed as,
+
+\begin{align*}
+    a = Q_0^{-1} \simeq 1.1867 \GeV^{-1} \simeq 1.1867 \times 0.197 \unit{fm} \simeq \boxed{0.233 \unit{fm}}
+\end{align*}\\
+which well coincides with the value stated in the textbook.
 \end{solution}
-
-\noindent\rule{7in}{1.5pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
