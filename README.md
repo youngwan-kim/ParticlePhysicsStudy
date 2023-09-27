@@ -29,9 +29,9 @@ This repository has an action that triggers $\LaTeX$ compilation when pushed, so
 | 5       | Interaction by Particle Exchange                 | $\color{green}{\textsf{Completed}}$    | $\color{green}{\textsf{Completed}}$     |
 | 6       | Electron-Positron Annihilation                   | $\color{green}{\textsf{Completed}}$    | $\color{green}{\textsf{Completed}}$     |
 | 7       | Electron-Proton Elastic Scattering               | $\color{green}{\textsf{Completed}}$    | $\color{green}{\textsf{Completed}}$     |
-| 8       | Deep Inelastic Scattering                        | $\color{green}{\textsf{Completed}}$    | $\color{red}{\textsf{Not Started}}$     |
-| 9       | Symmetries and the Quark Model                   | $\color{red}{\textsf{Not Uploaded}}$   | $\color{red}{\textsf{Not Started}}$     |
-| 10      | Quantum Chromodynamics                           | $\color{red}{\textsf{Not Uploaded}}$   | $\color{red}{\textsf{Not Started}}$     |
+| 8       | Deep Inelastic Scattering                        | $\color{green}{\textsf{Completed}}$    | $\color{orange}{\textsf{In Progress}}$  |
+| 9       | Symmetries and the Quark Model                   | $\color{green}{\textsf{Completed}}$    | $\color{red}{\textsf{Not Started}}$     |
+| 10      | Quantum Chromodynamics                           | $\color{green}{\textsf{Completed}}$    | $\color{red}{\textsf{Not Started}}$     |
 | 11      | The Weak Interaction                             | $\color{red}{\textsf{Not Uploaded}}$   | $\color{red}{\textsf{Not Started}}$     |
 | 12      | The Weak Interactions of Leptons                 | $\color{red}{\textsf{Not Uploaded}}$   | $\color{red}{\textsf{Not Started}}$     |
 | 13      | Neutrinos and Neutrino Oscillations              | $\color{red}{\textsf{Not Uploaded}}$   | $\color{red}{\textsf{Not Started}}$     |

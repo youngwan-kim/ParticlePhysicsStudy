@@ -3,7 +3,7 @@
 \section{Quantum Chromodynamics}
     
 \begin{problem}{10.1}
-
+By considering the symmetry of the wavefunction, explain why the existence of the $\Omega^−(sss)$ $L = 0$ baryon provides evidence for a degree of freedom in addition to space $\times$ spin $\times$ flavour.
 \end{problem}
 \begin{solution}
 
@@ -14,7 +14,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{10.2}
-
+From the expression for the running of $\als$ with $N_f = 3$, determine the value of $q^2$ at which $\als$ appears to become infinite. Comment on this result.
 \end{problem}
 \begin{solution}
 
@@ -25,7 +25,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{10.3}
-
+Find the overall “colour factor” for $qq \to qq$ if QCD corresponded to a SU(2) colour symmetry.
 \end{problem}
 \begin{solution}
 
@@ -36,7 +36,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{10.4}
+Calculate the non-relativistic QCD potential between quarks $q_1$ and $q_2$ in a $q_1q_2q_3$ baryon with colour wavefunction
 
+\begin{align*}
+    \psi = \frac{1}{\sqrt{6}} \left(  rgb-grb+gbr-bgr  +brg - rbg\right)
+\end{align*}\\
 \end{problem}
 \begin{solution}
 
@@ -47,7 +51,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{10.5}
-
+Draw the lowest-order QCD Feynman diagrams for the process $p\overbar{p}\to$ two-jets + X, where X represents the remnants of the colliding hadrons.
 \end{problem}
 \begin{solution}
 
@@ -58,7 +62,31 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{10.6}
+The observed events in the process $pp\to$ two-jets at the LHC can be described in terms of the jet $\pt$ and the jet rapidities $y_3$ and $y_4$.
 
+\begin{enumerate}[label=(\alph*)]
+    \item Assuming that the jets are massless, $E^2 = \pt^2 + p_z^2 $, show that the four-momenta of the final-state jets can be written as
+    
+        \begin{align*}
+            p_3 &= \left( \pt \cosh y_3,+ \pt \sin \phi ,+ \pt \cos \phi , \pt \sinh y_3  \right) \\
+            p_4 &= \left( \pt \cosh y_4,- \pt \sin \phi ,- \pt \cos \phi , \pt \sinh y_4  \right) 
+        \end{align*}\\
+    \item By writing the four-momenta of the colliding partons in a pp collision as 
+    
+        \begin{align*}
+            p_1 = \frac{\sqrt{s}}{2} \left( x_1,0,0,x_1 \right) \andtxt p_2 = \frac{\sqrt{s}}{2} \left( x_2,0,0,-x_1 \right)
+        \end{align*}\\
+        show that conservation of energy and momentum implies
+
+        \begin{align*}
+            x_1 = \frac{\pt}{\sqrt{s}}\left( e^{+y_3} + e^{+y_4} \right) \andtxt x_2 = \frac{\pt}{\sqrt{s}}\left( e^{-y_3} + e^{-y_4} \right)
+        \end{align*}\\
+    \item Hence show that
+    
+        \begin{align*}
+            Q^2 = \pt^2 \left( 1 + e^{y_4-y_3} \right).
+        \end{align*}\\
+\end{enumerate}
 \end{problem}
 \begin{solution}
 
@@ -69,7 +97,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{10.7}
+Using the results of the previous question show that the Jacobian
 
+    \begin{align*}
+        \frac{\partial \left( y_3,y_4,\pt^2 \right)}{\partial \left( x_1, x_2, q^2 \right)} = \frac{1}{x_1x_2}.
+    \end{align*}\\
 \end{problem}
 \begin{solution}
 
@@ -80,7 +112,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{10.8}
+The total cross section for the Drell-Yan process $p\overbar{p}\to \mu^+\mu^-X$ was shown to be
 
+\begin{align*}
+    \sigma_\text{DY} = \frac{4\pi \alpha^2}{81s} \int_0^1 \int_0^1 \frac{1}{x_1x_2} \left[ 4u(x_1)u(x_2) + 4 \overbar{u}(x_1)\overbar{u}(x_2) + d(x_1) d(x_2) + \overbar{d}(x_1)\overbar{d}(x_2)  \right] \dif x_1 \dif x_2
+\end{align*}\\
+\begin{enumerate}[label=(\alph*)]
+    \item Express this cross section in terms of the valence quark PDFs and a single PDF for the sea contribution, where $S(x)=\overbar{u}(x) = \overbar{d}(x)$.
+    \item Obtain the corresponding expression for $pp\to\mu^+\mu^-X$.
+    \item Sketch the region in the $ x_1-x_2$ plane corresponding $S_{q\overbar{q}}>s/4$. Comment on the expected ratio of the Drell-Yan cross sections in $pp$ and $p\overbar{p}$ collisions (at the same centre-of-mass energy) for the two cases: (i) $\hat{s} \ll s$ and (ii) $\hat{s} > s/4$, where $\hat{s}$ is the centre-of-mass energy of the colliding partons.
+\end{enumerate}
 \end{problem}
 \begin{solution}
 
@@ -91,7 +132,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{10.9}
+Drell-Yan production of $\mu^+\mu^-$ pairs with an invariant mass $Q^2$ has been studied in $\pi^\pm$ interactions with carbon (which has equal numbers of protons and neutrons). Explain why the ratio
 
+\begin{align*}
+    \frac{\sigma\left( \pi^+ \text{C} \to \mu^+\mu^-X \right)}{\sigma\left( \pi^- \text{C} \to \mu^+\mu^-X \right)}
+\end{align*}\\
+tends to unity for small $Q^2$ and tends to $\frac{1}{4}$ as $Q^2$ approaches $s$.
 \end{problem}
 \begin{solution}
 
