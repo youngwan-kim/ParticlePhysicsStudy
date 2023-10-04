@@ -6,23 +6,27 @@
 Use the data in Figure 8.2 to estimate the lifetime of the $\Delta^+$ baryon.
 \end{problem}
 \begin{solution}
+One could easily notice that the corresponding FWHM $\Gamma_{\Delta^+}$ for the $\Delta^+$ baryon which resonates around $W=1.232\GeV$ or $E_3 \approx 4.2 \GeV$ is around $\Gamma_{\Delta^+} \simeq 0.1 \GeV$. Thus the lifetime $\tau$ can be simply estimated by inverting $\Gamma_{\Delta^+}$, 
 
+\begin{align*}
+    \tau_{\Delta^+} = \Gamma_{\Delta^+}^{-1} \simeq 10 \GeV^{-1} = 10 \cdot \num{6.58e-25} \unit{s} \simeq \boxed{ \num{0.6e-23} \unit{s}} 
+\end{align*}\\
+which is a good estimation compared to the value stated in the \href{https://pdg.lbl.gov/2023/tables/rpp2023-tab-baryons-Delta.pdf}{\texttt{PDG summary table}}.
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{problem}{8.2}
+\begin{problem}{8.2} \customlabel{P8.2}{8.2}
 In fixed-target electron-proton elastic scattering
-
 \begin{align*}
-    Q^2 = 2m_p \left(E_1-E_2\right) = 2m_p E_{1y} \andtxt Q^2 = 4E_1E_3 \sin^2 \frac{\theta}{2}
+    Q^2 = 2m_p \left(E_1-E_2\right) = 2m_p E_{1}y \andtxt Q^2 = 4E_1E_3 \sin^2 \frac{\theta}{2}
 \end{align*}
 
 \begin{enumerate}[label=(\alph*)]
     \item Use these relations to show that 
-    
+
     \begin{align*}
         \sin^2\frac{\theta}{2} = \frac{E_1}{E_3} \frac{m_p^2}{Q^2} y^2 \quad \text{and hence} \quad \frac{E_3}{E_1}\cos^2\frac{\theta}{2} = 1-y - \frac{m_p^2 y^2}{Q^2}.
     \end{align*}
@@ -41,12 +45,48 @@ In fixed-target electron-proton elastic scattering
     can be written in the Lorentz-invariant form
 
     \begin{align*}
-        \frac{\dif\sigma}{\dif\Omega} = \frac{4\pi\alpha^2}{Q^4} \left[ \frac{G_E^2 + \tau G_M^2}{1+\tau} \left( 1 - y - \frac{m_p^2 y^2}{Q^2} \right) + \frac{1}{2}y^2 G_M^2 \right]
-    \end{align*}
+        \frac{\dif\sigma}{\dif Q^2} = \frac{4\pi\alpha^2}{Q^4} \left[ \frac{G_E^2 + \tau G_M^2}{1+\tau} \left( 1 - y - \frac{m_p^2 y^2}{Q^2} \right) + \frac{1}{2}y^2 G_M^2 \right]
+    \end{align*}\\
 \end{enumerate}
 \end{problem}
 \begin{solution}
+    \begin{enumerate}[label=(\alph*)]
+        \item It is straightforward to see that, 
+            
+            \begin{align*}
+                Q^2 = 4E_1E_3\sin^2\frac{\theta}{2} \implies \sin^2 \frac{\theta}{2} &= \frac{Q^2}{4E_1E_3}  = \frac{2m_p E_{1}y}{2 E_3} \\[0.12in]
+                &= \frac{m_p y}{2 E_3 } \times \frac{2E_1 y}{2 E_1 y}\\[0.12in]
+                &= \frac{m_p y}{2 E_3} \times \frac{2E_1 y}{Q^2 m_p^{-1}} = \frac{E_1}{E_3} \frac{m_p^2}{Q^2}y^2 \qed
+            \end{align*}\\
+            and also,
 
+            \begin{align*}
+                \frac{E_3}{E_1}\cos^2\frac{\theta}{2} &= \frac{E_3}{E_1} \left(1 - \sin^2 \frac{\theta}{2}\right) \\[0.12in]
+                &= \frac{E_3}{E_1} \left(  1 - \frac{E_1}{E_3} \frac{m_p^2}{Q^2}y^2  \right) \\[0.12in]
+                &= \frac{E_3}{E_1} - \frac{m_p^2}{Q^2}y^2 = 1 - y - \frac{m_p^2}{Q^2}y^2 \qed
+            \end{align*}\\
+            \item From azimuthal symmetry, one could let $\dif \Omega = \dif\left(  \cos \theta \right) \dif \phi = 2\pi \dif\left(  \cos \theta \right)$ which leads to : 
+            
+                \begin{align*}
+                    \left|\frac{\dif Q^2}{ \dif \Omega}\right| &= \frac{1}{2\pi} \left| \frac{\dif Q^2}{ \dif \left( \cos \theta \right)} \right| \\[0.12in]
+                    &= \frac{1}{2\pi} \left| \frac{\dif}{\dif \left( \cos\theta \right)} \left[ \frac{2m_p E_1^2 \left( 1-\cos\theta \right)}{ m_p + E_1 \left( 1-\cos\theta \right) }  \right]\right| \\[0.12in]
+                    &= \frac{1}{2\pi} \left| \frac{-2m_p^2 E_1^2}{\left[  m_p + E_1 \left( 1-\cos\theta \right) \right]^2} \right| = \frac{1}{\pi} E_3^2 
+                \end{align*}\\
+                Thus it could be written as, 
+
+                \begin{align}
+                    \frac{\dif \sigma}{\dif Q^2} = \left|  \frac{\dif Q^2}{\dif \Omega} \right|^{-1} \frac{\dif \sigma }{\dif \Omega} = \frac{\pi}{E_3^2} \frac{\dif\sigma}{\dif\Omega} \qed \label{P8.2b}
+                \end{align}\\
+                \item Starting from the relation (\ref{P8.2b}), 
+                
+                    \begin{align*}
+                        \frac{\dif \sigma}{\dif Q^2} = \frac{\pi}{E_3^2} \frac{\dif \sigma}{\dif \Omega} &= \frac{\pi}{\color{pinegreen} E_3^2} \cdot  \frac{\alpha^2}{\color{pinegreen} 4E_1^2 \sin^4\halftheta} \frac{E_3}{E_1} \left( \frac{G_E^2+\tau G_M^2}{1+\tau} \cos^2 \halftheta + 2\tau G_M^2 \sin^2\halftheta \right) \\[0.12in]
+                        &=  \alpha^2 \pi {\color{pinegreen} \frac{4}{Q^4} }\left[ \left( \frac{G_E^2+\tau G_M^2}{1+\tau} \right) {\color{red} \frac{E_3}{E_1}  \cos^2 \halftheta }+ 2\tau G_M^2 {\color{blue} \frac{E_3}{E_1}  \sin^2\halftheta} \right] \\[0.12in]
+                        &=   {  \frac{4 \alpha^2 \pi }{Q^4} }\left[   \frac{G_E^2+\tau G_M^2}{1+\tau}  {\color{red} \left( 1-y-\frac{m_p^2}{Q^2}y^2 \right) }+ 2{\color{magenta} \tau} G_M^2 {\color{blue} \frac{m_p^2}{Q^2}y^2 } \right] \\[0.12in]
+                        &=  {  \frac{4 \alpha^2 \pi }{Q^4} }\left[   \frac{G_E^2+\tau G_M^2}{1+\tau}  { \left( 1-y-\frac{m_p^2}{Q^2}y^2 \right) }+ 2{\color{magenta} \frac{Q^2}{4m_p^2}} G_M^2 {  \frac{m_p^2}{Q^2}y^2 } \right] \\[0.12in]
+                        &=  \frac{4\pi\alpha^2}{Q^4} \left[ \frac{G_E^2 + \tau G_M^2}{1+\tau} \left( 1 - y - \frac{m_p^2 y^2}{Q^2} \right) + \frac{1}{2}y^2 G_M^2 \right] \qed
+                    \end{align*}\\
+    \end{enumerate}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -54,7 +94,7 @@ In fixed-target electron-proton elastic scattering
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{problem}{8.3}
-    In fixed-target electron–proton inelastic scattering:
+    In fixed-target electron-proton inelastic scattering:
     \begin{enumerate}[label=(\alph*)]
         \item Show that the laboratory frame differential cross section for deep-inelastic scattering is related to the Lorentz-invariant differential cross section of Equation (8.11) by
         
@@ -72,14 +112,74 @@ In fixed-target electron-proton elastic scattering
         \item Hence, show that the Lorentz-invariant cross section of Equation (8.11) becomes
         
         \begin{align*}
-            \frac{\dif^2 \sigma}{\dif E_3 \dif \Omega} = \frac{\alpha^2}{4E_1^2 \sin^4 \halftheta} \left[ \frac{F_2}{\nu}\cos^2\halftheta + \frac{2F_1}{m_p^2} \sin^2 \halftheta \right].
+            \frac{\dif^2 \sigma}{\dif E_3 \dif \Omega} = \frac{\alpha^2}{4E_1^2 \sin^4 \halftheta} \left[ \frac{F_2}{\nu}\cos^2\halftheta + \frac{2F_1}{m_p} \sin^2 \halftheta \right].
         \end{align*}
 
         \item A fixed-target ep scattering experiment consists of an electron beam of maximum energy $20 \GeV$ and a variable angle spectrometer that can detect scattered electrons with energies greater than $2 \GeV$. Find the range of values of $\theta$ over which deep inelastic scattering events can be studied at $x = 0.2$ and $Q^2 = 2 \GeV^2$
     \end{enumerate}
 \end{problem}
 \begin{solution}
+    \begin{enumerate}[label=(\alph*)]
+        \item From the chain rule of derivations, the following holds 
+        
+            \begin{align*}
+                \frac{\dif^2 \sigma}{\dif E_3 \dif \Omega} &= \left| \frac{\dif E_3}{ \dif x}\right|^{-1} \cdot \left| \frac{\dif Q^2}{\dif \Omega} \right|^{-1} \frac{\dif^2 \sigma}{\dif x \dif \Omega}  \\[0.12in]
+                &= \left| \frac{\dif E_3}{ \dif x}\right|^{-1} \cdot \left| \frac{1}{2\pi}\frac{\dif }{\dif \left( \cos\theta \right)} \left( p_1 - p_3 \right)^2 \right|^{-1} \frac{\dif^2 \sigma}{\dif x \dif \Omega}  \\[0.12in]
+                &=  \left| \frac{\dif E_3}{ \dif x}\right|^{-1} \cdot \pi \left|  \frac{\dif }{\dif \left( \cos\theta \right)} \left[ m_e^2 - E_1 E_3 \left( 1-\cos\theta  \right) \right] \right|^{-1} \frac{\dif^2 \sigma}{\dif x \dif \Omega} \\[0.12in]
+                &= \left| \frac{\dif E_3}{ \dif x}\right|^{-1} \cdot  \frac{E_1E_3}{\pi} \frac{\dif^2 \sigma}{\dif x \dif \Omega} \\[0.12in]
+                &=  \left| \frac{\dif }{ \dif x} \left( E_1 - \frac{Q^2}{2m_p x} \right) \right|^{-1} \cdot  \frac{E_1E_3}{\pi} \frac{\dif^2 \sigma}{\dif x \dif \Omega}  \\[0.12in]
+                &= \frac{2m_p x^2}{Q^2} \frac{E_1E_3}{\pi}  \frac{\dif^2 \sigma}{\dif x \dif Q^2} \qed
+            \end{align*}\\
+        \item  Starting from the relation of $Q^2 = - \left( p_1 - p_3 \right)^2 \simeq 2E_1 E_3 \left( 1-\cos\theta \right) $, one could write down
+        
+            \begin{align}
+                Q^2 = 2E_1 E_3 \left( 1-\cos\theta \right) = 4 E_1 E_3 \sin^2 \halftheta = 2m_p \nu x &\implies \sin^2\halftheta = \frac{ m_p \nu x}{2E_1E_3} = \frac{ m_p  xy}{2 E_3} \nonumber \\[0.12in]
+                &\implies \frac{1}{m_p} \frac{E_3}{E_1} \sin^2\halftheta =  \frac{1}{m_p} \frac{E_3}{E_1}\frac{ m_p  xy}{2 E_3} \label{P8.3.b}
+            \end{align}\\
+        Also from the relation between $Q^2$ and $E_1$
 
+            \begin{align*}
+                Q^2 \simeq \left( s-m_p^2 \right) xy = 2E_1 m_p xy \implies E_1 = \frac{Q^2}{2m_p xy}
+            \end{align*}\\
+        Plugging this into (\ref{P8.3.b}) yields,
+
+            \begin{align*}
+                \frac{1}{m_p} \frac{E_3}{E_1} \sin^2\halftheta = \frac{1}{m_p} \frac{E_3}{E_1}\frac{ m_p  xy}{2 E_3} = \frac{m_p }{Q^2}x^2 y^2 \qed
+            \end{align*}\\
+        Then using the trigonometric relation, 
+
+            \begin{align*}
+                \frac{E_3}{E_1}\cos^2 \halftheta  &=  \frac{E_3}{E_1} -  \frac{E_3}{E_1}\sin^2 \halftheta  \\[0.12in]
+                &= \frac{E_3}{E_1} -  \frac{m_p^2 }{Q^2}x^2 y^2  = 1-y-\frac{m_p^2 }{Q^2}x^2 y^2 \qed
+            \end{align*}\\
+        \item From the above results,
+        
+            \begin{align*}
+                \frac{\dif^2 \sigma}{\dif E_3 \dif \Omega} &=  \frac{2m_p x^2}{Q^2} \frac{E_1E_3}{\pi} \frac{\dif^2 \sigma}{\dif x \dif Q^2} \\[0.12in]
+                &= \frac{2m_p x^2}{Q^2} \frac{E_1E_3}{\pi} \frac{4\pi\alpha^2}{\color{pinegreen} Q^4} \left[  { \color{red} \left( 1-y-\frac{m_p^2 y^2}{Q^2} \right)} \frac{F_2}{x} + {\color{blue} y^2} F_1 \right] \\[0.12in]
+                &=  \frac{2m_p x^2}{Q^2} \frac{E_1E_3}{\pi} \frac{4\pi\alpha^2}{\color{pinegreen} 16 E_1^2 E_3^2 \sin^4 \halftheta} \left[  {\color{red} \frac{E_3}{E_1} \cos^2 \halftheta} \frac{F_2}{x} + {\color{blue} \frac{1}{x^2 m_p^2} \frac{E_3}{E_1} \sin^2\halftheta  Q^2 }F_1 \right] \\[0.12in]
+                &= \frac{\alpha^2}{4E_1^2 \sin^4 \halftheta} \left( \frac{2m_p x^2}{Q^2} \cancelto{}{\frac{E_3}{E_1}} \right)\left[   \cancelto{}{\frac{E_3}{E_1}} \cos^2 \halftheta  \frac{F_2}{x} +   \frac{1}{x^2 m_p^2} \cancelto{}{\frac{E_3}{E_1}} \sin^2\halftheta  Q^2 F_1 \right] \\[0.12in]
+                &= \frac{\alpha^2}{4E_1^2 \sin^4 \halftheta}  \left[     \cos^2 \halftheta  F_2 \frac{2 m_p x}{ \color{magenta} Q^2} +     \sin^2\halftheta    F_1 \frac{2}{m_p} \right] \\[0.12in]
+                &= \frac{\alpha^2}{4E_1^2 \sin^4 \halftheta}  \left[     \cos^2 \halftheta  F_2 \frac{2 m_p x}{ \color{magenta} 2 m_p x \nu} +     \sin^2\halftheta    F_1 \frac{2}{m_p} \right] \\[0.12in]
+                &=  \frac{\alpha^2}{4E_1^2 \sin^4 \halftheta} \left[ \frac{F_2}{\nu}\cos^2\halftheta + \frac{2F_1}{m_p} \sin^2 \halftheta \right] \qed
+            \end{align*}\\
+        \item From the given values, one could find that 
+        
+            \begin{align*}
+                \nu = \frac{Q^2}{2m_p x} \simeq \frac{2 \GeV^2}{2 \cdot 0.938 \GeV \cdot 0.2} \simeq 5.3 \GeV \implies E_3 = E_1 - 5.3 \GeV \in \left[ 2,14.7 \right] \GeV
+            \end{align*}\\
+            where the minimum value of 2 GeV is from the detector resolution mentioned in the problem. Using the expression of $\sin^2 \theta/2$ derived in (b), one could obtain 
+
+            \begin{align*}
+                \sin^2 \halftheta = \frac{E_1}{E_3} \frac{m_p^2}{Q^2} x^2 y^2 = \frac{1}{E_1E_3} {\color{red}\frac{m_p^2}{Q^2} x^2 \nu^2} \simeq \frac{\color{red} 2.5 \GeV^2}{E_3 \left( E_3 + 5.3 \GeV \right)}  \quad \text{for} \quad E_3 \in  \left[ 2,14.7 \right] \GeV
+            \end{align*}\\
+            which converts into an expression of angle as,
+
+            \begin{align*}
+                \theta \simeq 2 \arcsin \sqrt{\frac{2.5 \GeV^2}{E_3 \left( E_3 + 5.3 \GeV \right)}} \quad \text{for} \quad E_3 \in  \left[ 2,14.7 \right] \GeV
+            \end{align*}\\
+            it can be checked that in the considered region $\theta(E_3)$ decreases monotonically, thus the range for $\theta$ can be derived as $\boxed{  10.3^\circ \lesssim  \theta \lesssim  48.8^\circ }$.
+    \end{enumerate}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
