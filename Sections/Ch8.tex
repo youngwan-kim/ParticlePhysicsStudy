@@ -190,7 +190,24 @@ In fixed-target electron-proton elastic scattering
     If quarks were spin-0 particles, why would $F^{ep}_1(x)/F^{ep}_2(x)$ be zero?
 \end{problem}
 \begin{solution}
+One should remind that the angular dependence of electron-proton cross sections arise from the helicity conservation of electrons and quarks, which is due to the half-spin structure of themselves. Starting from the differential cross section of an electron-quark collision,
 
+    \begin{align*}
+        \frac{\dif \sigma}{ \dif \Omega^\ast} &= \frac{Q_q^2 e^4}{8\pi^2 s}  \frac{1}{\left( 1-\cos\theta^\ast \right)^2} \left[ 1 + \cancelto{}{\frac{1}{4}\left( 1+ \cos\theta^\ast \right)^2 }\right]  \\[0.12in]
+        &= \frac{Q_q^2 e^4}{8\pi^2 s}   \frac{1}{\left( 1-\cos\theta^\ast \right)^2} = \frac{Q_q^2 }{8\pi^2 s} \cdot 16\pi^2 \alpha^2 \cdot \frac{E^4}{q^4} = \frac{2Q_q^2 \alpha^2}{q^4} \frac{E^4}{s} = \frac{Q_q^2 \alpha^2s}{8 q^4} 
+    \end{align*}\\
+where the second angular dependent term is neglected as spin-0 is assumed for quarks. The corresponding Lorentz-invariant expression can be then achieved using chain rules, 
+
+    \begin{align*}
+        \frac{\dif \sigma}{\dif q^2} = \frac{\dif \sigma}{\dif \Omega^\ast} \left| \frac{\dif q^2}{\dif \Omega^\ast} \right|^{-1} &=  \frac{\dif \sigma}{\dif \Omega^\ast} \left| \frac{1}{2\pi} \frac{\dif}{\dif \left( \cos \theta^\ast \right)} E^2 \left[ \left( 1-\cos\theta^\ast \right) \right] \right|^{-1} \\[0.12in]
+        &= \frac{Q_q^2 \alpha^2s}{8 q^4}  \cdot \frac{2\pi}{E^2} = \frac{\pi \alpha^2  Q_q^2 }{ q^4}\\
+    \end{align*}    
+Now considering the quark-parton model, one could interpret the above differential cross section in terms of proton structure functions :
+
+    \begin{align*}
+        \frac{\dif \sigma}{\dif Q^2} = \frac{\pi \alpha^2 Q_q^2}{Q^4} \left[ 1+0\cdot (1-y)^2 \right] \implies \frac{\dif^2 \sigma}{\dif x \dif Q^2} = \frac{\pi \alpha^2 Q_q^2}{Q^4} \sum_i Q_i^2 q_i^p(x)
+    \end{align*}\\
+    which implies that as the coefficient for $y^2$ has to be $0$, $F_1^{\text{ep}}(x)$ has  to be 0. 
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -201,7 +218,12 @@ In fixed-target electron-proton elastic scattering
     What is the expected value of $\int_0^1 u(x) - \overbar{u}(x) \dif x$ for the proton?
 \end{problem}
 \begin{solution}
+Splitting the up quark PDF into valence and sea contribution, one obtains
 
+    \begin{align*}
+        \int_0^1 u(x) - \overbar{u}(x) \dif x =  \int_0^1 \left[ \left[ u_V(x) + u_S(x) \right] - u_S(x) \right] \dif x = \int_0^1 u_V(x) \dif x = \boxed{2} 
+    \end{align*}\\
+where the last identity holds as the proton is being considered here.
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -212,12 +234,35 @@ In fixed-target electron-proton elastic scattering
 Figure 8.18 shows the raw measurements of the structure function $F_2(x)$ in low-energy electron-deuterium scattering. When combined with the measurements of Figure 8.11, it is found that
 
 \begin{align*}
-    \frac{\int_0^1 F^{eD}_2(x)}{\int_0^1 F^{ep}_2(x)} \simeq 0.84
+    \frac{\int_0^1 F^{eD}_2(x) \dif x}{\int_0^1 F^{ep}_2(x) \dif x} \simeq 0.84
 \end{align*}\\
-Write down the quark–parton model prediction for this ratio and determine the relative fraction of the momen- tum of proton carried by down-/anti-down-quarks compared to that carried by the up-/anti-up-quarks, $f_d/f_u$
+Write down the quark-parton model prediction for this ratio and determine the relative fraction of the momen- tum of proton carried by down-/anti-down-quarks compared to that carried by the up-/anti-up-quarks, $f_d/f_u$
 \end{problem}
 \begin{solution}
+Starting from writing down $F_2^{\text{eD}}(x)$ in terms of quark PDFs in the scattered deuterium, 
 
+    \begin{align}
+        F_2^{\text{eD}}(x) = x \sum_i Q_i^2  q_i^\text{D}(x) = x \left[ \frac{4}{9} u^\text{D}(x) + \frac{1}{9} d^\text{D}(x) +  \frac{4}{9} \bar{u}^\text{D}(x) + \frac{1}{9} \bar{d}^\text{D}(x)  \right] \label{P8.6.1}
+    \end{align}\\
+    and upon the fact that deuterium is consisted of one proton and neutron each, the following expressions for $q_i^\text{D}(x)$ holds :
+
+    \begin{align*}
+        u^\text{D}(x) = \frac{1}{2}\left[ u^p(x) + u^n(x) \right] =  \frac{1}{2} \left[ u(x) + d(x) \right]  &\andtxt  d^\text{D}(x) =  \frac{1}{2} \left[ d^p(x) + d^n(x) \right] =  \frac{1}{2} \left[ d(x) + u(x) \right] \\[0.12in]
+        \bar{u}^\text{D}(x) =  \frac{1}{2}\left[  \bar{u}^p(x) + \bar{u}^n(x) \right] =   \frac{1}{2} \left[ \bar{u}(x) + \bar{d}(x)  \right] &\andtxt  \bar{d}^\text{D}(x) =  \frac{1}{2}\left[  \bar{d}^p(x) + \bar{d}^n(x) \right] =  \frac{1}{2} \left[ \bar{d}(x) + \bar{u}(x)  \right]
+    \end{align*}\\
+    Inserting these relations into (\ref{P8.6.1}) gives, 
+
+    \begin{align*}
+        F_2^{\text{eD}}(x) &=  x \frac{1}{2} \left[ \frac{4}{9} u^\text{D}(x) + \frac{1}{9} d^\text{D}(x) +  \frac{4}{9} \bar{u}^\text{D}(x) + \frac{1}{9} \bar{d}^\text{D}(x)  \right] \\[0.12in]
+        &= x  \frac{1}{2}  \left[ \frac{4}{9}  \left\{ u(x) + d(x)  \right\}  + \frac{1}{9}  \left\{ u(x) + d(x)  \right\}  +  \frac{4}{9} \left\{  \bar{u}(x) + \bar{d}(x) \right\} + \frac{1}{9} \left\{  \bar{u}(x) + \bar{d}(x) \right\}\right] \\[0.12in]
+        &= x \frac{5}{18} \left[  u(x) + d(x) +  \bar{u}(x) + \bar{d}(x) \right]
+    \end{align*}\\
+    Then, the ratio between the integrated structure functions can be expressed as the following upon the quark-parton model as,
+
+    \begin{align*}
+        \frac{\int_0^1 F_2^\text{eD}(x)}{\int_0^1 F_2^\text{ep}(x)} = \frac{\frac{5}{18}f_u + \frac{5}{18}f_d}{\frac{4}{9}f_u + \frac{1}{9}f_d} = \frac{5(1+r)}{8+2r} \simeq 0.84 \quad \text{where} \quad r \equiv \frac{f_d}{f_u}
+    \end{align*}\\
+    solving the above in terms of $r$ gives $\boxed{r\equiv f_d/f_u \simeq 0.51}$ which is as expected.
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
