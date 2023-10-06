@@ -288,7 +288,31 @@ Starting from writing down $F_2^{\text{eD}}(x)$ in terms of quark PDFs in the sc
     \end{enumerate}
 \end{problem}
 \begin{solution}
+    \begin{enumerate}[label=(\alph*)]
+        \item It could be easily seen that from the definition of $F_2$,
+            
+            \begin{align*}
+                F_2^\text{ep}(x) = x \sum_i Q_i^2 q_i^p(x) &= x \left[ \frac{4}{9} \left( u^p(x) + \bar{u}^p(x) \right) + \frac{1}{9} \left( d^p(x) + \bar{d}^p(x) \right) + \frac{1}{9} \left( s^p(x) + \bar{s}^p(x) \right) \right] \\[0.12in]
+                &=  \frac{4}{9} x \left[ u(x) + \bar{u}(x) \right] + \frac{1}{9} x \left[ d(x) + \bar{d}(x) + s(x) + \bar{s}(x) \right] \qed
+            \end{align*}\\
+        \item The same can be done for the case of neutrons by considering isospin symmetry : 
+        
+            \begin{align*}
+                F_2^\text{en}(x) = x \sum_i Q_i^2 q_i^p(x) &= x \left[ \frac{4}{9} \left( u^n(x) + \bar{u}^n(x) \right) + \frac{1}{9} \left( d^n(x) + \bar{d}^n(x) \right) + \frac{1}{9} \left( s^n(x) + \bar{s}^n(x) \right) \right] \\[0.12in]
+                &=  \frac{1}{9} x \left[ u(x) + \bar{u}(x) + s(x) + \bar{s}(x)  \right] + \frac{1}{4} x \left[ d(x) + \bar{d}(x) \right]
+            \end{align*}\\
+            Then one could calculate the given integral as, 
 
+            \begin{align*}
+                \int_0^1 \left[  F_2^\text{ep}(x) - F_2^\text{en}(x) \right] \frac{\dif x}{x} &= \frac{1}{3} \int_0^1 \left[ u(x) + \bar{u}(x) - d(x) -\bar{d}(x) \right] \dif x \\[0.12in]
+                &= \frac{1}{3} \int_0^1 \left[ u_V(x) + u_S(x) + \bar{u}(x) - d_V(x) - d_S(x) -\bar{d}(x) \right] \dif x \\[0.12in]
+                &\simeq \frac{1}{3} \int_0^1 \left[ u_V(x) +2 \bar{u}(x) - d_V(x) - 2 \bar{d}(x) \right] \dif x \quad  \Big( u_S(x) 
+                \simeq \bar{u}(x) \andtxt d_S(x) \simeq \bar{d}(x) \Big) \\[0.12in] 
+                &= \frac{1}{3} \int_0^1 \left[ u_V(x)- d_V(x) \right] \dif x - \frac{2}{3} \int_0^1 \left[ \bar{u}(x) -\bar{d}(x) \right] \dif x \\[0.12in]
+                &=  \frac{1}{3} - \frac{2}{3} \int_0^1 \left[ \bar{u}(x) -\bar{d}(x) \right] \dif x \qed
+            \end{align*}\\
+            The observed value of the above expression, which is $0.24\pm0.03$ being nearly close to $1/3$ can be interpreted as the second term being 0, which is that $\bar{u}(x)\simeq \bar{d}(x)$ in the measured region. 
+    \end{enumerate}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -304,9 +328,28 @@ At the HERA collider, electrons of energy $E_1 = 27.5 \GeV$ collided with proton
 where $\theta$ is the angle through which the electron has scattered and $E_3$ is the energy of the scattered electron. Estimate $x$ and $Q^2$ for the event shown in Figure 8.13 assuming that the energy of the scattered electron is $250 \GeV$.
 \end{problem}
 \begin{solution}
+Setting the four-vectors for the given collision, as 
 
+    \begin{alignat*}{3}
+        p_1 &= \left( E_1,0,0,E_1 \right) \quad &&p_2 = \left( E_2,0,0,-E_2 \right) \\[0.12in]
+        p_3 &= \left( E_3, E_3\sin\theta,0,E_3\cos\theta \right) \quad &&q = \left( E_1-E_3, - E_3\sin\theta, 0, E_1 - E_3\cos\theta  \right)
+    \end{alignat*}\\
+    which could be used to calculate the Bjorken $x$ as
+
+    \begin{align*}
+        x = \frac{Q^2}{2p_2\cdot q} &= -\frac{\left( p_1-p_3 \right)^2}{2p_2\cdot q} \simeq  \frac{p_1 \cdot p_3}{p_2\cdot q} \\[0.12in]
+        &= \frac{E_1E_3\left( 1-\cos\theta \right)}{E_2 \left( E_1-E_3 \right)+E_2\left( E_1-E_3\cos\theta \right)} \\[0.12in]
+        &= \frac{E_1E_3\left( 1-\cos\theta \right)}{E_2 \left[ 2 E_1-E_3 \left(  1+ \cos\theta  \right)\right]} \\[0.12in]
+        &= \frac{E_3}{E_2} \left[ \frac{1-\cos\theta}{2-\frac{E_3}{E_1}\left(1+\cos\theta\right)} \right] \qed
+    \end{align*}\\
+From Figure 8.13 one could notice that $\theta \simeq 150^\circ$, and using the values of $E_1 = 27.5\GeV$ , $E_2=820\GeV$ and $E_3 = 250\GeV$ which was given in the problem, $Q^2$ and $x$ can be computed as,
+
+    \begin{align*}
+        Q^2 &\simeq 2E_1 E_3 \left( 1-\cos\theta \right) \\[0.12in]
+        &\simeq 2 \cdot 27.5 \GeV \cdot 250\GeV \cdot \left( 1+ 0.86 \right) \simeq\boxed{ \num{2.55e+4} \GeV^2} \\[0.175in]
+        x &\simeq  \frac{E_3}{E_2} \left[ \frac{1-\cos\theta}{2-\frac{E_3}{E_1}\left(1+\cos\theta\right)} \right] \\[0.12in]
+        &\simeq \frac{250}{820} \left[  \frac{1+0.86}{2-\frac{250}{27.5}\left( 1-0.86 \right)}  \right] \simeq \boxed{0.77}
+    \end{align*}\\
 \end{solution}
-
-\noindent\rule{7in}{1.5pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
