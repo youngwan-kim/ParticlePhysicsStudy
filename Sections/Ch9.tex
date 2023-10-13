@@ -15,7 +15,21 @@ show that
 \end{align*}\\
 \end{problem}
 \begin{solution}
+From the general term of the binomial expansion,
 
+    \begin{align*}
+        \left( 1+ i \frac{1}{n} \boldsymbol{\alpha} \cdot \hat{\boldsymbol{G}}\right)^n &= \sum_{k=0}^n \frac{n!}{k!\left( n-k \right)!} \left(  i \frac{1}{n} \boldsymbol{\alpha} \cdot \hat{\boldsymbol{G}}\right)^k \\[0.12in]
+        &= \sum_{k=0}^n \frac{\left( n-k+1 \right) \cdots\left( n-1 \right) n}{k! } \frac{1}{n^k} \left(  i   \boldsymbol{\alpha} \cdot \hat{\boldsymbol{G}}\right)^k \\[0.12in]
+        &=  \sum_{k=0}^n  \frac{n-k+1}{n} \frac{n-k+2}{n} \cdots \frac{n-1}{n} \frac{n}{n} \frac{1}{k!} \left(  i   \boldsymbol{\alpha} \cdot \hat{\boldsymbol{G}}\right)^k \\[0.12in]
+        &= \sum_{k=0}^n \left[ \prod_{j=1}^k\left(  1-\frac{k-j}{n}  \right)\right]\frac{1}{k!} \left(  i   \boldsymbol{\alpha} \cdot \hat{\boldsymbol{G}}\right)^k
+    \end{align*}\\
+    Now taking the limit of $n\to\infty$ gives,
+
+    \begin{align*}
+        \hat{U}(\boldsymbol{\alpha}) &= \lim_{n\to\infty}   \left( 1+ i \frac{1}{n} \boldsymbol{\alpha} \cdot \hat{\boldsymbol{G}}\right)^n \\[0.12in]
+        &= \lim_{n\to\infty} \sum_{k=0}^n \Bigg[ \cancelto{1}{\prod_{j=1}^k\left(  1-\frac{k-j}{n}  \right)}\Bigg]\frac{1}{k!} \left(  i   \boldsymbol{\alpha} \cdot \hat{\boldsymbol{G}}\right)^k \\[0.12in]
+        &= \sum_{k=0}^n \frac{1}{k!} \left(  i   \boldsymbol{\alpha} \cdot \hat{\boldsymbol{G}}\right)^k = \exp \left( i   \boldsymbol{\alpha} \cdot \hat{\boldsymbol{G}} \right) \qed
+    \end{align*}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -47,7 +61,189 @@ By considering the isospin states, show that the rates for the following strong 
 \end{align*}\\
 \end{problem}
 \begin{solution}
+One should first note that branching ratio of certain decay modes depend on their cross-section which is proportional to the squared matrix element. Considering isospin states, the matrix element $\mathcal{M}$ can be expressed in terms of initial and final isospin states as, 
 
+\begin{align*}
+    \mathcal{M} = \braket{\psi_i|A_{if}|\psi_f}
+\end{align*}\\
+where $A_{if}$ is the isospin operator. Upon the fact that for any total isospin $I$, the strong force acts the same, it is good to specify $\mathcal{M}_I$ for each total isospin $I$ which is defined as 
+
+\begin{align*}
+    \mathcal{M}_I = \braket{\psi^I_f|A_I|\psi^I_i}
+\end{align*}\\
+where $A_I$ corresponds to the isospin operator for total isospin $I$. The first step is to identify the isospin states. This could be achieved by realizing that the isospin states can be composed using Clebsch-Gordan coefficients, which is summarized in Figure \ref{P9.3.f1}
+\begin{figure}[tbh!] 
+    \begin{center}
+    \setlength{\unitlength}{1mm}
+    \begin{picture}(140,65)(0,10)
+    \scriptsize
+
+    %
+    % j1 x j2
+    %
+    \put(4,26){\line(1,0){36}}
+    \put(4,26){\line(0,1){14}}
+    \put(20,40){\line(-1,0){16}}
+    \put(20,40){\line(0,1){8}}
+    \put(40,48){\line(-1,0){20}}
+    \put(40,48){\line(0,-1){22}}
+    \multiput(20,40)(2,0){10}{\line(1,0){1}}
+    \multiput(20,40)(0,-2){7}{\line(0,-1){1}}
+    \put(23,46){\makebox(0,0){$J$}}
+    \put(23,42){\makebox(0,0){$M$}}
+    \put(29,46){\makebox(0,0){$J$}}
+    \put(29,42){\makebox(0,0){$M$}}
+    \put(35,46){\makebox(0,0){$\cdots$}}
+    \put(35,42){\makebox(0,0){$\cdots$}}
+    \put(8,38){\makebox(0,0){$m_1$}}
+    \put(16,38){\makebox(0,0){$m_2$}}
+    \put(8,34){\makebox(0,0){$m_1$}}
+    \put(16,34){\makebox(0,0){$m_2$}}
+    \put(8,31){\makebox(0,0){$\vdots$}}
+    \put(16,31){\makebox(0,0){$\vdots$}}
+    \put(12,44){\makebox(0,0){\normalsize $j_1 \, \times \, j_2$}}
+    \put(30,33){\makebox(0,0){Coefficients}}
+    
+    
+    
+    
+    %
+    % 1/2 x 1/2
+    %
+    \put(60,58){\line(1,0){24}}
+    \put(60,58){\line(0,1){4}}
+    \put(76,62){\line(-1,0){16}}
+    \put(76,62){\line(0,1){8}}
+    \put(84,70){\line(-1,0){8}}
+    \put(84,70){\line(0,-1){12}}
+    \multiput(76,62)(2,0){4}{\line(1,0){1}}
+    \multiput(76,62)(0,-2){2}{\line(0,-1){1}}
+    \put(68,50){\line(1,0){32}}
+    \put(68,50){\line(0,1){8}}
+    \put(100,66){\line(-1,0){16}}
+    \put(100,66){\line(0,-1){16}}
+    \multiput(84,58)(2,0){8}{\line(1,0){1}}
+    \multiput(84,58)(0,-2){4}{\line(0,-1){1}}
+    \put(84,46){\line(1,0){24}}
+    \put(84,46){\line(0,1){4}}
+    \put(108,58){\line(-1,0){8}}
+    \put(108,58){\line(0,-1){12}}
+    \multiput(100,50)(2,0){4}{\line(1,0){1}}
+    \multiput(100,50)(0,-2){2}{\line(0,-1){1}}
+    \put(66,66){\makebox(0,0){\normalsize 1/2$\, \times \,$1/2}}
+    \put(80,68){\makebox(0,0){1}}
+    \put(80,64){\makebox(0,0){1}}
+    \put(88,64){\makebox(0,0){1}}
+    \put(96,64){\makebox(0,0){0}}
+    \put(64,60){\makebox(0,0){1/2}}
+    \put(72,60){\makebox(0,0){1/2}}
+    \put(80,60){\makebox(0,0){1}}
+    \put(88,60){\makebox(0,0){0}}
+    \put(96,60){\makebox(0,0){0}}
+    \put(72,56){\makebox(0,0){1/2}}
+    \put(80,56){\makebox(0,0){-1/2}}
+    \put(88,56){\makebox(0,0){1/2}}
+    \put(96,56){\makebox(0,0){1/2}}
+    \put(104,56){\makebox(0,0){1}}
+    \put(72,52){\makebox(0,0){-1/2}}
+    \put(80,52){\makebox(0,0){1/2}}
+    \put(88,52){\makebox(0,0){1/2}}
+    \put(96,52){\makebox(0,0){-1/2}}
+    \put(104,52){\makebox(0,0){-1}}
+    \put(88,48){\makebox(0,0){-1/2}}
+    \put(96,48){\makebox(0,0){-1/2}}
+    \put(104,48){\makebox(0,0){1}}
+    
+        
+        
+        %
+    % 1 x 1/2
+    %
+    \put(76,32){\line(-1,0){16}}
+    \put(76,32){\line(0,1){8}}
+    \put(60,28){\line(1,0){24}}
+    \put(60,28){\line(0,1){4}}
+    \put(84,40){\line(-1,0){8}}
+    \put(84,40){\line(0,-1){12}}
+    \multiput(76,32)(2,0){4}{\line(1,0){1}}
+    \multiput(76,32)(0,-2){2}{\line(0,-1){1}}
+    \put(68,20){\line(1,0){32}}
+    \put(68,20){\line(0,1){8}}
+    \put(100,36){\line(-1,0){16}}
+    \put(100,36){\line(0,-1){16}}
+    \multiput(84,28)(2,0){8}{\line(1,0){1}}
+    \multiput(84,28)(0,-2){4}{\line(0,-1){1}}
+    \put(84,12){\line(1,0){32}}
+    \put(84,12){\line(0,1){8}}
+    \put(116,28){\line(-1,0){16}}
+    \put(116,28){\line(0,-1){16}}
+    \multiput(100,20)(2,0){8}{\line(1,0){1}}
+    \multiput(100,20)(0,-2){4}{\line(0,-1){1}}
+    \put(100,8){\line(1,0){24}}
+    \put(100,8){\line(0,1){4}}
+    \put(124,20){\line(-1,0){8}}
+    \put(124,20){\line(0,-1){12}}
+    \multiput(116,12)(2,0){4}{\line(1,0){1}}
+    \multiput(116,12)(0,-2){2}{\line(0,-1){1}}
+    \put(68,36){\makebox(0,0){\normalsize 1$\, \times \,$1/2}}
+    \put(80,38){\makebox(0,0){3/2}}
+    \put(80,34){\makebox(0,0){3/2}}
+    \put(88,34){\makebox(0,0){3/2}}
+    \put(96,34){\makebox(0,0){1/2}}
+    \put(64,30){\makebox(0,0){1}}
+    \put(72,30){\makebox(0,0){1/2}}
+    \put(80,30){\makebox(0,0){1}}
+    \put(88,30){\makebox(0,0){1/2}}
+    \put(96,30){\makebox(0,0){1/2}}
+    \put(72,26){\makebox(0,0){1}}
+    \put(80,26){\makebox(0,0){-1/2}}
+    \put(88,26){\makebox(0,0){1/3}}
+    \put(96,26){\makebox(0,0){2/3}}
+    \put(104,26){\makebox(0,0){3/2}}
+    \put(112,26){\makebox(0,0){1/2}}
+    \put(72,22){\makebox(0,0){0}}
+    \put(80,22){\makebox(0,0){1/2}}
+    \put(88,22){\makebox(0,0){2/3}}
+    \put(96,22){\makebox(0,0){-1/3}}
+    \put(104,22){\makebox(0,0){-1/2}}
+    \put(112,22){\makebox(0,0){-1/2}}
+    \put(88,18){\makebox(0,0){0}}
+    \put(96,18){\makebox(0,0){-1/2}}
+    \put(104,18){\makebox(0,0){2/3}}
+    \put(112,18){\makebox(0,0){1/3}}
+    \put(120,18){\makebox(0,0){3/2}}
+    \put(88,14){\makebox(0,0){-1}}
+    \put(96,14){\makebox(0,0){1/2}}
+    
+
+    \end{picture}
+    \end{center}
+    \caption{Clebsch-Gordan coefficients where square roots are understood on each coefficient, that is, $-1/2$ meaning $\protect -\sqrt{1/2}$.}
+    \label{P9.3.f1}
+\end{figure}\\
+The initial state which are solely $\Delta$ baryons, can be represented by the following isospin states where each states are displayed in the form of $\ket{I\spc I_3}$ : 
+
+\begin{align*}
+    \psi_{\Delta^{++}} =  \Big| \frac{3}{2} \spc \frac{3}{2} \Big\rangle \comma \psi_{\Delta^{+}} =  \Big| \frac{3}{2} \spc \frac{1}{2} \Big\rangle \comma \psi_{\Delta^{0}} =  \Big| \frac{3}{2} \spc -\frac{1}{2} \Big\rangle \comma \psi_{\Delta^{-}} =  \Big| \frac{3}{2} \spc -\frac{3}{2} \Big\rangle 
+\end{align*}\\
+The isospin states for the $\pi$ mesons are simply derived using Figure \ref{P9.3.f1},
+
+\begin{align*}
+    \psi_{\pi^+} &= \psi_{uu} =  \Big| \frac{1}{2} \spc \frac{1}{2} \Big\rangle \otimes  \Big| \frac{1}{2} \spc \frac{1}{2} \Big\rangle = \ket{1\spc 1} \\[0.12in]
+    \psi_{\pi^-} &= \psi_{dd} =  \Big| \frac{1}{2} \spc -\frac{1}{2} \Big\rangle \otimes  \Big| \frac{1}{2} \spc -\frac{1}{2} \Big\rangle = \ket{1\spc -1} \\[0.12in]
+    \psi_{\pi^0} &= \psi_{\frac{1}{\sqrt{2}}\left( ud+du \right)} =  \frac{1}{\sqrt{2}}\left[ \Big| \frac{1}{2} \spc \frac{1}{2} \Big\rangle \otimes  \Big| \frac{1}{2} \spc -\frac{1}{2} \Big\rangle +   \Big| \frac{1}{2} \spc- \frac{1}{2} \Big\rangle \otimes  \Big| \frac{1}{2} \spc  \frac{1}{2} \Big\rangle  \right]= \ket{1\spc 0} 
+\end{align*}\\
+And for the decayed final state, again using the Clebsch-Gordan coefficients from Figure \ref{P9.3.f1}, the isospin states can be obtained :
+
+\begin{align*}
+    \psi_{\pi^+,p} &= \ket{1\spc 1} \otimes \Big| \frac{1}{2} \spc \frac{1}{2} \Big\rangle = \Big| \frac{3}{2} \spc \frac{3}{2} \Big\rangle \\[0.12in]
+    \psi_{\pi^+,n} &= \ket{1\spc 1} \otimes \Big| \frac{1}{2} \spc -\frac{1}{2} \Big\rangle = \sqrt{\frac{1}{3}} \Big| \frac{3}{2} \spc \frac{1}{2} \Big\rangle + \sqrt{\frac{2}{3}} \Big| \frac{1}{2} \spc \frac{1}{2} \Big\rangle \\[0.12in]
+    \psi_{\pi^0,p} &= \ket{1\spc 0} \otimes \Big| \frac{1}{2} \spc \frac{1}{2} \Big\rangle = \sqrt{\frac{2}{3}} \Big| \frac{3}{2} \spc \frac{1}{2} \Big\rangle - \sqrt{\frac{1}{3}} \Big| \frac{1}{2} \spc \frac{1}{2} \Big\rangle \\[0.12in]
+    \psi_{\pi^0,n} &= \ket{1\spc 0} \otimes \Big| \frac{1}{2} \spc -\frac{1}{2} \Big\rangle = \sqrt{\frac{2}{3}} \Big| \frac{3}{2} \spc -\frac{1}{2} \Big\rangle + \sqrt{\frac{1}{3}} \Big| \frac{1}{2} \spc -\frac{1}{2} \Big\rangle \\[0.12in]
+    \psi_{\pi^-,p} &= \ket{1\spc -1} \otimes \Big| \frac{1}{2} \spc \frac{1}{2} \Big\rangle = \sqrt{\frac{1}{3}} \Big| \frac{3}{2} -\spc \frac{1}{2} \Big\rangle + \sqrt{\frac{2}{3}} \Big| \frac{1}{2} \spc -\frac{1}{2} \Big\rangle \\[0.12in]
+    \psi_{\pi^-,n} &= \ket{1\spc -1} \otimes \Big| \frac{1}{2} \spc -\frac{1}{2} \Big\rangle =   \Big| \frac{3}{2} \spc -\frac{3}{2} \Big\rangle 
+\end{align*}\\
+Now using the above isospin expression of each initial and final states, one could estimate the respective cross section and their ratios. As the initial states are all represented with pure $I=3/2$ states, one would only have to compare the corresponding coefficients,
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
