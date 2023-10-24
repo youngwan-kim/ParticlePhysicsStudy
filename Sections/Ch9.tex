@@ -45,7 +45,19 @@ From the general term of the binomial expansion,
     where $\hat{J}_z$ is the angular momentum operator $\hat{J}_z = x \hatp_y - y\hatp_x $. 
 \end{problem}
 \begin{solution}
+One could write down the new coordinates $(x',y')$ after an infinitesimal counter clockwise z-axis rotation of $\epsilon$ as 
 
+\begin{align*}
+    x' &= x \cos \epsilon + y \sin \epsilon = x + y \epsilon + \mathcal{O}(\epsilon^2) \\[0.1in]
+    y' &= - x\sin \epsilon + y \cos \theta = -x \epsilon + y + \mathcal{O}(\epsilon^2) 
+\end{align*}\\
+which transforms the wavefunction as, 
+
+\begin{align*}
+    \psi(x,y,z) \to \psi'(x',y',z') &= \psi(x+y\epsilon,-x\epsilon+y,z) + \mathcal{O}(\epsilon^2) \\[0.135in]
+    &= \psi(x,y,z) + y\epsilon \pder{\psi}{x} - x\epsilon \pder{\psi}{y} + \mathcal{O}(\epsilon^2) \\[0.12in]
+    &\simeq \left[  1 - \epsilon \left( x \pder{}{y} - y \pder{}{x} \right) \right] \psi(x,y,z) = \left[ 1-i\epsilon \left( x \hatp_y - y \hatp_x \right) \right] \psi  \qed 
+\end{align*}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -243,7 +255,26 @@ And for the decayed final state, again using the Clebsch-Gordan coefficients fro
     \psi_{\pi^-,p} &= \ket{1\spc -1} \otimes \Big| \frac{1}{2} \spc \frac{1}{2} \Big\rangle = \sqrt{\frac{1}{3}} \Big| \frac{3}{2} -\spc \frac{1}{2} \Big\rangle + \sqrt{\frac{2}{3}} \Big| \frac{1}{2} \spc -\frac{1}{2} \Big\rangle \\[0.12in]
     \psi_{\pi^-,n} &= \ket{1\spc -1} \otimes \Big| \frac{1}{2} \spc -\frac{1}{2} \Big\rangle =   \Big| \frac{3}{2} \spc -\frac{3}{2} \Big\rangle 
 \end{align*}\\
-Now using the above isospin expression of each initial and final states, one could estimate the respective cross section and their ratios. As the initial states are all represented with pure $I=3/2$ states, one would only have to compare the corresponding coefficients,
+Now using the above isospin expression of each initial and final states, one could estimate the respective cross section and their ratios. As the initial states are all represented with pure $I=3/2$ states, one would only have to compare the corresponding coefficients which is to only consider $\mathcal{M}_{3/2}$. For instance, consider the $\Delta^- \to \pi^- n $ decay mode, 
+
+\begin{align*}
+    \mathcal{M}_{3/2} \left( \Delta^- \to \pi^- n \right) \sim \braket{\psi_{\Delta^-}  | \psi_{\pi^-,n}^{3/2}} =   \Big\langle \frac{3}{2} -\spc \frac{3}{2}  \Big| \frac{3}{2} -\spc \frac{3}{2} \Big\rangle  
+\end{align*}\\
+and considering that $\Gamma \sim \mathcal{M}^2$, one could say that 
+
+\begin{align*}
+    \Gamma\left( \Delta^- \to \pi^- n \right) \sim \mathcal{M}_{3/2} \left( \Delta^- \to \pi^- n \right)^2 \sim 1
+\end{align*}\\
+up to some constant factor. Doing the same for all of the other processes, one could obtain 
+
+\begin{align*}
+    \Gamma\left( \Delta^0 \to \pi^- p \right) &\sim \mathcal{M}_{3/2} \left( \Delta^0 \to \pi^- p \right)^2 = \left[ \sqrt{\frac{1}{3}}   \Big\langle \frac{3}{2} \spc -\frac{1}{2}  \Big| \frac{3}{2}  \spc- \frac{1}{2} \Big\rangle   \right]^2 \sim \frac{1}{3} \\[0.12in]
+    \Gamma\left( \Delta^0 \to \pi^0 n \right) &\sim \mathcal{M}_{3/2} \left( \Delta^0 \to \pi^0 n  \right)^2 = \left[ \sqrt{\frac{2}{3}}   \Big\langle \frac{3}{2}  \spc -\frac{1}{2}  \Big| \frac{3}{2}  \spc- \frac{1}{2} \Big\rangle   \right]^2 \sim \frac{2}{3} \\[0.12in]
+    \Gamma\left( \Delta^+ \to \pi^+ n \right) &\sim \mathcal{M}_{3/2} \left( \Delta^+ \to \pi^+ n  \right)^2 = \left[ \sqrt{\frac{1}{3}}   \Big\langle \frac{3}{2}  \spc \frac{1}{2}  \Big| \frac{3}{2}  \spc \frac{1}{2} \Big\rangle   \right]^2 \sim \frac{1}{3} \\[0.12in]
+    \Gamma\left( \Delta^+ \to \pi^0 p \right) &\sim \mathcal{M}_{3/2} \left( \Delta^+ \to \pi^0 p  \right)^2 = \left[ \sqrt{\frac{2}{3}}   \Big\langle \frac{3}{2}  \spc \frac{1}{2}  \Big| \frac{3}{2}  \spc \frac{1}{2} \Big\rangle   \right]^2 \sim \frac{2}{3} \\[0.12in]
+    \Gamma\left( \Delta^{++} \to \pi^+ p \right) &\sim \mathcal{M}_{3/2} \left( \Delta^{++} \to \pi^+ p  \right)^2 = \left[     \Big\langle \frac{3}{2}  \spc \frac{3}{2}  \Big| \frac{3}{2}  \spc \frac{3}{2} \Big\rangle   \right]^2 \sim 1  
+\end{align*}\\[0.12in]
+by multiplying all with a constant factor of 3, one would finally obtain the ratio of $\boxed{3:1:2:1:2:3}$ for the given branching ratios. 
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -254,6 +285,15 @@ Now using the above isospin expression of each initial and final states, one cou
 If quarks and antiquarks were spin-zero particles, what would be the multiplicity of the $L = 0$ multiplet(s). Remember that the overall wavefunction for bosons must be symmetric under particle exchange.
 \end{problem}
 \begin{solution}
+As mentioned in the textbook, it is known that the colour wavefunction $\xi_\text{colour}$ in the  overall wavefunction $\psi=\phi_\text{flavour}\chi_\text{spin}\xi_\text{colour}\eta_\text{space}$ is necessarily totally antisymmetric, plus only mesonic and baryonic multiplets are available due to colour confinement.  
+    \begin{enumerate}[label=(\roman*)]
+        \item Meson ($q\overbar{q}$)
+        
+            As quarks and antiquarks are distinguishable, there is no restriction on the exchange symmetry of the overall wavefunction. Thus the multiplicity will simply be \boxed{9} in this case.
+        \item Baryon ($qqq$)
+        
+        If (anti)quarks were spin-zero particles, the spin-statistics theorem states that the overall wavefunction $\psi=\phi_\text{flavour}\chi_\text{spin}\xi_\text{colour}\eta_\text{space}$ of the multiplets should be symmetric under the interchange of any two of the quarks. Also, as $L=0$ is considered the quarks are descirbed by $l=0$ s-waves, thus the exchange symmetry factor is given as $(-1)^l = 1$ for any two quarks which implies that $\eta_\text{space}$ is symmetric. As $\xi_\text{colour}\eta_\text{space}$ is antisymmetric, $\phi_\text{flavour}\chi_\text{spin}$ must be antisymmetric too in order to make $\psi$ totally symmetric. For the spin wavefunction, any multiplet with arbitrary multiplicity will end up being a singlet as it would be a combination of spin zero particles. This boils down to the requirement that if $\phi_\text{flavour}$ is totally antisymmetric, the overall wavefunction will be symmetric. As there is only one totally antisymmetric flavour state, in this case the multiplicity will be \boxed{1}.
+    \end{enumerate}
 
 \end{solution}
 
