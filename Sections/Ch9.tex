@@ -292,7 +292,7 @@ As mentioned in the textbook, it is known that the colour wavefunction $\xi_\tex
             As quarks and antiquarks are distinguishable, there is no restriction on the exchange symmetry of the overall wavefunction. Thus the multiplicity will simply be \boxed{9} in this case.
         \item Baryon ($qqq$)
         
-        If (anti)quarks were spin-zero particles, the spin-statistics theorem states that the overall wavefunction $\psi=\phi_\text{flavour}\chi_\text{spin}\xi_\text{colour}\eta_\text{space}$ of the multiplets should be symmetric under the interchange of any two of the quarks. Also, as $L=0$ is considered the quarks are descirbed by $l=0$ s-waves, thus the exchange symmetry factor is given as $(-1)^l = 1$ for any two quarks which implies that $\eta_\text{space}$ is symmetric. As $\xi_\text{colour}\eta_\text{space}$ is antisymmetric, $\phi_\text{flavour}\chi_\text{spin}$ must be antisymmetric too in order to make $\psi$ totally symmetric. For the spin wavefunction, any multiplet with arbitrary multiplicity will end up being a singlet as it would be a combination of spin zero particles. This boils down to the requirement that if $\phi_\text{flavour}$ is totally antisymmetric, the overall wavefunction will be symmetric. As there is only one totally antisymmetric flavour state, in this case the multiplicity will be \boxed{1}.
+        If (anti)quarks were spin-zero particles, the spin-statistics theorem states that the overall wavefunction $\psi=\phi_\text{flavour}\chi_\text{spin}\xi_\text{colour}\eta_\text{space}$ of the multiplets should be symmetric under the interchange of any two of the quarks. Also, as $L=0$ is considered the quarks are descirbed by $l=0$ s-waves, thus the exchange symmetry factor is given as $(-1)^l = 1$ for any two quarks which implies that $\eta_\text{space}$ is symmetric. As $\xi_\text{colour}\eta_\text{space}$ is antisymmetric, $\phi_\text{flavour}\chi_\text{spin}$ must be antisymmetric too in order to make $\psi$ totally symmetric. For the spin wavefunction, any multiplet with arbitrary multiplicity will end up being a singlet as it would be a combination of spin zero particles. This boils down to the requirement that if $\phi_\text{flavour}$ is totally antisymmetric, the overall wavefunction will be symmetric. As there is only one totally antisymmetric flavour state for a $qqq$ bound state, in this case the multiplicity will be \boxed{1}.
     \end{enumerate}
 
 \end{solution}
@@ -305,11 +305,29 @@ As mentioned in the textbook, it is known that the colour wavefunction $\xi_\tex
 The neutral vector mesons can decay leptonically through a virtual photon, for example by $V(q\overbar{q}) \to \gamma \to e^+e^-$. The matrix element for this decay is proportional to $\braket{\psi|\hat{Q}_q|\psi}$ where $\psi$ is the meson flavour wavefunction and $\hat{Q}_q$ is an operator that is proportional to the quark charge. Neglecting the relatively small differences in phase space, show that
 
 \begin{align*}
-    \Gamma \left( \rho^0 \to e^+e^- \right) \spc  : \spc   \Gamma \left( \omega \to  e^+e^- \right) \spc : \spc   \Gamma \left( \phi^- \to e^+e^- \right) \spc \approx \spc 9:1:2
+    \Gamma \left( \rho^0 \to e^+e^- \right) \spc  : \spc   \Gamma \left( \omega \to  e^+e^- \right) \spc : \spc   \Gamma \left( \phi \to e^+e^- \right) \spc \approx \spc 9:1:2
 \end{align*}\\
 \end{problem}
 \begin{solution}
+Let the QED matrix element of $q\overbar{q}\to e^+e^-$ as 
 
+\begin{align*}
+    \mathcal{M}(q\overbar{q}\to e^+e^-) \sim \braket{e^+e^-|\hat{Q}_q|q\overbar{q}} \equiv \alpha Q_q
+\end{align*}\\
+where $\alpha$ is an arbitrary constant and $Q_q$ is the charge of the quark $q$. Using the flavour states of $\ket{\rho^0},\ket{\omega}$ and $\ket{\phi}$ one could express the matrix element of each decay in terms of $\alpha$ as :
+
+\begin{align}
+    \mathcal{M}(\rho^0\to e^+e^-) \sim \braket{e^+e^-|\hat{Q}_q|\rho^0} &= \frac{1}{\sqrt{2}} \left[ \braket{e^+e^-|\hat{Q}_q|u\overbar{u}} - \braket{e^+e^-|\hat{Q}_d|d\overbar{d}} \right] \nonumber  \\
+    &=  \frac{\alpha}{\sqrt{2}} \left( Q_u -Q_d \right) =  \frac{1}{\sqrt{2}} \alpha \label{P9.5.1} \\[0.15in]
+    \mathcal{M}(\omega\to e^+e^-) \sim \braket{e^+e^-|\hat{Q}_q|\omega} &= \frac{1}{\sqrt{2}} \left[ \braket{e^+e^-|\hat{Q}_q|u\overbar{u}} + \braket{e^+e^-|\hat{Q}_d|d\overbar{d}} \right] \nonumber \\
+    &=  \frac{\alpha}{\sqrt{2}} \left( Q_u + Q_d \right) =  \frac{1}{3\sqrt{2}} \alpha \label{P9.5.2} \\[0.15in]
+    \mathcal{M}(\phi\to e^+e^-) \sim \braket{e^+e^-|\hat{Q}_q|\phi} &=  \braket{e^+e^-|\hat{Q}_q|s\overbar{s}}  = \alpha Q_s = -\frac{1}{3}\alpha \label{P9.5.3}
+\end{align}\\
+As the amplitude is proportional to the square of the matrix element, the ratio between corresponding branching ratios can be obtained by squaring (\ref{P9.5.1}), (\ref{P9.5.2}) and (\ref{P9.5.3}) which gives, 
+
+\begin{align*}
+    \Gamma \left( \rho^0 \to e^+e^- \right) \spc  : \spc   \Gamma \left( \omega \to  e^+e^- \right) \spc : \spc   \Gamma \left( \phi \to e^+e^- \right) \spc \approx \frac{1}{2}\alpha^2 : \frac{1}{18} \alpha^2 : \frac{1}{9} \alpha^2 = \boxed{9:1:2} \qed 
+\end{align*}\\
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -320,7 +338,21 @@ The neutral vector mesons can decay leptonically through a virtual photon, for e
 Using the meson mass formulae of (9.37) and (9.38), obtain predictions for the masses of the $\pi^\pm , \pi^0 , \eta , \eta' , \rho^0 , \rho^\pm , \omega$ and $\phi$. Compare the values obtained to the experimental values listed in Table 9.1.
 \end{problem}
 \begin{solution}
+    As the problem is simply requiring to plug in values into the mass formulae for prseudoscalar and vector mesons, a summarized table with both predicted and observed experimental values is presented : \\[0.125in]
 
+    \begin{table}[tbh!]
+        \centering
+        \begin{tabular}{ccc|ccc}
+        \multicolumn{3}{c|}{Pseudoscalar}                        & \multicolumn{3}{c}{Vector}                                \\ \hline
+        \multicolumn{1}{c|}{Meson}   & Prediction & Experimental & \multicolumn{1}{c|}{Meson}    & Prediction & Experimental \\ \hline
+        \multicolumn{1}{c|}{$\pi^0$}   &    $137 \MeV$  & $135 \MeV$     & \multicolumn{1}{c|}{$\rho^0$}   &  $773 \MeV$  & $775 \MeV$     \\
+        \multicolumn{1}{c|}{$\pi^\pm$} &   $137 \MeV$  & $140 \MeV$     & \multicolumn{1}{c|}{$\rho^\pm$} &   $773 \MeV$  & $775 \MeV$     \\
+        \multicolumn{1}{c|}{$\eta$}    &   $512 \MeV$ & $548 \MeV$     & \multicolumn{1}{c|}{$\omega$}   &   $773 \MeV$  & $783 \MeV$     \\
+        \multicolumn{1}{c|}{$\eta'$}   &   $400 \MeV$  & $958 \MeV$     & \multicolumn{1}{c|}{$\phi$}     &   $1042 \MeV$   & $1020 \MeV$   
+        \end{tabular}
+    \end{table}\vspace{0.1in}
+
+    Here the value of $m_u=m_d=0.307\GeV$ and $A=0.06\GeV^3$ is used, and the averaged constituent mass is used.
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
@@ -331,8 +363,36 @@ Using the meson mass formulae of (9.37) and (9.38), obtain predictions for the m
 Compare the experimentally measured values of the masses of the $J_P = \frac{3}{2}^+ $ baryons, given in Table 9.2, with the predictions of (9.41). You will need to consider the combined spin of any two quarks in a spin-3/2 baryon state.
 \end{problem}
 \begin{solution}
+From the $L=0$ baryon mass prediction formula, 
 
-\end{solution}
+\begin{align} \label{P9.7.1}
+    m(q_1q_2q_3) = m_1 + m_2 + m_3 + A' \left( \frac{\langle \mathbf{S}_1 \cdot \mathbf{S}_2 \rangle}{m_1m_2} + \frac{\langle \mathbf{S}_1 \cdot \mathbf{S}_3 \rangle}{m_1m_3} + \frac{\langle \mathbf{S}_2 \cdot \mathbf{S}_3 \rangle}{m_2m_3}\right)
+\end{align}\\
+and using the expression of $\mathbf{S}=\mathbf{S}_1 + \mathbf{S}_2 + \mathbf{S}_3$ one could obtain,
+
+\begin{align*}
+    \mathbf{S}^2 &= \mathbf{S}_1^2 + \mathbf{S}_2^2 + \mathbf{S}_3^2 + 2 \left( \mathbf{S}_1 \cdot \mathbf{S}_2 + \mathbf{S}_1 \cdot \mathbf{S}_3 + \mathbf{S}_2 \cdot \mathbf{S}_3  \right) \\[0.12in]
+    &\implies \langle \mathbf{S}_1 \cdot \mathbf{S}_3 \rangle + \langle \mathbf{S}_1 \cdot \mathbf{S}_3 \rangle + \langle \mathbf{S}_1 \cdot \mathbf{S}_3 \rangle = \frac{1}{2} \left( \langle \mathbf{S}^2 \rangle - \langle \mathbf{S}_1^2 \rangle  - \langle \mathbf{S}_2^2 \rangle  - \langle \mathbf{S}_3^2 \rangle \right) = \frac{1}{2} \left[ \frac{3}{2}\cdot \frac{5}{2} - 3\cdot \frac{1}{2}\cdot \frac{3}{2} \right] = \frac{3}{4}
+\end{align*}\\
+and assuming that $m_1 = m_2 = m_3 = \overbar{m} = \frac{1}{3}\left( m_1 + m_2 + m_3 \right)$ one could write down the mass formula (\ref{P9.7.1}) as 
+
+\begin{align*}
+    m(q_1q_2q_3) = 3 \overbar{m} + \frac{3}{4}\cdot \frac{A'}{\overbar{m}^2}
+\end{align*}\\
+Plugging in the different $\overbar{m}$ values for each baryons which are : $\overbar{m}_\Delta = m_d = m_u = 0.365 \GeV$ , $\overbar{m}_\Sigma = \frac{1}{3} \left( 2m_u + m_s \right) = 0.423 \GeV$
+\end{solution} , $\overbar{m}_\Xi = \frac{1}{3} \left( m_u + 2m_s \right) = 0.481 \GeV$ and $\overbar{m}_\Omega = m_s = 0.540 \GeV$ , one could obtain the following predictions which has pretty good agreement within an error of $\mathcal{O}(1\%)$ :
+
+\begin{table}[tbh!]
+    \centering
+    \begin{tabular}{c|cc}
+    \hline
+    Baryon   & Prediction  & Experimental \\ \hline
+    $\Delta$ & $1241 \MeV$ & $1230 \MeV$  \\
+    $\Sigma$ & $1377 \MeV$ & $1385 \MeV$  \\
+    $\Xi$    & $1527 \MeV$ & $1533 \MeV$  \\
+    $\Omega$ & $1686 \MeV$ & $1670 \MeV$ 
+    \end{tabular}
+\end{table} \vspace{0.1in}
 
 \noindent\rule{7in}{1.5pt}
 
