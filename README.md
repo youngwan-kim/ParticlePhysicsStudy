@@ -34,7 +34,7 @@ This repository has an action that triggers $\LaTeX$ compilation when pushed, so
 | 8       | Deep Inelastic Scattering                        | $\color{green}{\textsf{Completed}}$    | $\color{green}{\textsf{Completed}}$     |
 | 9       | Symmetries and the Quark Model                   | $\color{green}{\textsf{Completed}}$    | $\color{orange}{\textsf{In Progress}}$  |
 | 10      | Quantum Chromodynamics                           | $\color{green}{\textsf{Completed}}$    | $\color{red}{\textsf{Not Started}}$     |
-| 11      | The Weak Interaction                             | $\color{red}{\textsf{Not Uploaded}}$   | $\color{red}{\textsf{Not Started}}$     |
+| 11      | The Weak Interaction                             | $\color{green}{\textsf{Completed}}$    | $\color{red}{\textsf{Not Started}}$     |
 | 12      | The Weak Interactions of Leptons                 | $\color{red}{\textsf{Not Uploaded}}$   | $\color{red}{\textsf{Not Started}}$     |
 | 13      | Neutrinos and Neutrino Oscillations              | $\color{red}{\textsf{Not Uploaded}}$   | $\color{red}{\textsf{Not Started}}$     |
 | 14      | CP Violation and Weak Hadronic Interactions      | $\color{red}{\textsf{Not Uploaded}}$   | $\color{red}{\textsf{Not Started}}$     |
