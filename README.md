@@ -1,5 +1,7 @@
 # Selected Solutions to Modern Particle Physics 
 
+[![LaTeX](https://github.com/youngwan-kim/ParticlePhysicsStudy/actions/workflows/build.yml/badge.svg)](https://github.com/youngwan-kim/ParticlePhysicsStudy/actions/workflows/build.yml)
+
 Welcome to this particle physics self-study solution repository! 
 This project is aimed at providing a resource for people who are interested in learning about particle physics. 
 Whether you're a beginner or just looking for additional documentation, I hope you find this repository helpful on your learning journey.

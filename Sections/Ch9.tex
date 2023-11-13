@@ -424,10 +424,32 @@ What values of the quark constituent masses are required to give the best agreem
 
 \begin{align*}
     \mu(\Sigma^+) = \left( 2.46 \pm 0.01 \right) \mu_N  \spc , \spc \mu(\Sigma^-) = \left( -1.16 \pm 0.03 \right) \mu_N \andtxt \mu(\Omega^-) = \left( -2.02 \pm 0.06 \right)  \mu_N .
-\end{align*}
+\end{align*}\\
 \end{problem}
 \begin{solution}
+One should first be able to write down the wavefunctions for the given baryons in the spin-up state, $\ket{\Sigma^+ \spinup\,},\ket{\Sigma^-\spinup\,}$ and $\ket{\Omega^-\spinup\,}$,
 
+\begin{align*}
+    \ket{\Sigma^+ \spinup\,} &= \frac{1}{\sqrt{6}}\left( 2u\spinup u\spinup s\spindown - u\spinup u\spindown s\spinup -u\spindown u\spinup s\spinup \, \right) \\[0.12in]
+    \ket{\Sigma^- \spinup\,} &= \frac{1}{\sqrt{6}}\left( 2d\spinup d\spinup s\spindown - d\spinup d\spindown s\spinup -d\spindown d\spinup s\spinup \, \right) \\[0.12in]
+    \ket{\Omega^- \spinup\,} &= \frac{1}{\sqrt{3}}\left( s\spinup s\spinup s\spindown - s\spinup s\spindown s\spinup -s\spindown s\spinup s\spinup \, \right)
+\end{align*}\\
+As the total magnetic moment of a baryon can be expressed in terms of the vector sum of the magnetic moments of the constituent quarks,
+
+\begin{align*}
+    \mu(\Sigma^+) &= \braket{\Sigma^+ \spinup |\hat{\mu}_z |\Sigma^+ \spinup \,} \\[0.1in]
+                  &= \frac{4}{6}\bra{u\spinup u\spinup s\spindown \,} \hat{\mu}_z \ket{u\spinup u\spinup s\spindown \,} + \frac{1}{6}\bra{u\spinup u\spindown s\spinup \,} \hat{\mu}_z \ket{u\spinup u\spindown s\spinup \,} + \frac{1}{6}\bra{u\spindown u\spinup s\spinup \,} \hat{\mu}_z \ket{u\spindown u\spinup s\spinup \,} \\[0.1in]
+                  &= \frac{4}{6} \left( \mu_u + \mu_u - \mu_s \right) + \frac{1}{6} \left( \mu_u - \mu_u + \mu_s \right) + \frac{1}{6} \left( - \mu_u + \mu_u + \mu_s \right) \\[0.1in]
+                  &=  \frac{1}{3} \left( 4\mu_u - \mu_s \right)
+\end{align*}\\
+and for $\Omega^-$,
+\begin{align*}
+    \mu(\Omega^-) &= \braket{\Omega^- \spinup |\hat{\mu}_z |\Omega^- \spinup \,} \\[0.1in]
+                  &= \frac{1}{3}\bra{s\spinup s\spinup s\spindown \,} \hat{\mu}_z \ket{s\spinup s\spinup s\spindown \,} + \frac{1}{3}\bra{s\spinup s\spindown s\spinup \,} \hat{\mu}_z \ket{s\spinup s\spindown s\spinup \,} + \frac{1}{3}\bra{s\spindown s\spinup s\spinup \,} \hat{\mu}_z \ket{s\spindown s\spinup s\spinup \,} \\[0.1in]
+                  &= \frac{1}{3} \left( \mu_s + \mu_s - \mu_s \right) + \frac{1}{3} \left( \mu_s - \mu_s + \mu_s \right) + \frac{1}{3} \left( - \mu_s + \mu_s + \mu_s \right) \\[0.1in]
+                  &=  \frac{1}{3} \left( 4\mu_u - \mu_s \right) 
+\end{align*}\\
+by switching $u\leftrightarrow d$ in $\ket{\Sigma^+ \spinup\,}$ gives $\ket{\Sigma^- \spinup\,} $ thus switching $\mu_u \leftrightarrow \mu_d$ for $\mu(\Sigma^+)$ will give $\mu(\Sigma^-)$
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
