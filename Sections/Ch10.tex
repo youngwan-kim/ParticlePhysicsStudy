@@ -104,7 +104,16 @@ Using the results of the previous question show that the Jacobian
     \end{align*}\\
 \end{problem}
 \begin{solution}
+Using the expressions derived in the previous question, one could simply calculate the Jacobian as,
 
+    \begin{align*}
+        \frac{\partial \left( y_3,y_4,\pt^2 \right)}{\partial \left( x_1, x_2, q^2 \right)} = 
+        \begin{vmatrix}
+            \pder{y_3}{x_1} & \pder{y_3}{x_2} & \pder{y_3}{q^2}\\ 
+            \pder{y_4}{x_1} & \pder{y_4}{x_2} & \pder{y_4}{q^2}\\ 
+            \pder{\pt^2}{x_1} & \pder{\pt^2}{x_2} & \pder{\pt^2}{q^2}
+       \end{vmatrix}
+    \end{align*}
 \end{solution}
 
 \noindent\rule{7in}{1.5pt}
